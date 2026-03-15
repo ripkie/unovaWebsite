@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShieldAlert, Wind, Package, Droplets, Bell } from "lucide-react";
+import { ArrowRight, ShieldAlert, Wind, Package, Droplets, Bell, ShieldCheck, Leaf, Home } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ const products = [
     focus: "Keamanan",
     focusColor: "text-red-400 bg-red-500/10",
     specs: ["Deteksi LPG & Gas Alam", "Valve Otomatis", "Alarm 85dB", "Notifikasi App"],
-    price: "Mulai dari Rp xx",
+    price: "Mulai dari Rp 1.800.000",
     highlights: [
       { icon: ShieldAlert, text: "Respon deteksi < 10 detik" },
       { icon: Bell, text: "Alarm suara & push notification" },
@@ -80,13 +80,19 @@ export default function ProductsPage() {
           </p>
           <div className="mt-6 flex justify-center gap-3 flex-wrap">
             {[
-              { label: "🛡️ Keamanan", desc: "Cegah kebakaran & ledakan" },
-              { label: "🌿 Kesehatan", desc: "Kualitas udara optimal" },
-              { label: "🏠 Rumah Pintar", desc: "Terintegrasi & otomatis" },
+              { icon: ShieldCheck, label: "Keamanan", desc: "Cegah kebakaran & ledakan", color: "#dc2626" },
+              { icon: Leaf,        label: "Kesehatan", desc: "Kualitas udara optimal",   color: "#16a34a" },
+              { icon: Home,        label: "Rumah Pintar", desc: "Terintegrasi & otomatis", color: "#6F96D1" },
             ].map((tag) => (
-              <div key={tag.label} className="px-4 py-2 rounded-xl bg-[#EDF0F5] border border-[#6F96D1]/20 text-center">
-                <div className="text-brand-navy text-sm font-semibold">{tag.label}</div>
-                <div className="text-brand-navy/45 text-xs">{tag.desc}</div>
+              <div
+                key={tag.label}
+                className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-white border border-[#6F96D1]/20 shadow-sm"
+              >
+                <tag.icon size={16} style={{ color: tag.color }} />
+                <div>
+                  <div className="text-brand-navy text-sm font-semibold leading-tight">{tag.label}</div>
+                  <div className="text-brand-navy/45 text-xs">{tag.desc}</div>
+                </div>
               </div>
             ))}
           </div>

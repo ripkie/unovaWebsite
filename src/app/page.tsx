@@ -46,16 +46,16 @@ export default function HomePage() {
     <>
       {/* ─── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-        {/* ── Background: calm EDF0F5 base with soft blue accents ── */}
+        {/* Background */}
         <div className="absolute inset-0 bg-[#EDF0F5]" />
-        {/* Subtle grid */}
+        {/* Grid */}
         <div className="absolute inset-0"
           style={{
             backgroundImage: "linear-gradient(rgba(111,150,209,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(111,150,209,0.08) 1px, transparent 1px)",
             backgroundSize: "48px 48px",
           }}
         />
-        {/* Soft orbs */}
+        {/* Orbs */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] rounded-full blur-3xl"
           style={{ background: "radial-gradient(circle, rgba(111,150,209,0.18) 0%, transparent 70%)" }}
         />
@@ -102,11 +102,9 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* ── Dashboard Mockup — light theme ── */}
+          {/* Dashboard Mockup */}
           <div className="mt-20 relative max-w-2xl mx-auto">
-            {/* Fade bottom */}
             <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#EDF0F5] to-transparent z-10 pointer-events-none" />
-
             <div className="rounded-3xl border border-[#6F96D1]/20 shadow-2xl overflow-hidden bg-white"
               style={{ boxShadow: "0 32px 80px rgba(111,150,209,0.18)" }}
             >
@@ -117,13 +115,11 @@ export default function HomePage() {
                 <div className="w-3 h-3 rounded-full bg-green-400/70" />
                 <span className="ml-3 text-brand-navy/30 text-xs font-mono">Unova Home — Dashboard</span>
               </div>
-
               {/* Status bar */}
               <div className="px-5 py-2.5 bg-green-50 border-b border-green-200/60 flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-green-700 text-xs font-semibold">Semua sistem normal · Pantauan aktif</span>
               </div>
-
               {/* Scene selector */}
               <div className="p-5 grid grid-cols-4 gap-3 bg-[#EDF0F5]/40">
                 {[
@@ -132,9 +128,7 @@ export default function HomePage() {
                   { icon: "🍳", label: "Masak", active: true },
                   { icon: "👨‍👩‍👧", label: "Keluarga", active: false },
                 ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col items-center gap-2 p-3 rounded-xl text-xs font-medium transition-all"
+                  <div key={i} className="flex flex-col items-center gap-2 p-3 rounded-xl text-xs font-medium transition-all"
                     style={item.active ? {
                       background: "linear-gradient(135deg, #6F96D1, #4a7bbf)",
                       color: "white",
@@ -150,10 +144,8 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-
               {/* Safety cards */}
               <div className="px-5 pb-2 grid grid-cols-2 gap-3">
-                {/* Gas sensor */}
                 <div className="p-4 rounded-2xl bg-green-50 border border-green-200/60 flex items-start gap-3">
                   <div className="w-9 h-9 rounded-xl bg-green-100 flex items-center justify-center shrink-0">
                     <ShieldAlert size={18} className="text-green-600" />
@@ -164,13 +156,10 @@ export default function HomePage() {
                     <div className="text-brand-navy/35 text-xs mt-0.5">Valve: Terbuka</div>
                   </div>
                 </div>
-                {/* Air quality */}
                 <div className="p-4 rounded-2xl border flex items-start gap-3"
-                  style={{ background: "rgba(111,150,209,0.06)", borderColor: "rgba(111,150,209,0.2)" }}
-                >
+                  style={{ background: "rgba(111,150,209,0.06)", borderColor: "rgba(111,150,209,0.2)" }}>
                   <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ background: "rgba(111,150,209,0.15)" }}
-                  >
+                    style={{ background: "rgba(111,150,209,0.15)" }}>
                     <Wind size={18} style={{ color: "#6F96D1" }} />
                   </div>
                   <div>
@@ -179,13 +168,10 @@ export default function HomePage() {
                     <div className="text-brand-navy/35 text-xs mt-0.5">PM2.5: 8 μg/m³</div>
                   </div>
                 </div>
-                {/* Humidity */}
                 <div className="p-4 rounded-2xl border flex items-start gap-3"
-                  style={{ background: "rgba(111,150,209,0.06)", borderColor: "rgba(111,150,209,0.2)" }}
-                >
+                  style={{ background: "rgba(111,150,209,0.06)", borderColor: "rgba(111,150,209,0.2)" }}>
                   <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ background: "rgba(111,150,209,0.15)" }}
-                  >
+                    style={{ background: "rgba(111,150,209,0.15)" }}>
                     <Droplets size={18} style={{ color: "#6F96D1" }} />
                   </div>
                   <div>
@@ -194,7 +180,6 @@ export default function HomePage() {
                     <div className="text-brand-navy/35 text-xs mt-0.5">Target: 50–65%</div>
                   </div>
                 </div>
-                {/* Temperature */}
                 <div className="p-4 rounded-2xl bg-orange-50 border border-orange-200/60 flex items-start gap-3">
                   <div className="w-9 h-9 rounded-xl bg-orange-100 flex items-center justify-center shrink-0">
                     <Thermometer size={18} className="text-orange-500" />
@@ -206,21 +191,18 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-
               {/* Bottom bar */}
               <div className="mx-5 mb-5 mt-3 p-3 rounded-xl border flex items-center gap-3"
-                style={{ background: "rgba(111,150,209,0.05)", borderColor: "rgba(111,150,209,0.15)" }}
-              >
+                style={{ background: "rgba(111,150,209,0.05)", borderColor: "rgba(111,150,209,0.15)" }}>
                 <Heart size={16} className="text-pink-400 shrink-0" />
                 <span className="text-brand-navy/45 text-xs">Keluarga Anda terlindungi 24 jam · Terakhir dicek 2 menit lalu</span>
                 <div className="ml-auto w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               </div>
             </div>
           </div>
-
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-brand-navy/20 animate-bounce">
           <ChevronDown size={24} />
         </div>
       </section>
@@ -308,7 +290,6 @@ export default function HomePage() {
               <div className="absolute -top-4 -right-4 glass px-4 py-2 rounded-xl shadow-lg border border-green-500/30">
                 <span className="text-green-600 text-sm font-bold">✅ Tersedia Sekarang</span>
               </div>
-              {/* Safety badge */}
               <div className="absolute -bottom-4 -left-4 glass px-4 py-3 rounded-xl shadow-lg border border-brand-blue/20">
                 <div className="text-brand-navy text-xs font-semibold">Bersertifikat SNI & CE</div>
                 <div className="text-brand-navy/50 text-xs">Standar keamanan internasional</div>
@@ -319,17 +300,39 @@ export default function HomePage() {
       </section>
 
       {/* ─── PARTNER SLIDER ───────────────────────────────────────────── */}
-      {allPartners.length > 0 && (
-        <section className="py-16 bg-brand-light border-t border-brand-blue/10 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
-            <span className="text-brand-navy/40 text-sm font-semibold tracking-widest uppercase">Dipercaya oleh mitra terkemuka</span>
+      {partners.length > 0 && (
+        <section className="py-14 border-t border-[#6F96D1]/15 overflow-hidden" style={{ background: "#EDF0F5" }}>
+          <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
+            <span className="text-brand-navy/35 text-xs font-bold tracking-widest uppercase">
+              Dipercaya oleh mitra terkemuka
+            </span>
           </div>
-          <div className="relative flex">
-            <div className="flex gap-16 animate-marquee whitespace-nowrap">
-              {allPartners.map((p, i) => (
-                <span key={i} className="text-brand-navy/30 text-xl font-display font-bold tracking-tight hover:text-brand-blue transition-colors cursor-default">
-                  {p.name}
-                </span>
+          {/* Outer mask: fade edges */}
+          <div
+            className="relative"
+            style={{
+              maskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+            }}
+          >
+            <div className="flex">
+              {/* 3 identical sets → guarantees seamless loop at any screen width */}
+              {[0, 1, 2].map((set) => (
+                <div
+                  key={set}
+                  className="flex gap-8 shrink-0 animate-marquee"
+                  style={{ animation: "marquee 5s linear infinite" }}
+                  aria-hidden={set > 0}
+                >
+                  {partners.map((p, i) => (
+                    <span key={i} className="flex items-center gap-8 shrink-0">
+                      <span className="text-brand-navy/30 text-lg font-display font-bold tracking-tight hover:text-[#6F96D1] transition-colors duration-200 cursor-default whitespace-nowrap select-none">
+                        {p.name}
+                      </span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-navy/15 shrink-0" />
+                    </span>
+                  ))}
+                </div>
               ))}
             </div>
           </div>

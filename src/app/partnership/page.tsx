@@ -103,16 +103,6 @@ export default function PartnershipPage() {
           <p className="text-brand-navy/40 text-xs font-bold tracking-widest uppercase">
             Mitra yang telah bergabung
           </p>
-          <p className="text-brand-navy/30 text-xs mt-2">
-            Tambah mitra: edit{" "}
-            <code className="font-mono bg-white px-1.5 py-0.5 rounded text-brand-navy/50">
-              unova.partners
-            </code>{" "}
-            di{" "}
-            <code className="font-mono bg-white px-1.5 py-0.5 rounded text-brand-navy/50">
-              package.json
-            </code>
-          </p>
         </div>
         {/* Row 1 */}
         <div className="relative flex overflow-hidden mb-4">
