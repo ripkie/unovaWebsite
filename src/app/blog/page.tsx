@@ -18,7 +18,7 @@ const internalPosts = [
     excerpt: "Bagaimana ekosistem rumah pintar berkembang melampaui sekadar otomasi menuju sistem yang benar-benar belajar dan beradaptasi.",
     category: "Teknologi",
     date: "10 Maret 2025",
-    //readTime: "6 menit",
+    readTime: "6 menit",
     iconName: "Home",
     color: "from-[#6F96D1] to-[#4a7bbf]",
   },
@@ -28,7 +28,7 @@ const internalPosts = [
     excerpt: "Perbandingan mendalam antara dua standar industri terkemuka dari sisi instalasi, skalabilitas, dan total biaya kepemilikan.",
     category: "Panduan",
     date: "25 Februari 2025",
-    //readTime: "9 menit",
+    readTime: "9 menit",
     iconName: "Zap",
     color: "from-slate-600 to-slate-800",
   },
@@ -38,7 +38,7 @@ const internalPosts = [
     excerpt: "Panduan langkah-demi-langkah untuk mengkuantifikasi penghematan energi dan efisiensi operasional dari instalasi IoT.",
     category: "Bisnis",
     date: "12 Februari 2025",
-    //readTime: "7 menit",
+    readTime: "7 menit",
     iconName: "BarChart3",
     color: "from-emerald-600 to-teal-700",
   },
@@ -48,7 +48,7 @@ const internalPosts = [
     excerpt: "Data BNPB menunjukkan kebocoran gas adalah penyebab utama kebakaran rumah tangga. Begini cara mencegahnya dengan teknologi.",
     category: "Teknologi",
     date: "5 Januari 2025",
-    //readTime: "5 menit",
+    readTime: "5 menit",
     iconName: "ShieldAlert",
     color: "from-red-600 to-orange-600",
   },
@@ -58,7 +58,7 @@ const internalPosts = [
     excerpt: "Studi WHO: udara dalam ruangan bisa 5x lebih tercemar dari luar. Panduan menjaga kualitas udara rumah agar keluarga tetap sehat.",
     category: "Industri",
     date: "20 Desember 2024",
-    //readTime: "8 menit",
+    readTime: "8 menit",
     iconName: "Wind",
     color: "from-green-600 to-emerald-700",
   },
@@ -160,6 +160,9 @@ export default function BlogPage() {
                         style={{ background: "rgba(111,150,209,0.12)", color: "#6F96D1" }}
                       >
                         {post.category}
+                      </span>
+                      <span className="flex items-center gap-1 text-brand-navy/35 text-xs">
+                        <Clock size={11} />{post.readTime}
                       </span>
                     </div>
                     <h3 className="font-display font-bold text-brand-navy text-base leading-snug group-hover:text-[#6F96D1] transition-colors">
