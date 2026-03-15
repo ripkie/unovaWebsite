@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
@@ -42,7 +43,7 @@ export default function Navbar() {
     // Transparent: no bg, subtle border so pill shape is still hinted
     background: isTransparent
       ? "rgba(237, 240, 245, 0.01)"
-      : "rgba(255, 255, 255, 0.92)",
+      : "rgba(237, 240, 245, 0.01)",
     backdropFilter: isTransparent ? "none" : "blur(18px)",
     WebkitBackdropFilter: isTransparent ? "none" : "blur(18px)",
     border: isTransparent
@@ -62,15 +63,19 @@ export default function Navbar() {
       <nav className="w-full" style={navStyle}>
         <div className="flex items-center justify-between px-5 py-3">
 
-          {/* Logo — always navy on light background */}
           <Link href="/" className="flex items-center shrink-0">
-            <img
+            <Image
               src="/logoUnova.svg"
               alt="Unova"
+              width={110}
+              height={28}
               style={{
                 height: "28px",
                 width: "auto",
-                filter: "brightness(0) saturate(100%) invert(11%) sepia(55%) saturate(900%) hue-rotate(202deg) brightness(95%)",
+                filter: isTransparent
+                  ? "brightness(0) invert(1)"
+                  : "brightness(0) saturate(100%) invert(11%) sepia(55%) saturate(900%) hue-rotate(202deg) brightness(95%)",
+                transition: "filter 0.4s ease",
               }}
             />
           </Link>

@@ -35,5 +35,6 @@ export interface Partner {
  * Ganti dengan async fetch saat migrasi ke CMS.
  */
 export function getPartners(): Partner[] {
-  return ((pkgJson as any).unova?.partners ?? []) as Partner[];
+  const pkg = pkgJson as { unova?: { partners?: Partner[] } };
+  return pkg.unova?.partners ?? [];
 }

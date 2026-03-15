@@ -35,7 +35,8 @@ export interface TeamMember {
 }
 
 export function getTeam(): TeamMember[] {
-  return ((pkgJson as any).unova?.team ?? []) as TeamMember[];
+  const pkg = pkgJson as { unova?: { team?: TeamMember[] } };
+  return pkg.unova?.team ?? [];
 }
 
 /** Ambil hanya C-Level */

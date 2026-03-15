@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin, Phone, ArrowRight, Linkedin, Twitter, Instagram } from "lucide-react";
 
 export default function Footer() {
@@ -17,7 +18,7 @@ export default function Footer() {
               <span className="text-gradient-reverse">Ekosistem Cerdas?</span>
             </h2>
             <p className="mt-4 text-white/60 text-lg leading-relaxed max-w-md">
-              Dari konsultasi hingga implementasi penuh - tim Unova siap membantu Anda
+              Dari konsultasi hingga implementasi penuh — tim Unova siap membantu Anda
               membangun solusi IoT yang tepat dan efisien.
             </p>
           </div>
@@ -42,9 +43,11 @@ export default function Footer() {
       {/* Links */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-10">
         <div className="col-span-2 md:col-span-1">
-          <img
+          <Image
             src="/logoUnova.svg"
             alt="Unova"
+            width={110}
+            height={28}
             style={{ height: "28px", width: "auto", filter: "invert(1) brightness(2) opacity(0.85)" }}
           />
           <p className="mt-4 text-white/50 text-sm leading-relaxed">
@@ -54,7 +57,7 @@ export default function Footer() {
             {[
               { icon: Linkedin, href: "#" },
               { icon: Twitter, href: "#" },
-              { icon: Instagram, href: "https://www.instagram.com/creativitycorner.cc/?utm_source=ig_web_button_share_sheet" },
+              { icon: Instagram, href: "#" },
             ].map(({ icon: Icon, href }, i) => (
               <a
                 key={i}
@@ -97,9 +100,9 @@ export default function Footer() {
           </h4>
           <ul className="space-y-3">
             {[
-              "Gas Leak Prevention",
-              "Humidifier & Dehumidifier 2in1",
-              "Safety Listrik",
+              "Smart Sensor Hub",
+              "IoT Gateway",
+              "Cloud Dashboard",
               "API Platform",
             ].map((p) => (
               <li key={p}>
@@ -121,7 +124,7 @@ export default function Footer() {
           <ul className="space-y-3">
             <li className="flex items-start gap-2 text-white/60 text-sm">
               <MapPin size={14} className="mt-0.5 shrink-0 text-brand-blue" />
-              Bandung, Indonesia
+              Indonesia
             </li>
             <li className="flex items-start gap-2 text-white/60 text-sm">
               <Mail size={14} className="mt-0.5 shrink-0 text-brand-blue" />
