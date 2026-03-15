@@ -11,6 +11,11 @@
   "unova": {
     "partners": [
       {
+        "name": "Telkom Univerity",
+        "category": "Institusi",
+        "logo": "/images/logoPartner/TELU.png"
+      },
+      {
         "name": "Bandung Techno Park",
         "category": "Teknologi",
         "logo": "/images/logoPartner/BTP.webp"

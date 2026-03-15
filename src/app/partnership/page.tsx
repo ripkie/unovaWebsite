@@ -5,7 +5,6 @@ import { getPartners } from "@/lib/partners";
 import type { Partner } from "@/lib/partners";
 
 const partners: Partner[] = getPartners();
-const allPartners: Partner[] = [...partners, ...partners];
 
 export const metadata: Metadata = {
   title: "Kemitraan",
@@ -53,7 +52,7 @@ function PartnerCard({ partner, muted = false }: { partner: Partner; muted?: boo
     >
       {partner.logo ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={partner.logo} alt={partner.name} className="h-8 object-contain" />
+        <img src={partner.logo} alt={partner.name} className="h-18 object-contain" />
       ) : (
         <>
           <span className="text-brand-navy/60 font-display font-bold text-sm leading-tight">
@@ -104,16 +103,26 @@ export default function PartnershipPage() {
             Mitra yang telah bergabung
           </p>
         </div>
-        {/* Row 1 */}
-        <div className="relative flex overflow-hidden mb-4">
-          <div className="flex gap-5 animate-marquee whitespace-nowrap">
-            {allPartners.map((p, i) => <PartnerCard key={`r1-${i}`} partner={p} />)}
+        {/* Row 1 — kanan, seamless loop */}
+        <div className="relative overflow-hidden mb-4" style={{
+          maskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+        }}>
+          <style>{`
+            @keyframes slide-left  { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+            @keyframes slide-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+          `}</style>
+          <div className="flex w-max" style={{ animation: "slide-left 20s linear infinite" }}>
+            {[...partners, ...partners].map((p, i) => <PartnerCard key={`r1-${i}`} partner={p} />)}
           </div>
         </div>
-        {/* Row 2 — reverse */}
-        <div className="relative flex overflow-hidden">
-          <div className="flex gap-5 whitespace-nowrap animate-marquee-reverse">
-            {[...allPartners].reverse().map((p, i) => <PartnerCard key={`r2-${i}`} partner={p} muted />)}
+        {/* Row 2 — kiri (reverse), seamless loop */}
+        <div className="relative overflow-hidden" style={{
+          maskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+        }}>
+          <div className="flex w-max" style={{ animation: "slide-right 25s linear infinite" }}>
+            {[...[...partners].reverse(), ...[...partners].reverse()].map((p, i) => <PartnerCard key={`r2-${i}`} partner={p} muted />)}
           </div>
         </div>
       </section>
