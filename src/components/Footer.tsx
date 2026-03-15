@@ -48,7 +48,7 @@ export default function Footer() {
             alt="Unova"
             width={110}
             height={28}
-            style={{ height: "28px", width: "auto", filter: "invert(1) brightness(2) opacity(0.85)" }}
+            style={{ height: "28px", width: "auto", filter: "brightness(0) invert(1)" }}
           />
           <p className="mt-4 text-white/50 text-sm leading-relaxed">
             Inovasi teknologi untuk kehidupan yang lebih cerdas dan terkoneksi.
