@@ -46,13 +46,13 @@ const deptConfig: Record<string, { label: string; bg: string; text: string; bord
     border: "rgba(9,31,88,0.12)",
   },
   Engineering: {
-    label: "Engineering",
+    label: "Technical",
     bg: "rgba(111,150,209,0.08)",
     text: "#6F96D1",
     border: "rgba(111,150,209,0.2)",
   },
   Operations: {
-    label: "Operations",
+    label: "Official",
     bg: "rgba(16,185,129,0.06)",
     text: "#059669",
     border: "rgba(16,185,129,0.15)",
@@ -309,7 +309,7 @@ export default function AboutPage() {
                 <div className="flex items-center gap-3 w-full">
                   <div className="h-px flex-1" style={{ background: "rgba(111,150,209,0.2)" }} />
                   <span className="text-xs font-bold tracking-widest uppercase px-3" style={{ color: "#6F96D1" }}>
-                    Engineering — under CTO
+                    Technical — under CTO
                   </span>
                   <div className="h-px flex-1" style={{ background: "rgba(111,150,209,0.2)" }} />
                 </div>
@@ -330,7 +330,7 @@ export default function AboutPage() {
                 <div className="flex items-center gap-3 w-full">
                   <div className="h-px flex-1" style={{ background: "rgba(16,185,129,0.2)" }} />
                   <span className="text-xs font-bold tracking-widest uppercase px-3" style={{ color: "#059669" }}>
-                    Operations — under COO
+                    Official — under COO
                   </span>
                   <div className="h-px flex-1" style={{ background: "rgba(16,185,129,0.2)" }} />
                 </div>
