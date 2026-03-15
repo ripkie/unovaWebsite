@@ -31,7 +31,7 @@ const products: Record<string, ProductData> = {
     image: "/images/product-sensor.png",
     focus: "🛡️ Keamanan",
     description:
-      "Gas Leak Prevention adalah solusi keamanan rumah dari Unova yang mendeteksi kebocoran LPG dan gas alam secara real-time. Dilengkapi valve otomatis yang langsung menutup regulator gas saat kebocoran terdeteksi, serta alarm suara keras dan notifikasi ke smartphone — memberikan perlindungan berlapis untuk mencegah risiko kebakaran dan ledakan.",
+      "Gas Leak Prevention adalah solusi keamanan rumah dari Unova yang mendeteksi kebocoran LPG dan gas alam secara real-time. Dilengkapi valve otomatis yang langsung menutup regulator gas saat kebocoran terdeteksi, serta alarm suara keras dan notifikasi ke smartphone - memberikan perlindungan berlapis untuk mencegah risiko kebakaran dan ledakan.",
     highlights: [
       "Deteksi kebocoran LPG, gas alam, dan gas beracun (CO)",
       "Valve elektromagnetik otomatis menutup regulator < 10 detik",

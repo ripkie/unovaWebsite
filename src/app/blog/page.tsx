@@ -60,36 +60,12 @@ const internalPosts = [
 
 const externalArticles = [
   {
-    title: "Matter 1.3 Brings New Device Types and Long-Awaited Features",
-    source: "The Verge",
-    url: "https://www.theverge.com",
-    excerpt: "The Connectivity Standards Alliance released Matter 1.3, adding support for EV chargers, washing machines, and energy devices.",
-    date: "8 Maret 2025",
+    title: "Regulator Gas Canggih",
+    source: "Telkom University",
+    url: "https://telkomuniversity.ac.id/cegah-kecelakaan-dapur-mahasiswa-telkom-university-ciptakan-startup-keamanan-dapur/",
+    excerpt: "Regulator Gas LPG Canggih Buatan Mahasiswa Telkom University, Mampu Dikontrol Jarak Jauh",
+    date: "4 Maret 2026",
     category: "Teknologi",
-  },
-  {
-    title: "Gas Leak Prevention Technology Saves Lives in Residential Areas",
-    source: "Safety Science Journal",
-    url: "https://www.sciencedirect.com",
-    excerpt: "IoT-based gas detection with automatic valve shutdown reduces explosion risk by over 90% in residential settings.",
-    date: "1 Maret 2025",
-    category: "Industri",
-  },
-  {
-    title: "Global Smart Home Market to Reach $338 Billion by 2030",
-    source: "Forbes",
-    url: "https://www.forbes.com",
-    excerpt: "A new report forecasts explosive growth in smart home adoption, driven by falling hardware costs and improving interoperability.",
-    date: "5 Februari 2025",
-    category: "Bisnis",
-  },
-  {
-    title: "Indonesia Smart City Push Creates Opportunities for Local IoT Startups",
-    source: "Tech in Asia",
-    url: "https://techinasia.com",
-    excerpt: "Government initiatives across major Indonesian cities are creating significant opportunities for domestic IoT solution providers.",
-    date: "20 Januari 2025",
-    category: "Bisnis",
   },
 ];
 

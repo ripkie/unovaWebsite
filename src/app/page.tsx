@@ -38,7 +38,7 @@ const stats = [
   { value: "< 10s", label: "Waktu Respons Deteksi" },
   { value: "99.9%", label: "Akurasi Sensor" },
   { value: "24/7", label: "Monitoring Aktif" },
-  { value: "xx Thn", label: "Garansi Produk" },
+  { value: "2 Thn", label: "Garansi Produk" },
 ];
 
 export default function HomePage() {
@@ -63,7 +63,7 @@ export default function HomePage() {
           style={{ background: "radial-gradient(circle, rgba(111,150,209,0.12) 0%, transparent 70%)" }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center pt-24 pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center pt-36 pb-20">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#6F96D1]/30 text-brand-navy/70 text-sm font-medium mb-8 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
@@ -254,7 +254,7 @@ export default function HomePage() {
               <span className="text-gradient">adalah Hak Setiap Keluarga</span>
             </h2>
             <p className="mt-4 text-brand-navy/60 max-w-xl mx-auto leading-relaxed">
-              Produk Unova dirancang untuk memberikan ketenangan pikiran - karena Anda tidak harus selalu ada di rumah untuk menjaga keluarga.
+              Produk Unova dirancang untuk memberikan ketenangan pikiran — karena Anda tidak harus selalu ada di rumah untuk menjaga keluarga.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
