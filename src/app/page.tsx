@@ -5,8 +5,6 @@ import { getPartners } from "@/lib/partners";
 import type { Partner } from "@/lib/partners";
 
 const partners: Partner[] = getPartners();
-const allPartners = [...partners, ...partners];
-
 const features = [
   {
     icon: ShieldAlert,
