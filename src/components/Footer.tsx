@@ -100,9 +100,9 @@ export default function Footer() {
           </h4>
           <ul className="space-y-3">
             {[
-              "Smart Sensor Hub",
-              "IoT Gateway",
-              "Cloud Dashboard",
+              "Gas Leak Prevention",
+              "Humidifier & Dehumidifier 2in1",
+              "Safety Listrik",
               "API Platform",
             ].map((p) => (
               <li key={p}>
