@@ -40,10 +40,9 @@ export default function Navbar() {
     maxWidth: "860px",
     borderRadius: "18px",
     transition: "background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease",
-    // Transparent: no bg, subtle border so pill shape is still hinted
     background: isTransparent
       ? "rgba(237, 240, 245, 0.01)"
-      : "rgba(237, 240, 245, 0.01)",
+      : "rgba(255, 255, 255, 0.92)",
     backdropFilter: isTransparent ? "none" : "blur(18px)",
     WebkitBackdropFilter: isTransparent ? "none" : "blur(18px)",
     border: isTransparent
@@ -54,7 +53,6 @@ export default function Navbar() {
       : "0 4px 28px rgba(111, 150, 209, 0.13)",
   };
 
-  // Text & icon colors — always dark since both hero types are light
   const textColor = "rgba(9, 31, 88, 0.65)";
   const textActive = "#091F58";
 
@@ -63,6 +61,7 @@ export default function Navbar() {
       <nav className="w-full" style={navStyle}>
         <div className="flex items-center justify-between px-5 py-3">
 
+          {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
             <Image
               src="/logoUnova.svg"
@@ -72,10 +71,7 @@ export default function Navbar() {
               style={{
                 height: "28px",
                 width: "auto",
-                filter: isTransparent
-                  ? "brightness(0) invert(1)"
-                  : "brightness(0) saturate(100%) invert(11%) sepia(55%) saturate(900%) hue-rotate(202deg) brightness(95%)",
-                transition: "filter 0.4s ease",
+                filter: "brightness(0) saturate(100%) invert(11%) sepia(55%) saturate(900%) hue-rotate(202deg) brightness(95%)",
               }}
             />
           </Link>

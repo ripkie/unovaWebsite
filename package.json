@@ -54,7 +54,7 @@
     "team": [
       {
         "id": "ceo",
-        "name": "Arillian Dylan N",
+        "name": "King Dylan",
         "role": "CEO & Co-Founder",
         "department": "C-Level",
         "reportsTo": null,
@@ -72,16 +72,16 @@
       },
       {
         "id": "coo",
-        "name": "Devan Rizki A",
+        "name": "Sir Devan",
         "role": "Chief Operation Officer",
         "department": "C-Level",
         "reportsTo": "ceo",
-        "bio": "Memastikan operasional Unova berjalan efisien - dari supply chain produk hingga eksekusi strategi pemasaran.",
+        "bio": "Memastikan operasional Unova berjalan efisien — dari supply chain produk hingga eksekusi strategi pemasaran.",
         "photo": null
       },
       {
         "id": "design-engineer",
-        "name": "Ibra Salman Maulana",
+        "name": "Nama Design Engineer",
         "role": "Design Engineer",
         "department": "Engineering",
         "reportsTo": "cto",
@@ -90,7 +90,7 @@
       },
       {
         "id": "iot-engineer",
-        "name": "Insan Fathul Aziz",
+        "name": "Nama IoT Engineer",
         "role": "IoT Engineer",
         "department": "Engineering",
         "reportsTo": "cto",
@@ -99,7 +99,7 @@
       },
       {
         "id": "electrical-engineer",
-        "name": "-1 juga ini",
+        "name": "Nama Electrical Engineer",
         "role": "Electrical Engineer",
         "department": "Engineering",
         "reportsTo": "cto",
@@ -108,7 +108,7 @@
       },
       {
         "id": "software-engineer",
-        "name": "Muh Rifki Widya R",
+        "name": "Nama Software Engineer",
         "role": "Software Engineer",
         "department": "Engineering",
         "reportsTo": "cto",
@@ -117,7 +117,7 @@
       },
       {
         "id": "creative-1",
-        "name": "Mutiara A. Z. A. M.",
+        "name": "Nama Creative Specialist",
         "role": "Creative Specialist",
         "department": "Operations",
         "reportsTo": "coo",
@@ -126,7 +126,7 @@
       },
       {
         "id": "creative-2",
-        "name": "Seina Al Qirani",
+        "name": "Nama Creative Specialist",
         "role": "Creative Specialist",
         "department": "Operations",
         "reportsTo": "coo",
@@ -135,7 +135,7 @@
       },
       {
         "id": "marketing-1",
-        "name": "Faiza Restu Aulia",
+        "name": "Nama Marketing & Sales",
         "role": "Marketing & Sales Specialist",
         "department": "Operations",
         "reportsTo": "coo",
@@ -144,7 +144,7 @@
       },
       {
         "id": "marketing-2",
-        "name": "Najwamadiha Wilandiva R",
+        "name": "Nama Marketing & Sales",
         "role": "Marketing & Sales Specialist",
         "department": "Operations",
         "reportsTo": "coo",
@@ -156,7 +156,7 @@
   "dependencies": {
     "framer-motion": "^12.36.0",
     "lucide-react": "^0.577.0",
-    "next": "15.1.6",
+    "next": "15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -166,7 +166,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.1.6",
+    "eslint-config-next": "15.3.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
