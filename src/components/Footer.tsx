@@ -57,7 +57,7 @@ export default function Footer() {
             {[
               { icon: Linkedin, href: "#" },
               { icon: Twitter, href: "#" },
-              { icon: Instagram, href: "#" },
+              { icon: Instagram, href: "https://www.instagram.com/creativitycorner.cc/?utm_source=ig_web_button_share_sheet" },
             ].map(({ icon: Icon, href }, i) => (
               <a
                 key={i}
