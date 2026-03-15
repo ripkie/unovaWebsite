@@ -18,7 +18,7 @@ export default function Footer() {
               <span className="text-gradient-reverse">Ekosistem Cerdas?</span>
             </h2>
             <p className="mt-4 text-white/60 text-lg leading-relaxed max-w-md">
-              Dari konsultasi hingga implementasi penuh — tim Unova siap membantu Anda
+              Dari konsultasi hingga implementasi penuh - tim Unova siap membantu Anda
               membangun solusi IoT yang tepat dan efisien.
             </p>
           </div>
@@ -124,7 +124,7 @@ export default function Footer() {
           <ul className="space-y-3">
             <li className="flex items-start gap-2 text-white/60 text-sm">
               <MapPin size={14} className="mt-0.5 shrink-0 text-brand-blue" />
-              Indonesia
+              Bandung, Indonesia
             </li>
             <li className="flex items-start gap-2 text-white/60 text-sm">
               <Mail size={14} className="mt-0.5 shrink-0 text-brand-blue" />

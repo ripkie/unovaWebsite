@@ -145,7 +145,7 @@ export default function AboutPage() {
           </h1>
           <p className="mt-4 text-brand-navy/55 text-lg leading-relaxed max-w-2xl">
             Unova adalah startup home technology Indonesia yang fokus menghadirkan
-            produk keamanan dan kesehatan rumah — terjangkau, andal, dan berdampak
+            produk keamanan dan kesehatan rumah - terjangkau, andal, dan berdampak
             nyata bagi setiap keluarga.
           </p>
         </div>
@@ -169,7 +169,7 @@ export default function AboutPage() {
                   teknologi pencegahannya sudah ada?
                 </p>
                 <p>
-                  Dari pertanyaan itu lahirlah Unova — startup home technology yang fokus
+                  Dari pertanyaan itu lahirlah Unova - startup home technology yang fokus
                   pada dua hal yang paling fundamental:{" "}
                   <strong className="text-brand-navy">keamanan</strong> dan{" "}
                   <strong className="text-brand-navy">kesehatan</strong> di lingkungan rumah.
