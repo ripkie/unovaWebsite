@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ExternalLink, Clock, Home, Zap, BarChart3, ShieldAlert, Wind, CheckCircle, type LucideIcon } from "lucide-react";
+import { ArrowRight, ExternalLink, Home, Zap, BarChart3, ShieldAlert, Wind, CheckCircle, type LucideIcon } from "lucide-react";
 
 const categories = ["Semua", "Teknologi", "Panduan", "Bisnis", "Industri"];
 
