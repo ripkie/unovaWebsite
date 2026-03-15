@@ -11,6 +11,11 @@
   "unova": {
     "partners": [
       {
+        "name": "Bandung Techno Park",
+        "category": "Teknologi",
+        "logo": "/images/logoPartner/BTP.webp"
+      },
+      {
         "name": "Telkom Indonesia",
         "category": "Teknologi",
         "logo": null
