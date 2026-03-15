@@ -111,7 +111,7 @@ export default function HomePage() {
                 <div className="w-3 h-3 rounded-full bg-red-400/70" />
                 <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
                 <div className="w-3 h-3 rounded-full bg-green-400/70" />
-                <span className="ml-3 text-brand-navy/30 text-xs font-mono">Unova Home — Dashboard</span>
+                <span className="ml-3 text-brand-navy/30 text-xs font-mono">Unova Home - Dashboard</span>
               </div>
               {/* Status bar */}
               <div className="px-5 py-2.5 bg-green-50 border-b border-green-200/60 flex items-center gap-2">
@@ -121,10 +121,10 @@ export default function HomePage() {
               {/* Scene selector — emoji diganti Lucide icons */}
               <div className="p-5 grid grid-cols-4 gap-3 bg-[#EDF0F5]/40">
                 {[
-                  { icon: Moon,            label: "Malam",    active: false },
-                  { icon: Sun,             label: "Pagi",     active: false },
-                  { icon: UtensilsCrossed, label: "Masak",    active: true  },
-                  { icon: Users,           label: "Keluarga", active: false },
+                  { icon: Moon, label: "Malam", active: false },
+                  { icon: Sun, label: "Pagi", active: false },
+                  { icon: UtensilsCrossed, label: "Masak", active: true },
+                  { icon: Users, label: "Keluarga", active: false },
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col items-center gap-2 p-3 rounded-xl text-xs font-medium transition-all"
                     style={item.active ? {
@@ -228,7 +228,7 @@ export default function HomePage() {
               <span className="text-gradient">adalah Hak Setiap Keluarga</span>
             </h2>
             <p className="mt-4 text-brand-navy/60 max-w-xl mx-auto leading-relaxed">
-              Produk Unova dirancang untuk memberikan ketenangan pikiran — karena Anda tidak harus selalu ada di rumah untuk menjaga keluarga.
+              Produk Unova dirancang untuk memberikan ketenangan pikiran - karena Anda tidak harus selalu ada di rumah untuk menjaga keluarga.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
