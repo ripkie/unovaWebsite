@@ -111,14 +111,14 @@ export default function HomePage() {
                 <div className="w-3 h-3 rounded-full bg-red-400/70" />
                 <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
                 <div className="w-3 h-3 rounded-full bg-green-400/70" />
-                <span className="ml-3 text-brand-navy/30 text-xs font-mono">Unova Home - Dashboard</span>
+                <span className="ml-3 text-brand-navy/30 text-xs font-mono">Unova Home — Dashboard</span>
               </div>
               {/* Status bar */}
               <div className="px-5 py-2.5 bg-green-50 border-b border-green-200/60 flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-green-700 text-xs font-semibold">Semua sistem normal · Pantauan aktif</span>
               </div>
-              {/* Scene selector — emoji diganti Lucide icons */}
+              {/* Scene selector */}
               <div className="p-5 grid grid-cols-4 gap-3 bg-[#EDF0F5]/40">
                 {[
                   { icon: Moon, label: "Malam", active: false },
@@ -228,7 +228,7 @@ export default function HomePage() {
               <span className="text-gradient">adalah Hak Setiap Keluarga</span>
             </h2>
             <p className="mt-4 text-brand-navy/60 max-w-xl mx-auto leading-relaxed">
-              Produk Unova dirancang untuk memberikan ketenangan pikiran - karena Anda tidak harus selalu ada di rumah untuk menjaga keluarga.
+              Produk Unova dirancang untuk memberikan ketenangan pikiran — karena Anda tidak harus selalu ada di rumah untuk menjaga keluarga.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -250,7 +250,6 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              {/* 🛡️ diganti Shield icon */}
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-red-500/10 text-red-500 text-xs font-bold mb-4">
                 <Shield size={13} /> Produk Unggulan
               </span>
@@ -289,7 +288,6 @@ export default function HomePage() {
                 <Image src="/images/product-sensor.png" alt="Gas Leak Prevention" width={400} height={400} className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="absolute -top-4 -right-4 glass px-4 py-2 rounded-xl shadow-lg border border-green-500/30">
-                {/* ✅ diganti Check icon */}
                 <span className="inline-flex items-center gap-1.5 text-green-600 text-sm font-bold">
                   <Check size={14} /> Tersedia Sekarang
                 </span>
@@ -303,7 +301,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── PARTNER SLIDER ───────────────────────────────────────────── */}
+      {/* ─── PARTNER SLIDER ───*/}
       {partners.length > 0 && (
         <section className="py-14 border-t border-[#6F96D1]/15 overflow-hidden" style={{ background: "#EDF0F5" }}>
           <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
@@ -311,30 +309,25 @@ export default function HomePage() {
               Dipercaya oleh mitra terkemuka
             </span>
           </div>
-          <div
-            className="relative"
-            style={{
-              maskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
-            }}
-          >
-            <div className="flex">
-              {[0, 1, 2].map((set) => (
-                <div
-                  key={set}
-                  className="flex gap-8 shrink-0"
-                  style={{ animation: "marquee 5s linear infinite" }}
-                  aria-hidden={set > 0}
-                >
-                  {partners.map((p, i) => (
-                    <span key={i} className="flex items-center gap-8 shrink-0">
-                      <span className="text-brand-navy/30 text-lg font-display font-bold tracking-tight hover:text-[#6F96D1] transition-colors duration-200 cursor-default whitespace-nowrap select-none">
-                        {p.name}
-                      </span>
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-navy/15 shrink-0" />
-                    </span>
-                  ))}
-                </div>
+          {/* Fade mask kiri & kanan */}
+          <div style={{
+            maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+            overflow: "hidden",
+          }}>
+            {/*
+              1 track berisi 2 set identik.
+              Animasi geser -50% (= 1 set) → posisi kembali ke awal = seamless.
+              Ubah durasi "12s" untuk atur kecepatan.
+            */}
+            <div className="flex w-max" style={{ animation: "slider 12s linear infinite" }}>
+              {[...partners, ...partners].map((p, i) => (
+                <span key={i} className="flex items-center gap-10 px-5 shrink-0">
+                  <span className="text-brand-navy/35 text-base font-display font-bold tracking-tight hover:text-[#6F96D1] transition-colors duration-200 cursor-default whitespace-nowrap select-none">
+                    {p.name}
+                  </span>
+                  <span className="w-1 h-1 rounded-full bg-brand-navy/20 shrink-0" />
+                </span>
               ))}
             </div>
           </div>
