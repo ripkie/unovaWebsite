@@ -1,6 +1,7 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CheckCircle2, Download, ShieldAlert, Bell, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Download, ShieldAlert, Bell, Zap, Shield, UtensilsCrossed, Building2, Hotel } from "lucide-react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -16,7 +17,7 @@ interface ProductData {
   description: string;
   highlights: string[];
   specs: Record<string, string>;
-  useCases: { icon: string; title: string; desc: string }[];
+  useCases: { icon: React.ElementType; title: string; desc: string }[];
   compatibleWith: string[];
 }
 
@@ -29,7 +30,7 @@ const products: Record<string, ProductData> = {
     badgeColor: "bg-green-500",
     price: "Rp 1.800.000",
     image: "/images/product-sensor.png",
-    focus: "🛡️ Keamanan",
+    focus: "Keamanan",
     description:
       "Gas Leak Prevention adalah solusi keamanan rumah dari Unova yang mendeteksi kebocoran LPG dan gas alam secara real-time. Dilengkapi valve otomatis yang langsung menutup regulator gas saat kebocoran terdeteksi, serta alarm suara keras dan notifikasi ke smartphone — memberikan perlindungan berlapis untuk mencegah risiko kebakaran dan ledakan.",
     highlights: [
@@ -57,9 +58,9 @@ const products: Record<string, ProductData> = {
       "Garansi": "2 tahun",
     },
     useCases: [
-      { icon: "🏠", title: "Dapur Rumah Tangga", desc: "Proteksi kompor gas dari kebocoran regulator, selang, maupun fitting yang longgar." },
-      { icon: "🏢", title: "Restoran & Café", desc: "Keamanan operasional dapur komersial 24/7 dengan monitoring jarak jauh via dashboard." },
-      { icon: "🏨", title: "Hotel & Kost", desc: "Lindungi puluhan unit sekaligus dengan sistem alert terpusat ke manajemen." },
+      { icon: UtensilsCrossed, title: "Dapur Rumah Tangga", desc: "Proteksi kompor gas dari kebocoran regulator, selang, maupun fitting yang longgar." },
+      { icon: Building2,       title: "Restoran & Café",   desc: "Keamanan operasional dapur komersial 24/7 dengan monitoring jarak jauh via dashboard." },
+      { icon: Hotel,           title: "Hotel & Kost",      desc: "Lindungi puluhan unit sekaligus dengan sistem alert terpusat ke manajemen." },
     ],
     compatibleWith: ["Unova App", "Google Home", "Amazon Alexa", "Home Assistant", "MQTT"],
   },
@@ -92,7 +93,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <div>
               <div className="flex items-center gap-2 mb-4 flex-wrap">
                 <span className={`px-3 py-1 rounded-full text-white text-xs font-bold ${product.badgeColor}`}>{product.badge}</span>
-                <span className="px-3 py-1 rounded-full text-xs font-bold" style={{ background: "rgba(111,150,209,0.12)", color: "#6F96D1" }}>{product.focus}</span>
+                {/* 🛡️ diganti Shield icon */}
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold" style={{ background: "rgba(111,150,209,0.12)", color: "#6F96D1" }}>
+                  <Shield size={12} />{product.focus}
+                </span>
               </div>
               <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-navy">{product.name}</h1>
               <p className="mt-2 text-lg font-medium" style={{ color: "#6F96D1" }}>{product.tagline}</p>
@@ -188,8 +192,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <div className="grid md:grid-cols-3 gap-6">
             {product.useCases.map((uc) => (
               <div key={uc.title} className="p-8 rounded-2xl bg-white border border-brand-blue/10 hover:border-brand-blue/30 hover:shadow-lg transition-all">
-                <span className="text-4xl">{uc.icon}</span>
-                <h3 className="mt-4 font-display font-bold text-brand-navy text-xl">{uc.title}</h3>
+                {/* 🏠🏢🏨 diganti icon component */}
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(111,150,209,0.1)" }}>
+                  <uc.icon size={24} style={{ color: "#6F96D1" }} />
+                </div>
+                <h3 className="font-display font-bold text-brand-navy text-xl">{uc.title}</h3>
                 <p className="mt-2 text-brand-navy/60 text-sm leading-relaxed">{uc.desc}</p>
               </div>
             ))}

@@ -1,9 +1,15 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ExternalLink, Clock } from "lucide-react";
+import { ArrowRight, ExternalLink, Clock, Home, Zap, BarChart3, ShieldAlert, Wind, CheckCircle, type LucideIcon } from "lucide-react";
 
 const categories = ["Semua", "Teknologi", "Panduan", "Bisnis", "Industri"];
+
+const iconMap: Record<string, LucideIcon> = { Home, Zap, BarChart3, ShieldAlert, Wind };
+function PostIcon({ name }: { name: string }) {
+  const Icon = iconMap[name] ?? Home;
+  return <Icon size={40} className="text-white/80" />;
+}
 
 const internalPosts = [
   {
@@ -13,7 +19,7 @@ const internalPosts = [
     category: "Teknologi",
     date: "10 Maret 2025",
     readTime: "6 menit",
-    image: "🏠",
+    iconName: "Home",
     color: "from-[#6F96D1] to-[#4a7bbf]",
   },
   {
@@ -23,7 +29,7 @@ const internalPosts = [
     category: "Panduan",
     date: "25 Februari 2025",
     readTime: "9 menit",
-    image: "⚡",
+    iconName: "Zap",
     color: "from-slate-600 to-slate-800",
   },
   {
@@ -33,7 +39,7 @@ const internalPosts = [
     category: "Bisnis",
     date: "12 Februari 2025",
     readTime: "7 menit",
-    image: "📊",
+    iconName: "BarChart3",
     color: "from-emerald-600 to-teal-700",
   },
   {
@@ -43,7 +49,7 @@ const internalPosts = [
     category: "Teknologi",
     date: "5 Januari 2025",
     readTime: "5 menit",
-    image: "🔥",
+    iconName: "ShieldAlert",
     color: "from-red-600 to-orange-600",
   },
   {
@@ -53,7 +59,7 @@ const internalPosts = [
     category: "Industri",
     date: "20 Desember 2024",
     readTime: "8 menit",
-    image: "🌿",
+    iconName: "Wind",
     color: "from-green-600 to-emerald-700",
   },
 ];
@@ -143,9 +149,9 @@ export default function BlogPage() {
                   href={`/blog/${post.slug}`}
                   className="group bg-white rounded-2xl border border-[#6F96D1]/15 overflow-hidden hover:shadow-lg hover:shadow-[#6F96D1]/15 hover:-translate-y-1 transition-all duration-300"
                 >
-                  {/* Thumbnail */}
+                  {/* Thumbnail — emoji diganti PostIcon */}
                   <div className={`h-36 bg-gradient-to-br ${post.color} flex items-center justify-center`}>
-                    <span className="text-5xl">{post.image}</span>
+                    <PostIcon name={post.iconName} />
                   </div>
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-3">
@@ -175,7 +181,6 @@ export default function BlogPage() {
             </div>
           ) : (
             <div className="text-center py-16">
-              <p className="text-4xl mb-3">📭</p>
               <p className="text-brand-navy/40 font-medium">Belum ada artikel di kategori ini</p>
               <button onClick={() => setActiveCategory("Semua")} className="mt-4 text-[#6F96D1] text-sm font-semibold hover:underline">
                 Lihat semua artikel
@@ -238,8 +243,10 @@ export default function BlogPage() {
           <h2 className="text-2xl font-display font-bold text-brand-navy">Update Terbaru ke Inbox Anda</h2>
           <p className="mt-2 text-brand-navy/55 text-sm">Tips keamanan rumah, update produk, dan insight industri.</p>
           {subscribed ? (
-            <div className="mt-6 px-6 py-4 rounded-2xl bg-green-50 border border-green-200 text-green-700 font-semibold text-sm">
-              ✅ Terima kasih! Anda akan menerima update terbaru dari Unova.
+            <div className="mt-6 px-6 py-4 rounded-2xl bg-green-50 border border-green-200 text-green-700 font-semibold text-sm flex items-center justify-center gap-2">
+              {/* ✅ diganti CheckCircle icon */}
+              <CheckCircle size={16} />
+              Terima kasih! Anda akan menerima update terbaru dari Unova.
             </div>
           ) : (
             <div className="mt-6 flex gap-3">

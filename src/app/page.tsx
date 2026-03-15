@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShieldAlert, Wind, Heart, Bell, ChevronDown, Droplets, Thermometer, Zap, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ShieldAlert, Wind, Heart, Bell, ChevronDown, Droplets, Thermometer, Zap, CheckCircle2, Moon, Sun, UtensilsCrossed, Users, Shield, Check } from "lucide-react";
 import { getPartners } from "@/lib/partners";
 import type { Partner } from "@/lib/partners";
 
@@ -118,13 +118,13 @@ export default function HomePage() {
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-green-700 text-xs font-semibold">Semua sistem normal · Pantauan aktif</span>
               </div>
-              {/* Scene selector */}
+              {/* Scene selector — emoji diganti Lucide icons */}
               <div className="p-5 grid grid-cols-4 gap-3 bg-[#EDF0F5]/40">
                 {[
-                  { icon: "🌙", label: "Malam", active: false },
-                  { icon: "☀️", label: "Pagi", active: false },
-                  { icon: "🍳", label: "Masak", active: true },
-                  { icon: "👨‍👩‍👧", label: "Keluarga", active: false },
+                  { icon: Moon,            label: "Malam",    active: false },
+                  { icon: Sun,             label: "Pagi",     active: false },
+                  { icon: UtensilsCrossed, label: "Masak",    active: true  },
+                  { icon: Users,           label: "Keluarga", active: false },
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col items-center gap-2 p-3 rounded-xl text-xs font-medium transition-all"
                     style={item.active ? {
@@ -137,7 +137,7 @@ export default function HomePage() {
                       border: "1px solid rgba(111,150,209,0.15)",
                     }}
                   >
-                    <span className="text-2xl">{item.icon}</span>
+                    <item.icon size={20} />
                     {item.label}
                   </div>
                 ))}
@@ -250,7 +250,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-block px-3 py-1 rounded-lg bg-red-500/10 text-red-500 text-xs font-bold mb-4">🛡️ Produk Unggulan</span>
+              {/* 🛡️ diganti Shield icon */}
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-red-500/10 text-red-500 text-xs font-bold mb-4">
+                <Shield size={13} /> Produk Unggulan
+              </span>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-brand-navy leading-tight">
                 Gas Leak Prevention
                 <br />
@@ -286,7 +289,10 @@ export default function HomePage() {
                 <Image src="/images/product-sensor.png" alt="Gas Leak Prevention" width={400} height={400} className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="absolute -top-4 -right-4 glass px-4 py-2 rounded-xl shadow-lg border border-green-500/30">
-                <span className="text-green-600 text-sm font-bold">✅ Tersedia Sekarang</span>
+                {/* ✅ diganti Check icon */}
+                <span className="inline-flex items-center gap-1.5 text-green-600 text-sm font-bold">
+                  <Check size={14} /> Tersedia Sekarang
+                </span>
               </div>
               <div className="absolute -bottom-4 -left-4 glass px-4 py-3 rounded-xl shadow-lg border border-brand-blue/20">
                 <div className="text-brand-navy text-xs font-semibold">Bersertifikat SNI & CE</div>
@@ -305,7 +311,6 @@ export default function HomePage() {
               Dipercaya oleh mitra terkemuka
             </span>
           </div>
-          {/* Outer mask: fade edges */}
           <div
             className="relative"
             style={{
@@ -314,11 +319,10 @@ export default function HomePage() {
             }}
           >
             <div className="flex">
-              {/* 3 identical sets → guarantees seamless loop at any screen width */}
               {[0, 1, 2].map((set) => (
                 <div
                   key={set}
-                  className="flex gap-8 shrink-0 animate-marquee"
+                  className="flex gap-8 shrink-0"
                   style={{ animation: "marquee 5s linear infinite" }}
                   aria-hidden={set > 0}
                 >
