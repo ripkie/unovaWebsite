@@ -18,7 +18,7 @@ const internalPosts = [
     excerpt: "Bagaimana ekosistem rumah pintar berkembang melampaui sekadar otomasi menuju sistem yang benar-benar belajar dan beradaptasi.",
     category: "Teknologi",
     date: "10 Maret 2025",
-    readTime: "6 menit",
+    //readTime: "6 menit",
     iconName: "Home",
     color: "from-[#6F96D1] to-[#4a7bbf]",
   },
@@ -160,9 +160,6 @@ export default function BlogPage() {
                         style={{ background: "rgba(111,150,209,0.12)", color: "#6F96D1" }}
                       >
                         {post.category}
-                      </span>
-                      <span className="flex items-center gap-1 text-brand-navy/35 text-xs">
-                        <Clock size={11} />{post.readTime}
                       </span>
                     </div>
                     <h3 className="font-display font-bold text-brand-navy text-base leading-snug group-hover:text-[#6F96D1] transition-colors">
