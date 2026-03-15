@@ -33,7 +33,7 @@ const values = [
 ];
 
 const milestones = [
-  { date: "Januari 2026", event: "Unova didirikan di Jakarta dengan tim 11 orang" },
+  { date: "Januari 2026", event: "Unova didirikan di Bandung dengan tim 11 orang" },
   { date: "Februari 2026", event: "Lolos Program Inkubasi Bandung Techno Park" },
 ];
 
