@@ -27,7 +27,7 @@ const products: Record<string, ProductData> = {
     tagline: "Proteksi otomatis dari kebocoran gas",
     badge: "Tersedia Sekarang",
     badgeColor: "bg-green-500",
-    price: "Rp 1.800.000",
+    price: "Rp xx",
     image: "/images/product-sensor.png",
     focus: "🛡️ Keamanan",
     description:

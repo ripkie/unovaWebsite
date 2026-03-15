@@ -22,7 +22,7 @@ const products = [
     focus: "Keamanan",
     focusColor: "text-red-400 bg-red-500/10",
     specs: ["Deteksi LPG & Gas Alam", "Valve Otomatis", "Alarm 85dB", "Notifikasi App"],
-    price: "Mulai dari Rp 1.800.000",
+    price: "Mulai dari Rp xx",
     highlights: [
       { icon: ShieldAlert, text: "Respon deteksi < 10 detik" },
       { icon: Bell, text: "Alarm suara & push notification" },

@@ -32,25 +32,25 @@ export default function Navbar() {
 
   const pillStyle: React.CSSProperties = scrolled
     ? {
-        maxWidth: "800px",
-        borderRadius: "16px",
-        background: "rgba(255,255,255,0.94)",
-        backdropFilter: "blur(16px)",
-        WebkitBackdropFilter: "blur(16px)",
-        border: "1px solid rgba(111,150,209,0.2)",
-        boxShadow: "0 4px 24px rgba(111,150,209,0.1)",
-      }
+      maxWidth: "800px",
+      borderRadius: "16px",
+      background: "rgba(255,255,255,0.94)",
+      backdropFilter: "blur(16px)",
+      WebkitBackdropFilter: "blur(16px)",
+      border: "1px solid rgba(111,150,209,0.2)",
+      boxShadow: "0 4px 24px rgba(111,150,209,0.1)",
+    }
     : {
-        // Always visible: subtle white pill even before scroll
-        maxWidth: "100%",
-        borderRadius: "0",
-        background: "rgba(255,255,255,0.85)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-        border: "none",
-        borderBottom: "1px solid rgba(111,150,209,0.12)",
-        boxShadow: "none",
-      };
+      // Always visible: subtle white pill even before scroll
+      maxWidth: "100%",
+      borderRadius: "0",
+      background: "rgba(255,255,255,0.85)",
+      backdropFilter: "blur(12px)",
+      WebkitBackdropFilter: "blur(12px)",
+      border: "none",
+      borderBottom: "1px solid rgba(111,150,209,0.12)",
+      boxShadow: "none",
+    };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center">
@@ -65,8 +65,8 @@ export default function Navbar() {
               src="/logoUnova.svg"
               alt="Unova"
               style={{
-                height: "28px",
-                width: "auto",
+                height: "18px",
+                width: "105px",
                 filter: "invert(10%) sepia(60%) saturate(800%) hue-rotate(205deg) brightness(40%)",
               }}
             />

@@ -51,7 +51,7 @@ const team = [
   {
     name: "Sir Devan",
     role: "Chief Operation Officer",
-    bio: "Ahli pemasaran B2B dengan rekam jejak membangun brand teknologi di pasar Asia Tenggara.",
+    bio: "LOREM IPSUM, infokan mau dikasih quotes apa.",
     avatar: "👤",
   },
 ];
@@ -74,7 +74,7 @@ export default function AboutPage() {
           </h1>
           <p className="mt-4 text-brand-navy/55 text-lg leading-relaxed max-w-2xl">
             Unova adalah startup home technology Indonesia yang fokus menghadirkan
-            produk keamanan dan kesehatan rumah — terjangkau, andal, dan berdampak
+            produk keamanan dan kesehatan rumah - terjangkau, andal, dan berdampak
             nyata bagi setiap keluarga.
           </p>
         </div>
@@ -93,14 +93,14 @@ export default function AboutPage() {
               </h2>
               <div className="mt-6 space-y-4 text-brand-navy/65 leading-relaxed">
                 <p>
-                  Pada 2022, para pendiri Unova bertanya: mengapa insiden kebakaran akibat
+                  Pada 2025, para pendiri Unova bertanya: mengapa insiden kebakaran akibat
                   kebocoran gas masih terus terjadi di rumah-rumah Indonesia, padahal
                   teknologi pencegahannya sudah ada? Dan mengapa kualitas udara dalam
-                  ruangan — yang langsung berdampak pada kesehatan keluarga — masih
+                  ruangan - yang langsung berdampak pada kesehatan keluarga — masih
                   diabaikan begitu saja?
                 </p>
                 <p>
-                  Dari pertanyaan itu lahirlah Unova — startup home technology yang fokus
+                  Dari pertanyaan itu lahirlah Unova - startup home technology yang fokus
                   pada dua hal yang paling fundamental: <strong className="text-brand-navy">keamanan</strong> dan{" "}
                   <strong className="text-brand-navy">kesehatan</strong> di lingkungan rumah.
                 </p>
@@ -126,7 +126,7 @@ export default function AboutPage() {
                 </div>
                 <p className="text-brand-navy/60 leading-relaxed">
                   Menghadirkan produk home technology yang melindungi keamanan dan
-                  meningkatkan kesehatan keluarga Indonesia — dengan solusi yang
+                  meningkatkan kesehatan keluarga Indonesia - dengan solusi yang
                   terjangkau, andal, dan mudah digunakan oleh siapa saja.
                 </p>
               </div>
@@ -142,7 +142,7 @@ export default function AboutPage() {
                   <h3 className="font-display font-bold text-brand-navy text-lg">Visi</h3>
                 </div>
                 <p className="text-brand-navy/60 leading-relaxed">
-                  Menjadi merek home technology terpercaya di Asia Tenggara yang dipercaya
+                  Menjadi merek home technology terpercaya di Bandung yang dipercaya
                   jutaan keluarga untuk melindungi rumah mereka setiap hari.
                 </p>
               </div>
