@@ -1,0 +1,5 @@
+# Simpan logo mitra di sini
+# Format: SVG atau PNG transparan
+# Contoh: telkom.svg, pln.svg, grabfood.svg
+# Lalu isi field "logo" di package.json > unova.partners dengan path:
+# "/images/partners/nama-file.svg"

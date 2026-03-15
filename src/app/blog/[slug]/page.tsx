@@ -301,45 +301,44 @@ export default async function BlogPostPage({
   return (
     <>
       {/* Hero */}
-      <section className={`relative pt-40 pb-20 bg-gradient-to-br ${post.color} overflow-hidden noise`}>
-        <div className="absolute inset-0 grid-bg opacity-20" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
+      <section className="pt-28 pb-12 bg-white border-b border-[#6F96D1]/15">
+        <div className="max-w-4xl mx-auto px-6">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-white/60 text-sm hover:text-white transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-brand-navy/40 text-sm hover:text-brand-navy transition-colors mb-6"
           >
-            <ArrowLeft size={16} />
+            <ArrowLeft size={15} />
             Kembali ke Blog
           </Link>
 
-          <div className="flex items-center gap-3 mb-5">
-            <span className="px-3 py-1 rounded-lg bg-white/20 text-white text-xs font-bold backdrop-blur-sm">
+          <div className="flex items-center gap-3 mb-4 flex-wrap">
+            <span className="px-3 py-1 rounded-lg text-xs font-bold" style={{ background: "rgba(111,150,209,0.12)", color: "#6F96D1" }}>
               {post.category}
             </span>
-            <span className="flex items-center gap-1 text-white/60 text-sm">
-              <Clock size={14} />
+            <span className="flex items-center gap-1 text-brand-navy/40 text-sm">
+              <Clock size={13} />
               {post.readTime}
             </span>
-            <span className="text-white/40 text-sm">{post.date}</span>
+            <span className="text-brand-navy/30 text-sm">{post.date}</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
+          <h1 className="text-3xl md:text-4xl font-display font-bold text-brand-navy leading-snug">
             {post.title}
           </h1>
-          <p className="mt-4 text-white/70 text-xl leading-relaxed">{post.excerpt}</p>
+          <p className="mt-3 text-brand-navy/55 text-lg leading-relaxed">{post.excerpt}</p>
 
-          <div className="mt-8 flex items-center justify-between flex-wrap gap-4">
+          <div className="mt-6 flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-lg">
+              <div className="w-9 h-9 rounded-xl bg-[#EDF0F5] flex items-center justify-center text-base">
                 👤
               </div>
               <div>
-                <div className="text-white font-semibold text-sm">{post.author}</div>
-                <div className="text-white/50 text-xs">{post.authorRole}</div>
+                <div className="text-brand-navy font-semibold text-sm">{post.author}</div>
+                <div className="text-brand-navy/40 text-xs">{post.authorRole}</div>
               </div>
             </div>
-            <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 text-white/70 text-sm hover:bg-white/20 transition-colors border border-white/20">
-              <Share2 size={14} />
+            <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#EDF0F5] text-brand-navy/60 text-sm hover:bg-[#6F96D1]/10 transition-colors border border-[#6F96D1]/15">
+              <Share2 size={13} />
               Bagikan
             </button>
           </div>
@@ -489,14 +488,14 @@ export default async function BlogPostPage({
               )}
 
               {/* CTA */}
-              <div className="p-5 rounded-2xl bg-brand-navy text-white">
+              <div className="p-5 rounded-2xl text-white" style={{ background: "#091F58" }}>
                 <p className="font-display font-bold mb-2">Tertarik dengan solusi Unova?</p>
                 <p className="text-white/60 text-sm mb-4 leading-relaxed">
                   Konsultasi gratis untuk proyek smart building Anda.
                 </p>
                 <Link
                   href="/contact-us"
-                  className="block text-center px-4 py-2.5 rounded-xl bg-brand-blue text-white text-sm font-semibold hover:bg-white hover:text-brand-navy transition-colors"
+                  className="block text-center px-4 py-2.5 rounded-xl text-white text-sm font-semibold transition-colors" style={{ background: "#6F96D1" }}
                 >
                   Hubungi Kami
                 </Link>

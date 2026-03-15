@@ -17,7 +17,7 @@ export default function Footer() {
               <span className="text-gradient-reverse">Ekosistem Cerdas?</span>
             </h2>
             <p className="mt-4 text-white/60 text-lg leading-relaxed max-w-md">
-              Dari konsultasi hingga implementasi penuh — tim Unova siap membantu Anda
+              Dari konsultasi hingga implementasi penuh - tim Unova siap membantu Anda
               membangun solusi IoT yang tepat dan efisien.
             </p>
           </div>
@@ -54,7 +54,7 @@ export default function Footer() {
             {[
               { icon: Linkedin, href: "#" },
               { icon: Twitter, href: "#" },
-              { icon: Instagram, href: "#" },
+              { icon: Instagram, href: "https://www.instagram.com/creativitycorner.cc/?utm_source=ig_web_button_share_sheet" },
             ].map(({ icon: Icon, href }, i) => (
               <a
                 key={i}
@@ -98,8 +98,8 @@ export default function Footer() {
           <ul className="space-y-3">
             {[
               "Gas Leak Prevention",
-              "Humdifier Dehumidifier 2in1",
-              "Cloud Dashboard",
+              "Humidifier & Dehumidifier 2in1",
+              "Safety Listrik",
               "API Platform",
             ].map((p) => (
               <li key={p}>

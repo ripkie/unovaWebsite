@@ -38,141 +38,192 @@ const stats = [
   { value: "< 10s", label: "Waktu Respons Deteksi" },
   { value: "99.9%", label: "Akurasi Sensor" },
   { value: "24/7", label: "Monitoring Aktif" },
-  { value: "2 Thn", label: "Garansi Produk" },
+  { value: "xx Thn", label: "Garansi Produk" },
 ];
 
 export default function HomePage() {
   return (
     <>
       {/* ─── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden noise">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-[#0d2a6e] to-[#1a3a8a]" />
-        <div className="absolute inset-0 grid-bg opacity-60" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-blue/10 rounded-full blur-3xl" />
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+        {/* ── Background: calm EDF0F5 base with soft blue accents ── */}
+        <div className="absolute inset-0 bg-[#EDF0F5]" />
+        {/* Subtle grid */}
+        <div className="absolute inset-0"
+          style={{
+            backgroundImage: "linear-gradient(rgba(111,150,209,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(111,150,209,0.08) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
+        />
+        {/* Soft orbs */}
+        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, rgba(111,150,209,0.18) 0%, transparent 70%)" }}
+        />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, rgba(111,150,209,0.12) 0%, transparent 70%)" }}
+        />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center pt-28 pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center pt-24 pb-20">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/80 text-sm font-medium mb-8 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            Home Technology — Keamanan & Kesehatan Rumah
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#6F96D1]/30 text-brand-navy/70 text-sm font-medium mb-8 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            Selamat Datang di Unova
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-[1.05] tracking-tight">
+          {/* Headline */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[1.05] tracking-tight text-brand-navy">
             Smarter Ways,
             <br />
-            <span className="text-gradient-reverse">Brighter Days.</span>
+            <span style={{ color: "#6F96D1" }}>Brighter Days.</span>
           </h1>
 
-          <p className="mt-6 text-xl md:text-2xl text-white/60 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="mt-6 text-xl md:text-2xl text-brand-navy/60 max-w-2xl mx-auto leading-relaxed font-light">
             Unova menghadirkan produk home technology yang menjaga keamanan dan
-            kesehatan keluarga Anda — otomatis, cerdas, dan selalu siaga.
+            kesehatan keluarga Anda - otomatis, cerdas, dan selalu siaga.
           </p>
 
+          {/* CTA buttons */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/products" className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-brand-blue text-white font-semibold text-lg hover:bg-white hover:text-brand-navy transition-all duration-300 shadow-lg shadow-brand-blue/30">
+            <Link
+              href="/products"
+              className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-semibold text-lg text-white transition-all duration-300 shadow-lg"
+              style={{ background: "#6F96D1", boxShadow: "0 8px 32px rgba(111,150,209,0.35)" }}
+            >
               Lihat Produk <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="/contact-us" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border border-white/20 text-white font-semibold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+            <Link
+              href="/contact-us"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border-2 border-[#6F96D1]/40 text-brand-navy font-semibold text-lg hover:bg-[#6F96D1]/10 transition-all duration-300 bg-white/70 backdrop-blur-sm"
+            >
               Minta Demo Gratis
             </Link>
           </div>
 
-          {/* Promo */}
-          <div className="mt-10 inline-flex items-center gap-4 px-6 py-3 rounded-2xl bg-white/5 border border-brand-blue/30 backdrop-blur-sm text-white/80 text-sm">
+          {/* Promo strip */}
+          <div className="mt-10 inline-flex items-center gap-4 px-6 py-3 rounded-2xl bg-white border border-[#6F96D1]/20 shadow-sm text-brand-navy/70 text-sm">
             <span className="px-2 py-0.5 rounded-md bg-green-500 text-white text-xs font-bold tracking-wide">PROMO</span>
             Konsultasi gratis & survei lokasi untuk instalasi pertama Anda
-            <Link href="/contact-us" className="text-brand-blue font-semibold hover:underline">Klaim sekarang →</Link>
+            <Link href="/contact-us" style={{ color: "#6F96D1" }} className="font-semibold hover:underline">
+              Klaim sekarang →
+            </Link>
           </div>
 
-          {/* ─── Hero App Mockup: Home Safety Dashboard ─── */}
+          {/* ── Dashboard Mockup — light theme ── */}
           <div className="mt-20 relative max-w-2xl mx-auto">
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0d2a6e] to-transparent z-10 pointer-events-none" />
-            <div className="glass-dark rounded-3xl border border-white/10 shadow-2xl overflow-hidden">
+            {/* Fade bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#EDF0F5] to-transparent z-10 pointer-events-none" />
+
+            <div className="rounded-3xl border border-[#6F96D1]/20 shadow-2xl overflow-hidden bg-white"
+              style={{ boxShadow: "0 32px 80px rgba(111,150,209,0.18)" }}
+            >
               {/* Window chrome */}
-              <div className="flex items-center gap-2 px-5 py-4 border-b border-white/10">
+              <div className="flex items-center gap-2 px-5 py-4 border-b border-[#6F96D1]/10 bg-[#EDF0F5]/60">
                 <div className="w-3 h-3 rounded-full bg-red-400/70" />
                 <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
                 <div className="w-3 h-3 rounded-full bg-green-400/70" />
-                <span className="ml-3 text-white/30 text-xs font-mono">Unova Home — Dashboard</span>
+                <span className="ml-3 text-brand-navy/30 text-xs font-mono">Unova Home — Dashboard</span>
               </div>
 
               {/* Status bar */}
-              <div className="px-5 py-3 bg-green-500/10 border-b border-green-500/20 flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-green-400 text-xs font-semibold">Semua sistem normal · Pantauan aktif</span>
+              <div className="px-5 py-2.5 bg-green-50 border-b border-green-200/60 flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-green-700 text-xs font-semibold">Semua sistem normal · Pantauan aktif</span>
               </div>
 
               {/* Scene selector */}
-              <div className="p-5 grid grid-cols-4 gap-3">
+              <div className="p-5 grid grid-cols-4 gap-3 bg-[#EDF0F5]/40">
                 {[
                   { icon: "🌙", label: "Malam", active: false },
                   { icon: "☀️", label: "Pagi", active: false },
                   { icon: "🍳", label: "Masak", active: true },
                   { icon: "👨‍👩‍👧", label: "Keluarga", active: false },
                 ].map((item, i) => (
-                  <div key={i} className={`flex flex-col items-center gap-2 p-3 rounded-xl text-xs font-medium transition-all ${item.active ? "bg-gradient-to-br from-brand-blue/60 to-brand-navy/80 text-white border border-brand-blue/50" : "bg-white/5 text-white/40 border border-white/10"}`}>
-                    <span className="text-2xl">{item.icon}</span>{item.label}
+                  <div
+                    key={i}
+                    className="flex flex-col items-center gap-2 p-3 rounded-xl text-xs font-medium transition-all"
+                    style={item.active ? {
+                      background: "linear-gradient(135deg, #6F96D1, #4a7bbf)",
+                      color: "white",
+                      border: "1px solid rgba(111,150,209,0.4)",
+                    } : {
+                      background: "white",
+                      color: "rgba(9,31,88,0.45)",
+                      border: "1px solid rgba(111,150,209,0.15)",
+                    }}
+                  >
+                    <span className="text-2xl">{item.icon}</span>
+                    {item.label}
                   </div>
                 ))}
               </div>
 
               {/* Safety cards */}
               <div className="px-5 pb-2 grid grid-cols-2 gap-3">
-                {/* Gas sensor — SAFE */}
-                <div className="p-4 rounded-2xl bg-green-500/10 border border-green-500/25 flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-green-500/20 flex items-center justify-center shrink-0">
-                    <ShieldAlert size={18} className="text-green-400" />
+                {/* Gas sensor */}
+                <div className="p-4 rounded-2xl bg-green-50 border border-green-200/60 flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-green-100 flex items-center justify-center shrink-0">
+                    <ShieldAlert size={18} className="text-green-600" />
                   </div>
                   <div>
-                    <div className="text-white text-sm font-bold">Sensor Gas</div>
-                    <div className="text-green-400 text-xs font-semibold">Aman · 0 ppm</div>
-                    <div className="text-white/30 text-xs mt-0.5">Valve: Terbuka</div>
+                    <div className="text-brand-navy text-sm font-bold">Sensor Gas</div>
+                    <div className="text-green-600 text-xs font-semibold">Aman · 0 ppm</div>
+                    <div className="text-brand-navy/35 text-xs mt-0.5">Valve: Terbuka</div>
                   </div>
                 </div>
                 {/* Air quality */}
-                <div className="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/25 flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-blue-500/20 flex items-center justify-center shrink-0">
-                    <Wind size={18} className="text-blue-400" />
+                <div className="p-4 rounded-2xl border flex items-start gap-3"
+                  style={{ background: "rgba(111,150,209,0.06)", borderColor: "rgba(111,150,209,0.2)" }}
+                >
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: "rgba(111,150,209,0.15)" }}
+                  >
+                    <Wind size={18} style={{ color: "#6F96D1" }} />
                   </div>
                   <div>
-                    <div className="text-white text-sm font-bold">Kualitas Udara</div>
-                    <div className="text-blue-400 text-xs font-semibold">Baik · AQI 32</div>
-                    <div className="text-white/30 text-xs mt-0.5">PM2.5: 8 μg/m³</div>
+                    <div className="text-brand-navy text-sm font-bold">Kualitas Udara</div>
+                    <div className="text-xs font-semibold" style={{ color: "#6F96D1" }}>Baik · AQI 32</div>
+                    <div className="text-brand-navy/35 text-xs mt-0.5">PM2.5: 8 μg/m³</div>
                   </div>
                 </div>
                 {/* Humidity */}
-                <div className="p-4 rounded-2xl bg-brand-blue/10 border border-brand-blue/25 flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-brand-blue/20 flex items-center justify-center shrink-0">
-                    <Droplets size={18} className="text-brand-blue" />
+                <div className="p-4 rounded-2xl border flex items-start gap-3"
+                  style={{ background: "rgba(111,150,209,0.06)", borderColor: "rgba(111,150,209,0.2)" }}
+                >
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: "rgba(111,150,209,0.15)" }}
+                  >
+                    <Droplets size={18} style={{ color: "#6F96D1" }} />
                   </div>
                   <div>
-                    <div className="text-white text-sm font-bold">Kelembapan</div>
-                    <div className="text-brand-blue text-xs font-semibold">Optimal · 58%</div>
-                    <div className="text-white/30 text-xs mt-0.5">Target: 50–65%</div>
+                    <div className="text-brand-navy text-sm font-bold">Kelembapan</div>
+                    <div className="text-xs font-semibold" style={{ color: "#6F96D1" }}>Optimal · 58%</div>
+                    <div className="text-brand-navy/35 text-xs mt-0.5">Target: 50–65%</div>
                   </div>
                 </div>
                 {/* Temperature */}
-                <div className="p-4 rounded-2xl bg-orange-500/10 border border-orange-500/25 flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-orange-500/20 flex items-center justify-center shrink-0">
-                    <Thermometer size={18} className="text-orange-400" />
+                <div className="p-4 rounded-2xl bg-orange-50 border border-orange-200/60 flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-orange-100 flex items-center justify-center shrink-0">
+                    <Thermometer size={18} className="text-orange-500" />
                   </div>
                   <div>
-                    <div className="text-white text-sm font-bold">Suhu Ruang</div>
-                    <div className="text-orange-400 text-xs font-semibold">24°C · Nyaman</div>
-                    <div className="text-white/30 text-xs mt-0.5">AC: Aktif</div>
+                    <div className="text-brand-navy text-sm font-bold">Suhu Ruang</div>
+                    <div className="text-orange-500 text-xs font-semibold">24°C · Nyaman</div>
+                    <div className="text-brand-navy/35 text-xs mt-0.5">AC: Aktif</div>
                   </div>
                 </div>
               </div>
 
-              {/* Bottom alert bar */}
-              <div className="mx-5 mb-5 mt-3 p-3 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
+              {/* Bottom bar */}
+              <div className="mx-5 mb-5 mt-3 p-3 rounded-xl border flex items-center gap-3"
+                style={{ background: "rgba(111,150,209,0.05)", borderColor: "rgba(111,150,209,0.15)" }}
+              >
                 <Heart size={16} className="text-pink-400 shrink-0" />
-                <span className="text-white/50 text-xs">Keluarga Anda terlindungi 24 jam · Terakhir dicek 2 menit lalu</span>
-                <div className="ml-auto w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                <span className="text-brand-navy/45 text-xs">Keluarga Anda terlindungi 24 jam · Terakhir dicek 2 menit lalu</span>
+                <div className="ml-auto w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               </div>
             </div>
           </div>
+
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
@@ -181,12 +232,12 @@ export default function HomePage() {
       </section>
 
       {/* ─── STATS ────────────────────────────────────────────────────── */}
-      <section className="bg-brand-navy border-t border-white/10">
+      <section className="border-t border-[#6F96D1]/15" style={{ background: "#EDF0F5" }}>
         <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-4xl font-display font-bold text-brand-blue">{s.value}</div>
-              <div className="mt-1 text-white/50 text-sm">{s.label}</div>
+              <div className="text-4xl font-display font-bold" style={{ color: "#6F96D1" }}>{s.value}</div>
+              <div className="mt-1 text-brand-navy/50 text-sm">{s.label}</div>
             </div>
           ))}
         </div>
@@ -203,7 +254,7 @@ export default function HomePage() {
               <span className="text-gradient">adalah Hak Setiap Keluarga</span>
             </h2>
             <p className="mt-4 text-brand-navy/60 max-w-xl mx-auto leading-relaxed">
-              Produk Unova dirancang untuk memberikan ketenangan pikiran — karena Anda tidak harus selalu ada di rumah untuk menjaga keluarga.
+              Produk Unova dirancang untuk memberikan ketenangan pikiran - karena Anda tidak harus selalu ada di rumah untuk menjaga keluarga.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -21,24 +21,23 @@ export default function ContactPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative pt-40 pb-20 bg-brand-navy overflow-hidden noise">
-        <div className="absolute inset-0 grid-bg opacity-30" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
+      <section className="pt-32 pb-12 bg-white border-b border-[#6F96D1]/15">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <span className="inline-block px-3 py-1 rounded-full bg-[#EDF0F5] text-[#6F96D1] text-xs font-bold tracking-widest uppercase mb-4">
             Hubungi Kami
           </span>
-          <h1 className="mt-4 text-5xl md:text-6xl font-display font-bold text-white">
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-navy">
             Mari Berbicara
           </h1>
-          <p className="mt-6 text-white/60 text-xl max-w-xl mx-auto">
-            Ada pertanyaan, ingin demo produk, atau siap mulai proyek? Tim kami
-            siap membantu Anda.
+          <p className="mt-4 text-brand-navy/55 text-lg max-w-xl mx-auto leading-relaxed">
+            Ada pertanyaan, ingin demo produk, atau siap mulai proyek?
+            Tim kami siap membantu Anda.
           </p>
         </div>
       </section>
 
       {/* Contact Cards */}
-      <section className="py-12 bg-brand-light border-b border-brand-blue/10">
+      <section className="py-10 bg-[#EDF0F5] border-b border-[#6F96D1]/15">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-5">
           {[
             {
@@ -56,7 +55,7 @@ export default function ContactPage() {
             {
               icon: MapPin,
               title: "Kantor",
-              value: "Jakarta, Indonesia",
+              value: "Bandung, Indonesia",
               sub: "Kunjungi dengan perjanjian",
             },
           ].map((c) => (

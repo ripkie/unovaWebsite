@@ -65,32 +65,28 @@ export default function ProductsPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative pt-40 pb-20 bg-brand-navy overflow-hidden noise">
-        <div className="absolute inset-0 grid-bg opacity-40" />
-        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-brand-blue/15 rounded-full blur-3xl" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
+      <section className="pt-32 pb-12 bg-white border-b border-[#6F96D1]/15">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <span className="inline-block px-3 py-1 rounded-full bg-[#EDF0F5] text-[#6F96D1] text-xs font-bold tracking-widest uppercase mb-4">
             Produk Kami
           </span>
-          <h1 className="mt-4 text-5xl md:text-6xl font-display font-bold text-white">
-            Aman & Sehat
-            <br />
-            <span className="text-gradient-reverse">di Rumah Anda</span>
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-navy">
+            Aman & Sehat<br />
+            <span style={{ color: "#6F96D1" }}>di Rumah Anda</span>
           </h1>
-          <p className="mt-6 text-white/60 text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-brand-navy/55 text-lg max-w-2xl mx-auto leading-relaxed">
             Unova menghadirkan produk home technology yang berdampak nyata —
             menjaga keamanan dan kesehatan keluarga Anda setiap hari.
           </p>
-          {/* Focus tags */}
-          <div className="mt-8 flex justify-center gap-3 flex-wrap">
+          <div className="mt-6 flex justify-center gap-3 flex-wrap">
             {[
               { label: "🛡️ Keamanan", desc: "Cegah kebakaran & ledakan" },
               { label: "🌿 Kesehatan", desc: "Kualitas udara optimal" },
               { label: "🏠 Rumah Pintar", desc: "Terintegrasi & otomatis" },
             ].map((tag) => (
-              <div key={tag.label} className="px-4 py-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm text-center">
-                <div className="text-white text-sm font-semibold">{tag.label}</div>
-                <div className="text-white/40 text-xs">{tag.desc}</div>
+              <div key={tag.label} className="px-4 py-2 rounded-xl bg-[#EDF0F5] border border-[#6F96D1]/20 text-center">
+                <div className="text-brand-navy text-sm font-semibold">{tag.label}</div>
+                <div className="text-brand-navy/45 text-xs">{tag.desc}</div>
               </div>
             ))}
           </div>

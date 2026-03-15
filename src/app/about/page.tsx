@@ -4,30 +4,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Tentang Kami",
-  description:
-    "Kenali Unova lebih dekat — misi, visi, nilai, dan tim di balik ekosistem IoT terpercaya Indonesia.",
+  description: "Kenali Unova lebih dekat - misi, visi, nilai, dan tim di balik home technology terpercaya Indonesia.",
 };
-
-const team = [
-  {
-    name: "Nama Founder",
-    role: "CEO & Co-Founder",
-    bio: "Visioner di balik Unova dengan pengalaman lebih dari 10 tahun di industri teknologi dan IoT.",
-    avatar: "👤",
-  },
-  {
-    name: "Nama CTO",
-    role: "CTO & Co-Founder",
-    bio: "Arsitek teknis yang membangun platform IoT Unova dari nol dengan fokus pada skalabilitas.",
-    avatar: "👤",
-  },
-  {
-    name: "Nama CMO",
-    role: "Chief Marketing Officer",
-    bio: "Ahli pemasaran B2B dengan rekam jejak membangun brand teknologi di pasar Asia Tenggara.",
-    avatar: "👤",
-  },
-];
 
 const values = [
   {
@@ -38,7 +16,7 @@ const values = [
   {
     icon: Users,
     title: "Berpusat pada Pengguna",
-    desc: "Desain yang intuitif bukan kemewahan — ini adalah standar minimum kami untuk setiap solusi.",
+    desc: "Desain yang intuitif bukan kemewahan - ini adalah standar minimum kami untuk setiap solusi.",
   },
   {
     icon: Globe,
@@ -53,52 +31,67 @@ const values = [
 ];
 
 const milestones = [
-  { date: "Januari 2022", event: "Unova didirikan di Jakarta dengan tim 5 orang" },
-  { date: "Agustus 2023", event: "Peluncuran produk pertama — Smart Sensor Hub v1" },
-  { date: "November 2023", event: "100 instalasi aktif pertama di Jabodetabek" },
-  { date: "Maret 2024", event: "Ekspansi ke Surabaya, Bali, dan Medan" },
-  { date: "September 2024", event: "Raih penghargaan Startup IoT Terbaik Indonesia" },
-  { date: "Januari 2025", event: "500+ instalasi aktif, 50+ mitra teknologi" },
+  { date: "Januari 2026", event: "Unova didirikan di Bandung dengan tim 11 orang" },
+  { date: "Februari 2026", event: "Lolos program Inkubasi Bandung Techno Park" },
+];
+
+const team = [
+  {
+    name: "King Dylan",
+    role: "CEO & Co-Founder",
+    bio: "LOREM IPSUM, ntar isi sendiri bang",
+    avatar: "👤",
+  },
+  {
+    name: "-1 CTO",
+    role: "CTO & Co-Founder",
+    bio: "Arsitek teknis yang membangun platform IoT Unova dari nol dengan fokus pada skalabilitas.",
+    avatar: "👤",
+  },
+  {
+    name: "Sir Devan",
+    role: "Chief Operation Officer",
+    bio: "Ahli pemasaran B2B dengan rekam jejak membangun brand teknologi di pasar Asia Tenggara.",
+    avatar: "👤",
+  },
 ];
 
 export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 bg-brand-navy overflow-hidden noise">
-        <div className="absolute inset-0 grid-bg opacity-30" />
-        <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl">
-            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
-              Tentang Kami
-            </span>
-            <h1 className="mt-4 text-5xl md:text-6xl font-display font-bold text-white leading-tight">
-              Kami Membangun
-              <br />
-              <span className="text-gradient-reverse">Masa Depan Konektivitas</span>
-            </h1>
-            <p className="mt-6 text-white/60 text-xl leading-relaxed">
-              Unova adalah perusahaan teknologi IoT Indonesia yang berkomitmen menghadirkan
-              ekosistem cerdas yang terjangkau, andal, dan berdampak nyata pada kehidupan
-              sehari-hari.
-            </p>
-          </div>
+      <section className="pt-32 pb-12 bg-white border-b border-[#6F96D1]/15">
+        <div className="max-w-7xl mx-auto px-6">
+          <span
+            className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4"
+            style={{ background: "#EDF0F5", color: "#6F96D1" }}
+          >
+            Tentang Kami
+          </span>
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-navy leading-tight">
+            Kami Membangun<br />
+            <span style={{ color: "#6F96D1" }}>Rumah yang Lebih Aman</span>
+          </h1>
+          <p className="mt-4 text-brand-navy/55 text-lg leading-relaxed max-w-2xl">
+            Unova adalah startup home technology Indonesia yang fokus menghadirkan
+            produk keamanan dan kesehatan rumah — terjangkau, andal, dan berdampak
+            nyata bagi setiap keluarga.
+          </p>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="section-padding bg-brand-light">
+      {/* Story + Mission/Vision */}
+      <section className="section-padding bg-[#EDF0F5]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
-              <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
+              <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#6F96D1" }}>
                 Kisah Kami
               </span>
               <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
                 Dimulai dari Satu Pertanyaan
               </h2>
-              <div className="mt-6 space-y-4 text-brand-navy/70 leading-relaxed">
+              <div className="mt-6 space-y-4 text-brand-navy/65 leading-relaxed">
                 <p>
                   Pada 2022, para pendiri Unova bertanya: mengapa insiden kebakaran akibat
                   kebocoran gas masih terus terjadi di rumah-rumah Indonesia, padahal
@@ -108,26 +101,26 @@ export default function AboutPage() {
                 </p>
                 <p>
                   Dari pertanyaan itu lahirlah Unova — startup home technology yang fokus
-                  pada dua hal yang paling fundamental: <strong>keamanan</strong> dan
-                  <strong> kesehatan</strong> di lingkungan rumah. Kami percaya bahwa
-                  teknologi cerdas seharusnya bisa diakses semua orang, bukan hanya mereka
-                  yang punya budget premium.
+                  pada dua hal yang paling fundamental: <strong className="text-brand-navy">keamanan</strong> dan{" "}
+                  <strong className="text-brand-navy">kesehatan</strong> di lingkungan rumah.
                 </p>
                 <p>
                   Hari ini, Unova telah melayani ratusan rumah dan fasilitas komersial
-                  di seluruh Indonesia. Produk kami, mulai dari Gas Leak Prevention hingga
-                  monitor kualitas udara yang akan datang, dirancang untuk memberikan
-                  ketenangan pikiran setiap hari — bahkan saat Anda tidak di rumah.
+                  di seluruh Indonesia, dengan produk yang dirancang untuk memberikan
+                  ketenangan pikiran setiap hari.
                 </p>
               </div>
             </div>
 
-            {/* Mission & Vision */}
             <div className="space-y-5">
-              <div className="p-7 rounded-2xl bg-white border border-brand-blue/10 hover:border-brand-blue/30 hover:shadow-lg transition-all group">
+              {/* Mission */}
+              <div className="p-7 rounded-2xl bg-white border border-[#6F96D1]/15 hover:border-[#6F96D1]/35 hover:shadow-lg transition-all group">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-brand-navy/5 flex items-center justify-center group-hover:bg-brand-blue/10 transition-colors">
-                    <Target size={20} className="text-brand-blue" />
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center"
+                    style={{ background: "rgba(111,150,209,0.1)" }}
+                  >
+                    <Target size={20} style={{ color: "#6F96D1" }} />
                   </div>
                   <h3 className="font-display font-bold text-brand-navy text-lg">Misi</h3>
                 </div>
@@ -137,16 +130,20 @@ export default function AboutPage() {
                   terjangkau, andal, dan mudah digunakan oleh siapa saja.
                 </p>
               </div>
-              <div className="p-7 rounded-2xl bg-white border border-brand-blue/10 hover:border-brand-blue/30 hover:shadow-lg transition-all group">
+              {/* Vision */}
+              <div className="p-7 rounded-2xl bg-white border border-[#6F96D1]/15 hover:border-[#6F96D1]/35 hover:shadow-lg transition-all group">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-brand-navy/5 flex items-center justify-center group-hover:bg-brand-blue/10 transition-colors">
-                    <Eye size={20} className="text-brand-blue" />
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center"
+                    style={{ background: "rgba(111,150,209,0.1)" }}
+                  >
+                    <Eye size={20} style={{ color: "#6F96D1" }} />
                   </div>
                   <h3 className="font-display font-bold text-brand-navy text-lg">Visi</h3>
                 </div>
                 <p className="text-brand-navy/60 leading-relaxed">
-                  Menjadi pemimpin ekosistem IoT di Asia Tenggara yang dipercaya oleh
-                  jutaan pengguna dan ribuan mitra integrator.
+                  Menjadi merek home technology terpercaya di Asia Tenggara yang dipercaya
+                  jutaan keluarga untuk melindungi rumah mereka setiap hari.
                 </p>
               </div>
             </div>
@@ -157,25 +154,27 @@ export default function AboutPage() {
       {/* Values */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#6F96D1" }}>
               Nilai-Nilai Kami
             </span>
             <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
               Yang Menggerakkan Kami
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {values.map((v) => (
               <div
                 key={v.title}
-                className="p-7 rounded-2xl bg-brand-light border border-brand-blue/10 hover:border-brand-blue/30 hover:shadow-lg transition-all group"
+                className="p-7 rounded-2xl border border-[#6F96D1]/15 bg-[#EDF0F5] hover:border-[#6F96D1]/35 hover:shadow-lg transition-all group"
               >
-                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-4 shadow-sm group-hover:shadow-md transition-shadow">
-                  <v.icon size={22} className="text-brand-blue" />
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-white shadow-sm"
+                >
+                  <v.icon size={22} style={{ color: "#6F96D1" }} />
                 </div>
                 <h3 className="font-display font-bold text-brand-navy mb-2">{v.title}</h3>
-                <p className="text-brand-navy/60 text-sm leading-relaxed">{v.desc}</p>
+                <p className="text-brand-navy/55 text-sm leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -183,28 +182,36 @@ export default function AboutPage() {
       </section>
 
       {/* Milestones */}
-      <section className="section-padding bg-brand-navy noise overflow-hidden">
+      <section className="section-padding" style={{ background: "#EDF0F5" }}>
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#6F96D1" }}>
               Perjalanan Kami
             </span>
-            <h2 className="mt-3 text-4xl font-display font-bold text-white">
+            <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
               Milestone Unova
             </h2>
           </div>
           <div className="relative">
-            {/* Line */}
-            <div className="absolute left-6 top-2 bottom-2 w-0.5 bg-brand-blue/30" />
+            {/* Vertical line */}
+            <div
+              className="absolute left-[11px] top-2 bottom-2 w-0.5"
+              style={{ background: "rgba(111,150,209,0.3)" }}
+            />
             <div className="space-y-8">
               {milestones.map((m, i) => (
-                <div key={i} className="flex items-start gap-6 pl-16 relative">
-                  <div className="absolute left-3 top-1 w-5 h-5 rounded-full border-2 border-brand-blue bg-brand-navy flex items-center justify-center">
-                    <span className="w-2 h-2 rounded-full bg-brand-blue" />
+                <div key={i} className="flex items-start gap-6 pl-10 relative">
+                  <div
+                    className="absolute left-0 top-1 w-5 h-5 rounded-full border-2 bg-white flex items-center justify-center"
+                    style={{ borderColor: "#6F96D1" }}
+                  >
+                    <span className="w-2 h-2 rounded-full" style={{ background: "#6F96D1" }} />
                   </div>
                   <div className="flex-1 pb-2">
-                    <span className="text-brand-blue text-sm font-bold block">{m.date}</span>
-                    <p className="mt-1 text-white/70">{m.event}</p>
+                    <span className="text-sm font-bold block" style={{ color: "#6F96D1" }}>
+                      {m.date}
+                    </span>
+                    <p className="mt-1 text-brand-navy/65">{m.event}</p>
                   </div>
                 </div>
               ))}
@@ -214,10 +221,10 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="section-padding bg-brand-light">
+      <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#6F96D1" }}>
               Tim Kami
             </span>
             <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
@@ -228,44 +235,47 @@ export default function AboutPage() {
             {team.map((member) => (
               <div
                 key={member.name}
-                className="p-8 rounded-2xl bg-white border border-brand-blue/10 text-center hover:shadow-lg hover:border-brand-blue/30 transition-all"
+                className="p-8 rounded-2xl bg-[#EDF0F5] border border-[#6F96D1]/15 text-center hover:shadow-lg hover:border-[#6F96D1]/30 transition-all"
               >
-                <div className="w-20 h-20 rounded-2xl bg-brand-light flex items-center justify-center mx-auto mb-4 text-4xl">
+                <div
+                  className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-4xl bg-white"
+                >
                   {member.avatar}
                 </div>
                 <h3 className="font-display font-bold text-brand-navy text-xl">{member.name}</h3>
-                <p className="text-brand-blue font-medium text-sm mt-1">{member.role}</p>
-                <p className="mt-3 text-brand-navy/60 text-sm leading-relaxed">{member.bio}</p>
+                <p className="font-medium text-sm mt-1" style={{ color: "#6F96D1" }}>{member.role}</p>
+                <p className="mt-3 text-brand-navy/55 text-sm leading-relaxed">{member.bio}</p>
               </div>
             ))}
           </div>
-          <p className="text-center text-brand-navy/40 text-sm mt-8">
-            * Data tim akan diperbarui. Foto dan profil lengkap segera hadir.
+          <p className="text-center text-brand-navy/35 text-sm mt-8">
+            * Foto dan profil lengkap akan diperbarui segera.
           </p>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-white border-t border-brand-blue/10 text-center">
+      <section className="py-20 bg-white border-t border-[#6F96D1]/15 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-display font-bold text-brand-navy">
             Bergabunglah dalam Misi Kami
           </h2>
-          <p className="mt-4 text-brand-navy/60">
+          <p className="mt-4 text-brand-navy/55">
             Apakah Anda klien, mitra, atau calon anggota tim — kami selalu terbuka
             untuk percakapan yang bermakna.
           </p>
-          <div className="mt-8 flex gap-4 justify-center">
+          <div className="mt-8 flex gap-4 justify-center flex-wrap">
             <Link
               href="/contact-us"
-              className="group inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-brand-navy text-white font-semibold hover:bg-brand-blue transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-white font-semibold transition-colors"
+              style={{ background: "#091F58" }}
             >
               Hubungi Kami
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={18} />
             </Link>
             <Link
               href="/partnership"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl border border-brand-blue/30 text-brand-navy font-semibold hover:bg-brand-light transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold transition-colors border border-[#6F96D1]/30 text-brand-navy hover:bg-[#EDF0F5]"
             >
               Jadi Mitra
             </Link>

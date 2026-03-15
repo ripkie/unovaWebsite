@@ -83,39 +83,36 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-16 bg-brand-navy overflow-hidden noise">
-        <div className="absolute inset-0 grid-bg opacity-30" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <Link href="/products" className="inline-flex items-center gap-2 text-white/50 text-sm hover:text-white transition-colors mb-8">
+      <section className="pt-28 pb-12 bg-white border-b border-[#6F96D1]/15">
+        <div className="max-w-7xl mx-auto px-6">
+          <Link href="/products" className="inline-flex items-center gap-2 text-brand-navy/40 text-sm hover:text-brand-navy transition-colors mb-8">
             <ArrowLeft size={16} />Kembali ke Produk
           </Link>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center gap-2 mb-4 flex-wrap">
                 <span className={`px-3 py-1 rounded-full text-white text-xs font-bold ${product.badgeColor}`}>{product.badge}</span>
-                <span className="px-3 py-1 rounded-full bg-brand-blue/20 text-brand-blue text-xs font-bold">{product.focus}</span>
+                <span className="px-3 py-1 rounded-full text-xs font-bold" style={{ background: "rgba(111,150,209,0.12)", color: "#6F96D1" }}>{product.focus}</span>
               </div>
-              <h1 className="text-5xl font-display font-bold text-white">{product.name}</h1>
-              <p className="mt-2 text-brand-blue text-xl font-medium">{product.tagline}</p>
-              <p className="mt-6 text-white/60 leading-relaxed text-lg">{product.description}</p>
-              <div className="mt-8 flex items-center gap-4">
-                <div>
-                  <div className="text-white/40 text-sm">Harga mulai dari</div>
-                  <div className="text-3xl font-display font-bold text-white">{product.price}</div>
-                </div>
+              <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-navy">{product.name}</h1>
+              <p className="mt-2 text-lg font-medium" style={{ color: "#6F96D1" }}>{product.tagline}</p>
+              <p className="mt-5 text-brand-navy/60 leading-relaxed">{product.description}</p>
+              <div className="mt-6 inline-block">
+                <div className="text-brand-navy/40 text-sm">Harga mulai dari</div>
+                <div className="text-3xl font-display font-bold text-brand-navy">{product.price}</div>
               </div>
-              <div className="mt-8 flex gap-4 flex-wrap">
-                <Link href="/contact-us" className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-brand-blue text-white font-semibold hover:bg-white hover:text-brand-navy transition-all">
-                  Pesan Sekarang<ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <div className="mt-6 flex gap-3 flex-wrap">
+                <Link href="/contact-us" className="group inline-flex items-center gap-2 px-7 py-3 rounded-xl text-white font-semibold transition-all" style={{ background: "#6F96D1" }}>
+                  Pesan Sekarang<ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="#" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all">
-                  <Download size={18} />Unduh Datasheet
+                <a href="#" className="inline-flex items-center gap-2 px-7 py-3 rounded-xl border border-[#6F96D1]/30 text-brand-navy font-semibold hover:bg-[#EDF0F5] transition-all">
+                  <Download size={17} />Unduh Datasheet
                 </a>
               </div>
             </div>
             <div className="flex items-center justify-center">
-              <div className="relative p-12 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                <Image src={product.image} alt={product.name} width={400} height={400} className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" />
+              <div className="relative p-12 rounded-3xl border border-[#6F96D1]/15" style={{ background: "#EDF0F5" }}>
+                <Image src={product.image} alt={product.name} width={380} height={380} className="object-contain drop-shadow-xl hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
           </div>

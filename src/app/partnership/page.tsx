@@ -4,18 +4,12 @@ import type { Metadata } from "next";
 import { getPartners } from "@/lib/partners";
 import type { Partner } from "@/lib/partners";
 
-/**
- * Partners dibaca via lib/partners.ts → package.json > unova.partners
- * Untuk menambah mitra: edit package.json atau ganti fungsi getPartners()
- * dengan fetch ke CMS saat siap migrasi.
- */
 const partners: Partner[] = getPartners();
 const allPartners: Partner[] = [...partners, ...partners];
 
 export const metadata: Metadata = {
   title: "Kemitraan",
-  description:
-    "Bergabunglah dengan jaringan mitra Unova dan buka peluang bisnis baru di industri IoT yang sedang tumbuh pesat.",
+  description: "Bergabunglah dengan jaringan mitra Unova dan buka peluang bisnis baru di industri home technology.",
 };
 
 const partnerTypes = [
@@ -48,28 +42,18 @@ const benefits = [
   "Prioritas pembaruan produk",
 ];
 
-function PartnerCard({
-  partner,
-  muted = false,
-}: {
-  partner: Partner;
-  muted?: boolean;
-}) {
+function PartnerCard({ partner, muted = false }: { partner: Partner; muted?: boolean }) {
   return (
     <div
-      className={`flex flex-col items-center justify-center px-8 py-4 rounded-2xl bg-white border min-w-[180px] h-20 transition-all shrink-0 ${
-        muted
-          ? "border-brand-blue/5 opacity-50"
-          : "border-brand-blue/10 hover:border-brand-blue/30 hover:shadow-md"
-      }`}
+      className="flex flex-col items-center justify-center px-8 py-4 rounded-2xl bg-white border min-w-[180px] h-20 transition-all shrink-0"
+      style={{
+        borderColor: muted ? "rgba(111,150,209,0.08)" : "rgba(111,150,209,0.2)",
+        opacity: muted ? 0.5 : 1,
+      }}
     >
       {partner.logo ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={partner.logo}
-          alt={partner.name}
-          className="h-8 object-contain"
-        />
+        <img src={partner.logo} alt={partner.name} className="h-8 object-contain" />
       ) : (
         <>
           <span className="text-brand-navy/60 font-display font-bold text-sm leading-tight">
@@ -86,73 +70,60 @@ export default function PartnershipPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 bg-brand-navy overflow-hidden noise">
-        <div className="absolute inset-0 grid-bg opacity-30" />
-        <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-brand-blue/10 rounded-full blur-3xl" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
+      <section className="pt-32 pb-12 bg-white border-b border-[#6F96D1]/15">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <span
+            className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4"
+            style={{ background: "#EDF0F5", color: "#6F96D1" }}
+          >
             Program Kemitraan
           </span>
-          <h1 className="mt-4 text-5xl md:text-6xl font-display font-bold text-white">
-            Tumbuh Bersama
-            <br />
-            <span className="text-gradient-reverse">Ekosistem Unova</span>
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-navy">
+            Tumbuh Bersama<br />
+            <span style={{ color: "#6F96D1" }}>Ekosistem Unova</span>
           </h1>
-          <p className="mt-6 text-white/60 text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-brand-navy/55 text-lg max-w-2xl mx-auto leading-relaxed">
             Bergabunglah dengan jaringan mitra Unova dan buka peluang bisnis
             baru di industri home technology yang sedang tumbuh pesat.
           </p>
           <Link
             href="/contact-us"
-            className="mt-10 inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-brand-blue text-white font-semibold text-lg hover:bg-white hover:text-brand-navy transition-all duration-300 shadow-lg shadow-brand-blue/30"
+            className="mt-8 inline-flex items-center gap-3 px-8 py-3.5 rounded-2xl text-white font-semibold text-base transition-all duration-300"
+            style={{ background: "#6F96D1" }}
           >
-            <Handshake size={22} />
+            <Handshake size={20} />
             Daftar sebagai Mitra
           </Link>
         </div>
       </section>
 
       {/* Partner Logo Slider */}
-      <section className="py-16 bg-brand-light overflow-hidden border-b border-brand-blue/10">
-        <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
-          <p className="text-brand-navy/40 text-sm font-semibold tracking-widest uppercase">
+      <section className="py-14 overflow-hidden border-b border-[#6F96D1]/15" style={{ background: "#EDF0F5" }}>
+        <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
+          <p className="text-brand-navy/40 text-xs font-bold tracking-widest uppercase">
             Mitra yang telah bergabung
           </p>
           <p className="text-brand-navy/30 text-xs mt-2">
-            Tambah/ubah mitra:{" "}
-            <code className="font-mono bg-brand-blue/10 px-1.5 py-0.5 rounded text-brand-navy/50">
+            Tambah mitra: edit{" "}
+            <code className="font-mono bg-white px-1.5 py-0.5 rounded text-brand-navy/50">
               unova.partners
             </code>{" "}
             di{" "}
-            <code className="font-mono bg-brand-blue/10 px-1.5 py-0.5 rounded text-brand-navy/50">
+            <code className="font-mono bg-white px-1.5 py-0.5 rounded text-brand-navy/50">
               package.json
-            </code>{" "}
-            · Logo: isi field{" "}
-            <code className="font-mono bg-brand-blue/10 px-1.5 py-0.5 rounded text-brand-navy/50">
-              logo
-            </code>{" "}
-            dengan path ke{" "}
-            <code className="font-mono bg-brand-blue/10 px-1.5 py-0.5 rounded text-brand-navy/50">
-              /public/images/partners/
             </code>
           </p>
         </div>
-
-        {/* Row 1 — scroll kanan */}
+        {/* Row 1 */}
         <div className="relative flex overflow-hidden mb-4">
           <div className="flex gap-5 animate-marquee whitespace-nowrap">
-            {allPartners.map((p, i) => (
-              <PartnerCard key={`r1-${i}`} partner={p} />
-            ))}
+            {allPartners.map((p, i) => <PartnerCard key={`r1-${i}`} partner={p} />)}
           </div>
         </div>
-
-        {/* Row 2 — scroll kiri */}
+        {/* Row 2 — reverse */}
         <div className="relative flex overflow-hidden">
           <div className="flex gap-5 whitespace-nowrap animate-marquee-reverse">
-            {[...allPartners].reverse().map((p, i) => (
-              <PartnerCard key={`r2-${i}`} partner={p} muted />
-            ))}
+            {[...allPartners].reverse().map((p, i) => <PartnerCard key={`r2-${i}`} partner={p} muted />)}
           </div>
         </div>
       </section>
@@ -160,8 +131,8 @@ export default function PartnershipPage() {
       {/* Partner Types */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#6F96D1" }}>
               Pilih Jalur Anda
             </span>
             <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
@@ -172,25 +143,24 @@ export default function PartnershipPage() {
             {partnerTypes.map((type) => (
               <div
                 key={type.title}
-                className="p-8 rounded-2xl border border-brand-blue/10 bg-brand-light hover:border-brand-blue/30 hover:shadow-lg hover:shadow-brand-blue/10 transition-all duration-300 group"
+                className="p-8 rounded-2xl border border-[#6F96D1]/15 bg-[#EDF0F5] hover:border-[#6F96D1]/35 hover:shadow-lg transition-all duration-300 group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-brand-navy/5 flex items-center justify-center mb-5 group-hover:bg-brand-blue/15 transition-colors">
-                  <type.icon size={26} className="text-brand-blue" />
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-colors"
+                  style={{ background: "rgba(111,150,209,0.1)" }}
+                >
+                  <type.icon size={26} style={{ color: "#6F96D1" }} />
                 </div>
-                <h3 className="font-display font-bold text-brand-navy text-xl mb-2">
-                  {type.title}
-                </h3>
-                <p className="text-brand-navy/60 text-sm leading-relaxed mb-6">
-                  {type.desc}
-                </p>
+                <h3 className="font-display font-bold text-brand-navy text-xl mb-2">{type.title}</h3>
+                <p className="text-brand-navy/55 text-sm leading-relaxed mb-5">{type.desc}</p>
                 <ul className="space-y-2">
                   {type.perks.map((perk) => (
-                    <li
-                      key={perk}
-                      className="flex items-center gap-2 text-sm text-brand-navy/70"
-                    >
-                      <span className="w-5 h-5 rounded-full bg-brand-blue/15 flex items-center justify-center shrink-0">
-                        <span className="w-2 h-2 rounded-full bg-brand-blue" />
+                    <li key={perk} className="flex items-center gap-2 text-sm text-brand-navy/65">
+                      <span
+                        className="w-5 h-5 rounded-full flex items-center justify-center shrink-0"
+                        style={{ background: "rgba(111,150,209,0.15)" }}
+                      >
+                        <span className="w-2 h-2 rounded-full" style={{ background: "#6F96D1" }} />
                       </span>
                       {perk}
                     </li>
@@ -203,44 +173,43 @@ export default function PartnershipPage() {
       </section>
 
       {/* Benefits */}
-      <section className="section-padding bg-brand-navy noise overflow-hidden">
+      <section className="section-padding" style={{ background: "#EDF0F5" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
+              <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#6F96D1" }}>
                 Keunggulan Kemitraan
               </span>
-              <h2 className="mt-3 text-4xl font-display font-bold text-white">
-                Yang Anda Dapatkan
-                <br />
-                <span className="text-gradient-reverse">sebagai Mitra Unova</span>
+              <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
+                Yang Anda Dapatkan<br />
+                <span style={{ color: "#6F96D1" }}>sebagai Mitra Unova</span>
               </h2>
-              <p className="mt-5 text-white/60 leading-relaxed">
+              <p className="mt-5 text-brand-navy/55 leading-relaxed">
                 Kami percaya pada kemitraan yang saling menguntungkan dan
-                berkelanjutan. Setiap mitra mendapatkan dukungan penuh untuk
-                sukses bersama.
+                berkelanjutan. Setiap mitra mendapatkan dukungan penuh untuk sukses bersama.
               </p>
               <Link
                 href="/contact-us"
-                className="group mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-blue text-white font-semibold hover:bg-white hover:text-brand-navy transition-all"
+                className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-semibold transition-all"
+                style={{ background: "#6F96D1" }}
               >
                 Mulai Kemitraan
-                <ArrowRight
-                  size={18}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
+                <ArrowRight size={18} />
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {benefits.map((b) => (
                 <div
                   key={b}
-                  className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                  className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#6F96D1]/15 hover:border-[#6F96D1]/30 transition-colors"
                 >
-                  <span className="w-6 h-6 rounded-full bg-brand-blue/30 flex items-center justify-center shrink-0 mt-0.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-brand-blue" />
+                  <span
+                    className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                    style={{ background: "rgba(111,150,209,0.15)" }}
+                  >
+                    <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#6F96D1" }} />
                   </span>
-                  <span className="text-white/70 text-sm leading-snug">{b}</span>
+                  <span className="text-brand-navy/65 text-sm leading-snug">{b}</span>
                 </div>
               ))}
             </div>

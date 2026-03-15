@@ -14,7 +14,7 @@ const internalPosts = [
     date: "10 Maret 2025",
     readTime: "6 menit",
     image: "🏠",
-    color: "from-brand-navy to-blue-800",
+    color: "from-[#6F96D1] to-[#4a7bbf]",
   },
   {
     slug: "knx-vs-matter-protokol",
@@ -24,7 +24,7 @@ const internalPosts = [
     date: "25 Februari 2025",
     readTime: "9 menit",
     image: "⚡",
-    color: "from-brand-blue to-cyan-600",
+    color: "from-slate-600 to-slate-800",
   },
   {
     slug: "roi-smart-building",
@@ -34,7 +34,7 @@ const internalPosts = [
     date: "12 Februari 2025",
     readTime: "7 menit",
     image: "📊",
-    color: "from-emerald-700 to-teal-600",
+    color: "from-emerald-600 to-teal-700",
   },
   {
     slug: "gas-leak-prevention-rumah",
@@ -44,7 +44,7 @@ const internalPosts = [
     date: "5 Januari 2025",
     readTime: "5 menit",
     image: "🔥",
-    color: "from-red-700 to-orange-600",
+    color: "from-red-600 to-orange-600",
   },
   {
     slug: "kualitas-udara-dalam-ruangan",
@@ -54,7 +54,7 @@ const internalPosts = [
     date: "20 Desember 2024",
     readTime: "8 menit",
     image: "🌿",
-    color: "from-green-700 to-emerald-600",
+    color: "from-green-600 to-emerald-700",
   },
 ];
 
@@ -71,7 +71,7 @@ const externalArticles = [
     title: "Gas Leak Prevention Technology Saves Lives in Residential Areas",
     source: "Safety Science Journal",
     url: "https://www.sciencedirect.com",
-    excerpt: "IoT-based gas detection with automatic valve shutdown reduces explosion risk by over 90% in residential settings, study shows.",
+    excerpt: "IoT-based gas detection with automatic valve shutdown reduces explosion risk by over 90% in residential settings.",
     date: "1 Maret 2025",
     category: "Industri",
   },
@@ -108,33 +108,36 @@ export default function BlogPage() {
 
   return (
     <>
-      {/* Header */}
-      <section className="relative pt-40 pb-24 bg-brand-navy overflow-hidden noise">
-        <div className="absolute inset-0 grid-bg opacity-30" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-light to-transparent" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Blog & Insights</span>
-          <h1 className="mt-4 text-5xl md:text-6xl font-display font-bold text-white">
-            Wawasan untuk<br /><span className="text-gradient-reverse">Rumah yang Lebih Aman</span>
+      {/* ── Hero: light, clean ── */}
+      <section className="pt-32 pb-14 bg-white border-b border-[#6F96D1]/15">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <span className="inline-block px-3 py-1 rounded-full bg-[#EDF0F5] text-[#6F96D1] text-xs font-bold tracking-widest uppercase mb-4">
+            Blog & Insights
+          </span>
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-navy">
+            Wawasan untuk<br />
+            <span style={{ color: "#6F96D1" }}>Rumah yang Lebih Aman</span>
           </h1>
-          <p className="mt-6 text-white/60 text-xl max-w-xl mx-auto">
-            Artikel, panduan, dan berita terkini seputar home technology, keamanan rumah, dan kualitas udara.
+          <p className="mt-4 text-brand-navy/55 text-lg max-w-xl mx-auto leading-relaxed">
+            Artikel, panduan, dan berita terkini seputar home technology,
+            keamanan rumah, dan kualitas udara.
           </p>
         </div>
       </section>
 
-      {/* Sticky Category Filter */}
-      <div className="bg-brand-light border-b border-brand-blue/10 sticky top-20 z-20">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex gap-2 overflow-x-auto scrollbar-hide">
+      {/* ── Category Filter ── */}
+      <div className="bg-[#EDF0F5] border-b border-[#6F96D1]/15 sticky top-[72px] z-20">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex gap-2 overflow-x-auto scrollbar-hide">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
+              className="px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all"
+              style={
                 activeCategory === cat
-                  ? "bg-brand-navy text-white shadow-sm"
-                  : "text-brand-navy/60 hover:bg-brand-blue/10 hover:text-brand-navy"
-              }`}
+                  ? { background: "#091F58", color: "white" }
+                  : { color: "rgba(9,31,88,0.55)", background: "transparent" }
+              }
             >
               {cat}
             </button>
@@ -142,51 +145,63 @@ export default function BlogPage() {
         </div>
       </div>
 
-      {/* Internal Posts */}
-      <section className="section-padding bg-brand-light">
+      {/* ── Internal Posts ── */}
+      <section className="py-14 bg-[#EDF0F5]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-10">
+          <div className="flex items-center justify-between mb-8">
             <div>
               <h2 className="text-2xl font-display font-bold text-brand-navy">Artikel dari Unova</h2>
               {activeCategory !== "Semua" && (
-                <p className="text-brand-navy/50 text-sm mt-1">
-                  {filteredInternal.length} artikel dalam kategori &ldquo;{activeCategory}&rdquo;
+                <p className="text-brand-navy/45 text-sm mt-1">
+                  {filteredInternal.length} artikel dalam &ldquo;{activeCategory}&rdquo;
                 </p>
               )}
             </div>
           </div>
 
           {filteredInternal.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {filteredInternal.map((post) => (
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group bg-white rounded-2xl border border-brand-blue/10 overflow-hidden hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 transition-all duration-300"
+                  className="group bg-white rounded-2xl border border-[#6F96D1]/15 overflow-hidden hover:shadow-lg hover:shadow-[#6F96D1]/15 hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className={`h-40 bg-gradient-to-br ${post.color} flex items-center justify-center`}>
-                    <span className="text-6xl opacity-80">{post.image}</span>
+                  {/* Thumbnail */}
+                  <div className={`h-36 bg-gradient-to-br ${post.color} flex items-center justify-center`}>
+                    <span className="text-5xl">{post.image}</span>
                   </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="px-2.5 py-1 rounded-lg bg-brand-blue/10 text-brand-blue text-xs font-semibold">{post.category}</span>
-                      <span className="flex items-center gap-1 text-brand-navy/40 text-xs"><Clock size={12} />{post.readTime}</span>
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span
+                        className="px-2.5 py-0.5 rounded-lg text-xs font-semibold"
+                        style={{ background: "rgba(111,150,209,0.12)", color: "#6F96D1" }}
+                      >
+                        {post.category}
+                      </span>
+                      <span className="flex items-center gap-1 text-brand-navy/35 text-xs">
+                        <Clock size={11} />{post.readTime}
+                      </span>
                     </div>
-                    <h3 className="font-display font-bold text-brand-navy text-lg leading-snug group-hover:text-brand-blue transition-colors">{post.title}</h3>
-                    <p className="mt-2 text-brand-navy/60 text-sm leading-relaxed line-clamp-3">{post.excerpt}</p>
-                    <div className="mt-4 pt-4 border-t border-brand-blue/10 flex items-center justify-between">
-                      <span className="text-brand-navy/40 text-xs">{post.date}</span>
-                      <span className="text-brand-blue text-xs font-semibold group-hover:underline">Baca →</span>
+                    <h3 className="font-display font-bold text-brand-navy text-base leading-snug group-hover:text-[#6F96D1] transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 text-brand-navy/55 text-sm leading-relaxed line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                    <div className="mt-4 pt-3 border-t border-[#6F96D1]/10 flex items-center justify-between">
+                      <span className="text-brand-navy/35 text-xs">{post.date}</span>
+                      <span className="text-[#6F96D1] text-xs font-semibold group-hover:underline">Baca →</span>
                     </div>
                   </div>
                 </Link>
               ))}
             </div>
           ) : (
-            <div className="text-center py-16 text-brand-navy/40">
+            <div className="text-center py-16">
               <p className="text-4xl mb-3">📭</p>
-              <p className="font-medium">Belum ada artikel di kategori ini</p>
-              <button onClick={() => setActiveCategory("Semua")} className="mt-4 text-brand-blue text-sm font-semibold hover:underline">
+              <p className="text-brand-navy/40 font-medium">Belum ada artikel di kategori ini</p>
+              <button onClick={() => setActiveCategory("Semua")} className="mt-4 text-[#6F96D1] text-sm font-semibold hover:underline">
                 Lihat semua artikel
               </button>
             </div>
@@ -194,31 +209,46 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* External */}
+      {/* ── External Articles ── */}
       {filteredExternal.length > 0 && (
-        <section className="section-padding bg-white">
+        <section className="py-14 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-10">
-              <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Dari Seluruh Dunia</span>
+            <div className="mb-8">
+              <span className="text-[#6F96D1] text-xs font-bold tracking-widest uppercase">News & Information</span>
               <h2 className="mt-1 text-2xl font-display font-bold text-brand-navy">Berita & Artikel Eksternal</h2>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {filteredExternal.map((article, i) => (
-                <a key={i} href={article.url} target="_blank" rel="noopener noreferrer"
-                  className="group flex items-start gap-6 p-6 rounded-2xl border border-brand-blue/10 bg-brand-light/50 hover:bg-brand-light hover:border-brand-blue/30 hover:shadow-md transition-all duration-200">
-                  <div className="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center shrink-0 group-hover:bg-brand-blue/20 transition-colors">
-                    <ExternalLink size={20} className="text-brand-blue" />
+                <a
+                  key={i}
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-5 p-5 rounded-2xl border border-[#6F96D1]/15 bg-[#EDF0F5]/50 hover:bg-[#EDF0F5] hover:border-[#6F96D1]/30 transition-all duration-200"
+                >
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: "rgba(111,150,209,0.12)" }}
+                  >
+                    <ExternalLink size={18} style={{ color: "#6F96D1" }} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <span className="text-brand-blue text-xs font-bold uppercase tracking-wide">{article.source}</span>
-                      <span className="px-2 py-0.5 rounded-md bg-brand-blue/10 text-brand-blue text-xs font-medium">{article.category}</span>
+                      <span className="text-[#6F96D1] text-xs font-bold uppercase tracking-wide">{article.source}</span>
+                      <span
+                        className="px-2 py-0.5 rounded-md text-xs font-medium"
+                        style={{ background: "rgba(111,150,209,0.1)", color: "#6F96D1" }}
+                      >
+                        {article.category}
+                      </span>
                       <span className="text-brand-navy/30 text-xs">{article.date}</span>
                     </div>
-                    <h3 className="font-display font-bold text-brand-navy group-hover:text-brand-blue transition-colors leading-snug">{article.title}</h3>
-                    <p className="mt-1 text-brand-navy/60 text-sm leading-relaxed line-clamp-2">{article.excerpt}</p>
+                    <h3 className="font-display font-semibold text-brand-navy group-hover:text-[#6F96D1] transition-colors leading-snug">
+                      {article.title}
+                    </h3>
+                    <p className="mt-1 text-brand-navy/55 text-sm leading-relaxed line-clamp-2">{article.excerpt}</p>
                   </div>
-                  <ArrowRight size={18} className="text-brand-navy/30 group-hover:text-brand-blue group-hover:translate-x-1 transition-all shrink-0 mt-1" />
+                  <ArrowRight size={16} className="text-brand-navy/25 group-hover:text-[#6F96D1] group-hover:translate-x-1 transition-all shrink-0 mt-1" />
                 </a>
               ))}
             </div>
@@ -226,27 +256,28 @@ export default function BlogPage() {
         </section>
       )}
 
-      {/* Newsletter */}
-      <section className="py-20 bg-brand-navy noise overflow-hidden">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-display font-bold text-white">Tetap Update dengan Dunia Home Tech</h2>
-          <p className="mt-4 text-white/60">Tips keamanan rumah, update produk, dan insight industri — langsung ke inbox Anda.</p>
+      {/* ── Newsletter ── */}
+      <section className="py-16 border-t border-[#6F96D1]/15" style={{ background: "#EDF0F5" }}>
+        <div className="max-w-lg mx-auto px-6 text-center">
+          <h2 className="text-2xl font-display font-bold text-brand-navy">Update Terbaru ke Inbox Anda</h2>
+          <p className="mt-2 text-brand-navy/55 text-sm">Tips keamanan rumah, update produk, dan insight industri.</p>
           {subscribed ? (
-            <div className="mt-8 px-6 py-4 rounded-2xl bg-green-500/15 border border-green-500/30 text-green-400 font-semibold">
-              Terima kasih! Anda akan menerima update terbaru dari Unova.
+            <div className="mt-6 px-6 py-4 rounded-2xl bg-green-50 border border-green-200 text-green-700 font-semibold text-sm">
+              ✅ Terima kasih! Anda akan menerima update terbaru dari Unova.
             </div>
           ) : (
-            <div className="mt-8 flex gap-3 max-w-md mx-auto">
+            <div className="mt-6 flex gap-3">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="email@anda.com"
-                className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/30 focus:outline-none focus:border-brand-blue transition-colors"
+                className="flex-1 px-4 py-3 rounded-xl border border-[#6F96D1]/25 bg-white text-brand-navy placeholder-brand-navy/30 focus:outline-none focus:border-[#6F96D1] transition-colors text-sm"
               />
               <button
                 onClick={() => email && setSubscribed(true)}
-                className="px-6 py-3 rounded-xl bg-brand-blue text-white font-semibold hover:bg-white hover:text-brand-navy transition-colors whitespace-nowrap"
+                className="px-6 py-3 rounded-xl text-white text-sm font-semibold transition-colors whitespace-nowrap"
+                style={{ background: "#6F96D1" }}
               >
                 Subscribe
               </button>
