@@ -276,12 +276,6 @@ export default function AboutPage() {
             <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
               Orang-orang di Balik Unova
             </h2>
-            <p className="mt-3 text-brand-navy/45 text-sm">
-              Data tim dikelola via{" "}
-              <code className="font-mono bg-[#EDF0F5] px-1.5 py-0.5 rounded text-brand-navy/60">
-                package.json → unova.team
-              </code>
-            </p>
           </div>
 
           {/* C-Level — 3 kolom centered */}

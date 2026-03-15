@@ -140,7 +140,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-white/30 text-sm">
-          <span>© {new Date().getFullYear()} Unova. Semua hak dilindungi.</span>
+          <span>© {new Date().getFullYear()} Unova - All Rights Reserved.</span>
           <div className="flex gap-6">
             <Link href="#" className="hover:text-white/60 transition-colors">
               Kebijakan Privasi
