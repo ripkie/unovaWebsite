@@ -159,7 +159,7 @@ export default function ContactPage() {
                   4. Paste di bawah menggantikan src yang ada
                 */}
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2983532867847!2d107.63154387499041!3d-6.914463993081456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e639a1d2b9b3%3A0x5a9e1b1b1b1b1b1b!2sBandung%20Techno%20Park!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5357.788879558221!2d107.62774407620549!3d-6.970454668254767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9ace29fcd5f%3A0xfa6ffa9182123965!2sBandung%20Techno%20Park!5e1!3m2!1sid!2skr!4v1773575824206!5m2!1sid!2skr"
                   width="100%"
                   height="420"
                   style={{ border: 0 }}
