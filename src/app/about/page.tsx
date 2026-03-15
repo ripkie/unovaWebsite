@@ -342,12 +342,6 @@ export default function AboutPage() {
               </div>
             </div>
           )}
-
-          <p className="text-center text-brand-navy/30 text-xs mt-10">
-            * Edit nama, role, bio, dan foto via{" "}
-            <code className="font-mono">package.json → unova.team[].photo</code>{" "}
-            (path ke <code className="font-mono">/public/images/team/nama.jpg</code>)
-          </p>
         </div>
       </section>
 
