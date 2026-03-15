@@ -91,12 +91,6 @@ export default function HomePage() {
             >
               Lihat Produk <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link
-              href="/contact-us"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border-2 border-[#6F96D1]/40 text-brand-navy font-semibold text-lg hover:bg-[#6F96D1]/10 transition-all duration-300 bg-white/70 backdrop-blur-sm"
-            >
-              Minta Demo Gratis
-            </Link>
           </div>
 
           {/* Promo strip */}
