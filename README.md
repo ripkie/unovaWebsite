@@ -11,13 +11,8 @@ Website company profile Unova dibangun dengan **Next.js 15 App Router**, **Tailw
 ### Instalasi
 
 ```bash
-# Clone / ekstrak project
 cd unova-web
-
-# Install dependencies
 npm install
-
-# Jalankan development server
 npm run dev
 ```
 
@@ -37,41 +32,39 @@ npm run start
 ```
 src/
 ├── app/
-│   ├── layout.tsx          # Root layout (Navbar + Footer)
-│   ├── page.tsx            # Home page
-│   ├── globals.css         # Global styles + Tailwind theme
-│   ├── loading.tsx         # Loading skeleton
-│   ├── not-found.tsx       # 404 page
-│   ├── sitemap.ts          # XML sitemap (SEO)
-│   ├── robots.ts           # robots.txt (SEO)
+│   ├── layout.tsx              # Root layout (Navbar + Footer)
+│   ├── page.tsx                # Home page
+│   ├── globals.css             # Global styles + Tailwind theme
+│   ├── loading.tsx             # Loading skeleton
+│   ├── not-found.tsx           # 404 page
+│   ├── sitemap.ts              # XML sitemap (SEO)
+│   ├── robots.ts               # robots.txt (SEO)
 │   ├── products/
-│   │   ├── page.tsx        # Halaman daftar produk
-│   │   └── [slug]/
-│   │       └── page.tsx    # Halaman detail produk
+│   │   ├── page.tsx            # Daftar produk
+│   │   └── [slug]/page.tsx     # Detail produk (Gas Leak Prevention, dll)
 │   ├── blog/
-│   │   ├── page.tsx        # Daftar artikel blog
-│   │   └── [slug]/
-│   │       └── page.tsx    # Detail artikel blog
-│   ├── partnership/
-│   │   └── page.tsx        # Program kemitraan
-│   ├── about/
-│   │   └── page.tsx        # Tentang kami
-│   └── contact-us/
-│       └── page.tsx        # Form kontak
+│   │   ├── page.tsx            # Daftar artikel
+│   │   └── [slug]/page.tsx     # Detail artikel
+│   ├── partnership/page.tsx    # Halaman kemitraan
+│   ├── about/page.tsx          # Tentang kami
+│   └── contact-us/page.tsx    # Form kontak
 ├── components/
-│   ├── Navbar.tsx          # Navigasi (fit-rounded on scroll)
-│   └── Footer.tsx          # Footer dengan CTA
+│   ├── Navbar.tsx              # Navigasi fit-rounded on scroll
+│   └── Footer.tsx              # Footer dengan CTA
+├── lib/
+│   └── partners.ts             # Utility data mitra (CMS-ready)
 public/
+├── logoUnova.svg               # Logo SVG vector Unova
 └── images/
-    ├── logo.png            # Logo Unova
-    └── product-sensor.png  # Gambar produk sensor
+    ├── product-sensor.png      # Gambar produk
+    └── partners/               # Taruh logo mitra di sini
 ```
 
 ---
 
 ## 🎨 Konfigurasi Brand
 
-Edit `src/app/globals.css` pada bagian `@theme` untuk mengubah warna brand:
+Edit `src/app/globals.css` pada bagian `@theme`:
 
 ```css
 @theme {
@@ -83,44 +76,87 @@ Edit `src/app/globals.css` pada bagian `@theme` untuk mengubah warna brand:
 
 ---
 
+## 🤝 Mengelola Data Mitra
+
+### Cara Cepat — Edit `package.json`
+
+Buka `package.json` dan edit bagian `unova.partners`:
+
+```json
+"unova": {
+  "partners": [
+    {
+      "name": "Nama Perusahaan",
+      "category": "Kategori",
+      "logo": null
+    },
+    {
+      "name": "Mitra dengan Logo",
+      "category": "Teknologi",
+      "logo": "/images/partners/nama-mitra.svg"
+    }
+  ]
+}
+```
+
+**Untuk logo:**
+1. Simpan file SVG/PNG ke `public/images/partners/`
+2. Isi field `logo` dengan path: `"/images/partners/nama-mitra.svg"`
+3. Jika `logo: null`, tampilan akan menggunakan nama teks
+
+### Migrasi ke CMS (Sanity / Contentful / Strapi)
+
+Saat siap, cukup edit `src/lib/partners.ts`:
+
+```typescript
+// Ganti fungsi ini dengan fetch ke CMS
+export async function getPartners(): Promise<Partner[]> {
+  const res = await fetch(`${process.env.CMS_URL}/api/partners`, {
+    next: { revalidate: 3600 } // ISR: revalidate setiap 1 jam
+  });
+  return res.json();
+}
+```
+
+Semua halaman (Home, Partnership) akan otomatis menggunakan data terbaru.
+
+---
+
 ## ➕ Menambah Produk Baru
 
-1. Buka `src/app/products/page.tsx`
-2. Tambahkan objek produk baru ke array `products`
-3. Buat entry di `src/app/products/[slug]/page.tsx` dalam objek `products`
-4. Tambahkan gambar produk ke `public/images/`
+1. Edit `src/app/products/page.tsx` → tambah ke array `products` (atau `comingSoon`)
+2. Buat entry di `src/app/products/[slug]/page.tsx` → tambah ke objek `products`
+3. Tambah gambar produk ke `public/images/`
+4. Update `src/app/sitemap.ts` dengan URL produk baru
 
 ---
 
 ## ✍️ Menambah Artikel Blog
 
-1. Buka `src/app/blog/page.tsx` — tambahkan ke array `internalPosts`
-2. Buat entry di `src/app/blog/[slug]/page.tsx` dalam objek `posts`
-3. Update `src/app/sitemap.ts` dengan URL artikel baru
+1. `src/app/blog/page.tsx` → tambah ke `internalPosts`
+2. `src/app/blog/[slug]/page.tsx` → tambah ke objek `posts`
+3. `src/app/sitemap.ts` → tambah URL artikel baru
 
 ---
 
-## 🤝 Menambah Logo Mitra
+## 🌐 Deploy ke Vercel
 
-1. Buka `src/app/partnership/page.tsx`
-2. Ganti array `partners` dengan nama/logo mitra asli
-3. Untuk menggunakan gambar logo, ganti `<span>` dengan komponen `<Image>`
-
----
-
-## 🌐 Deploy
-
-### Vercel (Rekomendasi)
 ```bash
 npm i -g vercel
 vercel
 ```
 
-### Domain
-Ganti `https://unova.id` di `src/app/layout.tsx` dan `src/app/sitemap.ts` dengan domain asli.
+Ganti `https://unova.id` di:
+- `src/app/layout.tsx` (metadataBase)
+- `src/app/sitemap.ts`
+- `src/app/robots.ts`
 
 ---
 
-## 📞 Kontak
+## 🔮 Roadmap Teknis
 
-Untuk pertanyaan teknis seputar pengembangan website ini, hubungi tim Unova.
+- [ ] Integrasi CMS (Sanity/Contentful) — edit `src/lib/partners.ts` + buat `src/lib/products.ts`
+- [ ] Halaman blog dari CMS dengan MDX support
+- [ ] Formulir kontak dengan email integration (Resend / SendGrid)
+- [ ] Analytics (Vercel Analytics / GA4)
+- [ ] i18n Bahasa Inggris untuk pasar regional

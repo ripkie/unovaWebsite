@@ -1,0 +1,26 @@
+<svg width="260" height="72" viewBox="0 0 260 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- u: open bowl shape, rounded terminals -->
+  <path d="M10 14 L10 42 C10 53 18 62 30 62 C42 62 50 53 50 42 L50 14"
+    stroke="currentColor" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+
+  <!-- n: curved arch to the right leg -->
+  <path d="M62 62 L62 30 C62 20 69 12 80 12 C91 12 98 20 98 30 L98 62"
+    stroke="currentColor" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+
+  <!-- o: perfect circle with 4-point sparkle brand mark inside -->
+  <circle cx="130" cy="37" r="22"
+    stroke="currentColor" stroke-width="7.5" fill="none"/>
+  <!-- 4-point sparkle star (signature brand detail of Unova) -->
+  <path d="M130 28 L131.8 34.2 L138 36 L131.8 37.8 L130 44 L128.2 37.8 L122 36 L128.2 34.2 Z"
+    fill="currentColor"/>
+
+  <!-- v: sharp chevron -->
+  <path d="M168 13 L184 62 L200 13"
+    stroke="currentColor" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- a: open circle on left + vertical bar on right -->
+  <path d="M210 37 C210 23 218 12 228 12 C238 12 248 23 248 37 C248 51 240 62 230 62 C220 62 212 53 210 44"
+    stroke="currentColor" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+  <path d="M248 13 L248 62"
+    stroke="currentColor" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+</svg>

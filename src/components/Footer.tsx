@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Mail, MapPin, Phone, ArrowRight, Linkedin, Twitter, Instagram } from "lucide-react";
 
 export default function Footer() {
@@ -43,13 +42,10 @@ export default function Footer() {
       {/* Links */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-10">
         <div className="col-span-2 md:col-span-1">
-          <Image
-            src="/images/logo.png"
+          <img
+            src="/logoUnova.svg"
             alt="Unova"
-            width={110}
-            height={30}
-            className="object-contain brightness-0 invert opacity-90"
-            style={{ width: "auto", height: "30px" }}
+            style={{ height: "28px", width: "auto", filter: "invert(1) brightness(2) opacity(0.85)" }}
           />
           <p className="mt-4 text-white/50 text-sm leading-relaxed">
             Inovasi teknologi untuk kehidupan yang lebih cerdas dan terkoneksi.
@@ -101,8 +97,8 @@ export default function Footer() {
           </h4>
           <ul className="space-y-3">
             {[
-              "Smart Sensor Hub",
-              "IoT Gateway",
+              "Gas Leak Prevention",
+              "Humdifier Dehumidifier 2in1",
               "Cloud Dashboard",
               "API Platform",
             ].map((p) => (
@@ -125,7 +121,7 @@ export default function Footer() {
           <ul className="space-y-3">
             <li className="flex items-start gap-2 text-white/60 text-sm">
               <MapPin size={14} className="mt-0.5 shrink-0 text-brand-blue" />
-              Indonesia
+              Bandung, Indonesia
             </li>
             <li className="flex items-start gap-2 text-white/60 text-sm">
               <Mail size={14} className="mt-0.5 shrink-0 text-brand-blue" />

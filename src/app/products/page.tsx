@@ -1,67 +1,65 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Wifi, Zap, Shield, Package } from "lucide-react";
+import { ArrowRight, ShieldAlert, Wind, Package, Droplets, Bell } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Produk",
   description:
-    "Jelajahi lini produk IoT Unova — dari Smart Sensor Hub hingga IoT Gateway. Dirancang untuk kemudahan instalasi dan keandalan jangka panjang.",
+    "Lini produk home technology Unova — solusi keamanan dan kesehatan untuk rumah Anda. Gas Leak Prevention, Humidifier & Dehumidifier 2-in-1, dan lebih banyak lagi.",
 };
 
 const products = [
   {
-    id: "smart-sensor-hub",
-    name: "Smart Sensor Hub",
-    tagline: "Pusat kendali ekosistem IoT Anda",
+    id: "gas-leak-prevention",
+    name: "Gas Leak Prevention",
+    tagline: "Proteksi otomatis dari kebocoran gas",
     description:
-      "Perangkat sensor multi-protokol yang menghubungkan seluruh sistem smart home atau bangunan komersial dengan mudah dan andal.",
+      "Gas leak detector dengan alarm dan valve otomatis yang menutup regulator saat kebocoran terdeteksi. Memberikan perlindungan cepat untuk mencegah risiko kebakaran dan ledakan pada sistem gas.",
     image: "/images/product-sensor.png",
     badge: "Tersedia",
     badgeColor: "bg-green-500",
-    specs: ["KNX / MQTT / Matter", "IP67 Rated", "100m Range", "Ultra Low Power"],
-    price: "Mulai dari Rp 2.500.000",
-    isNew: false,
+    focus: "Keamanan",
+    focusColor: "text-red-400 bg-red-500/10",
+    specs: ["Deteksi LPG & Gas Alam", "Valve Otomatis", "Alarm 85dB", "Notifikasi App"],
+    price: "Mulai dari Rp 1.800.000",
+    highlights: [
+      { icon: ShieldAlert, text: "Respon deteksi < 10 detik" },
+      { icon: Bell, text: "Alarm suara & push notification" },
+      { icon: Package, text: "Valve otomatis menutup regulator" },
+    ],
   },
 ];
 
 const comingSoon = [
   {
-    name: "IoT Gateway Pro",
-    desc: "Gateway enterprise untuk infrastruktur skala besar",
-    icon: Wifi,
+    id: "humidifier-dehumidifier-2in1",
+    name: "Humidifier & Dehumidifier 2-in-1",
+    desc: "Jaga kelembapan udara rumah secara otomatis — tambah saat terlalu kering, kurangi saat terlalu lembap. Dilengkapi sensor PM2.5 dan kontrol via aplikasi.",
+    icon: Droplets,
+    focus: "Kesehatan",
+    eta: "Q3 2025",
+    features: ["Auto humidity control", "Sensor PM2.5", "Quiet mode <25dB", "App control"],
   },
   {
-    name: "Cloud Dashboard",
-    desc: "Analitik dan monitoring real-time berbasis cloud",
-    icon: BarChart3Icon,
+    id: "air-quality-monitor",
+    name: "Air Quality Monitor",
+    desc: "Monitor kualitas udara real-time: CO₂, VOC, PM2.5, suhu, dan kelembapan dalam satu perangkat kompak.",
+    icon: Wind,
+    focus: "Kesehatan",
+    eta: "Q4 2025",
+    features: ["CO₂ & VOC sensor", "PM2.5 detector", "Real-time dashboard", "Historical data"],
   },
   {
-    name: "Energy Monitor",
-    desc: "Pantau dan optimalkan konsumsi energi bangunan Anda",
-    icon: Zap,
+    id: "smart-smoke-detector",
+    name: "Smart Smoke Detector",
+    desc: "Detektor asap pintar dengan koneksi ke ekosistem Unova. Alert ke smartphone sebelum asap memenuhi ruangan.",
+    icon: ShieldAlert,
+    focus: "Keamanan",
+    eta: "Q1 2026",
+    features: ["Photoelectric sensor", "App alert", "Interconnected", "10yr battery"],
   },
 ];
-
-function BarChart3Icon({ size = 24 }: { size?: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="18" y1="20" x2="18" y2="10" />
-      <line x1="12" y1="20" x2="12" y2="4" />
-      <line x1="6" y1="20" x2="6" y2="14" />
-      <line x1="2" y1="20" x2="22" y2="20" />
-    </svg>
-  );
-}
 
 export default function ProductsPage() {
   return (
@@ -75,91 +73,93 @@ export default function ProductsPage() {
             Produk Kami
           </span>
           <h1 className="mt-4 text-5xl md:text-6xl font-display font-bold text-white">
-            Teknologi yang
+            Aman & Sehat
             <br />
-            <span className="text-gradient-reverse">Bekerja untuk Anda</span>
+            <span className="text-gradient-reverse">di Rumah Anda</span>
           </h1>
           <p className="mt-6 text-white/60 text-xl max-w-2xl mx-auto leading-relaxed">
-            Setiap produk Unova dirancang untuk kemudahan instalasi, keandalan
-            jangka panjang, dan integrasi sempurna.
+            Unova menghadirkan produk home technology yang berdampak nyata —
+            menjaga keamanan dan kesehatan keluarga Anda setiap hari.
           </p>
+          {/* Focus tags */}
+          <div className="mt-8 flex justify-center gap-3 flex-wrap">
+            {[
+              { label: "🛡️ Keamanan", desc: "Cegah kebakaran & ledakan" },
+              { label: "🌿 Kesehatan", desc: "Kualitas udara optimal" },
+              { label: "🏠 Rumah Pintar", desc: "Terintegrasi & otomatis" },
+            ].map((tag) => (
+              <div key={tag.label} className="px-4 py-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm text-center">
+                <div className="text-white text-sm font-semibold">{tag.label}</div>
+                <div className="text-white/40 text-xs">{tag.desc}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Products */}
+      {/* Available Products */}
       <section className="section-padding bg-brand-light">
         <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-10">
+            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Tersedia Sekarang</span>
+            <h2 className="mt-2 text-3xl font-display font-bold text-brand-navy">Produk Aktif</h2>
+          </div>
+
           {products.map((product) => (
-            <div
-              key={product.id}
-              className="bg-white rounded-3xl border border-brand-blue/10 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-brand-blue/10 transition-all duration-500"
-            >
+            <div key={product.id} className="bg-white rounded-3xl border border-brand-blue/10 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-brand-blue/10 transition-all duration-500">
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Image */}
                 <div className="relative bg-brand-light flex items-center justify-center p-16 border-r border-brand-blue/10">
-                  <div className="absolute top-6 left-6 flex gap-2">
-                    <span
-                      className={`px-3 py-1 rounded-full text-white text-xs font-bold ${product.badgeColor}`}
-                    >
-                      {product.badge}
-                    </span>
-                    {product.isNew && (
-                      <span className="px-3 py-1 rounded-full bg-brand-blue text-white text-xs font-bold">
-                        BARU
-                      </span>
-                    )}
+                  <div className="absolute top-6 left-6 flex gap-2 flex-wrap">
+                    <span className={`px-3 py-1 rounded-full text-white text-xs font-bold ${product.badgeColor}`}>{product.badge}</span>
+                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${product.focusColor}`}>{product.focus}</span>
                   </div>
                   <Image
                     src={product.image}
                     alt={product.name}
-                    width={380}
-                    height={380}
+                    width={360}
+                    height={360}
                     className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700"
                   />
                 </div>
 
                 {/* Info */}
                 <div className="p-10 lg:p-14 flex flex-col justify-center">
-                  <h2 className="text-3xl font-display font-bold text-brand-navy">
-                    {product.name}
-                  </h2>
+                  <h2 className="text-3xl font-display font-bold text-brand-navy">{product.name}</h2>
                   <p className="mt-1 text-brand-blue font-medium">{product.tagline}</p>
                   <p className="mt-4 text-brand-navy/60 leading-relaxed">{product.description}</p>
 
-                  {/* Specs */}
-                  <div className="mt-8 grid grid-cols-2 gap-3">
-                    {product.specs.map((spec) => (
-                      <div
-                        key={spec}
-                        className="flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-light border border-brand-blue/10"
-                      >
-                        <Package size={14} className="text-brand-blue shrink-0" />
-                        <span className="text-brand-navy/70 text-sm font-medium">{spec}</span>
+                  {/* Key highlights */}
+                  <div className="mt-6 space-y-2">
+                    {product.highlights.map((h) => (
+                      <div key={h.text} className="flex items-center gap-3 p-3 rounded-xl bg-brand-light">
+                        <div className="w-8 h-8 rounded-lg bg-brand-blue/15 flex items-center justify-center shrink-0">
+                          <h.icon size={16} className="text-brand-blue" />
+                        </div>
+                        <span className="text-brand-navy/70 text-sm font-medium">{h.text}</span>
                       </div>
                     ))}
                   </div>
 
-                  {/* Price */}
-                  <div className="mt-8 pt-6 border-t border-brand-blue/10">
-                    <div className="text-brand-navy/50 text-sm mb-1">Harga</div>
-                    <div className="text-2xl font-display font-bold text-brand-navy">
-                      {product.price}
-                    </div>
+                  {/* Specs pills */}
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {product.specs.map((spec) => (
+                      <span key={spec} className="px-3 py-1.5 rounded-lg bg-brand-light border border-brand-blue/15 text-brand-navy/60 text-xs font-semibold">
+                        {spec}
+                      </span>
+                    ))}
                   </div>
 
-                  {/* Actions */}
+                  <div className="mt-8 pt-6 border-t border-brand-blue/10">
+                    <div className="text-brand-navy/50 text-sm mb-1">Harga</div>
+                    <div className="text-2xl font-display font-bold text-brand-navy">{product.price}</div>
+                  </div>
+
                   <div className="mt-6 flex gap-3 flex-wrap">
-                    <Link
-                      href={`/products/${product.id}`}
-                      className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-navy text-white font-semibold hover:bg-brand-blue transition-colors"
-                    >
-                      Detail Produk
-                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <Link href={`/products/${product.id}`} className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-navy text-white font-semibold hover:bg-brand-blue transition-colors">
+                      Detail Produk<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
-                    <Link
-                      href="/contact-us"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-brand-blue/30 text-brand-navy font-semibold hover:bg-brand-light transition-colors"
-                    >
+                    <Link href="/contact-us" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-brand-blue/30 text-brand-navy font-semibold hover:bg-brand-light transition-colors">
                       Minta Demo
                     </Link>
                   </div>
@@ -174,27 +174,39 @@ export default function ProductsPage() {
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
-              Segera Hadir
-            </span>
-            <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
-              Lini Produk Berikutnya
-            </h2>
+            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Segera Hadir</span>
+            <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Roadmap Produk</h2>
+            <p className="mt-3 text-brand-navy/50 max-w-xl mx-auto">
+              Kami terus berinovasi. Berikut produk-produk yang sedang dalam pengembangan.
+            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {comingSoon.map((p) => (
-              <div
-                key={p.name}
-                className="p-8 rounded-2xl border-2 border-dashed border-brand-blue/20 bg-brand-light/50 text-center hover:border-brand-blue/40 transition-colors group"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-brand-navy/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-blue/10 transition-colors">
-                  <p.icon size={24} className="text-brand-blue" />
+              <div key={p.name} className="p-8 rounded-2xl border-2 border-dashed border-brand-blue/20 bg-brand-light/50 hover:border-brand-blue/40 transition-colors group">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-14 h-14 rounded-2xl bg-brand-navy/5 flex items-center justify-center group-hover:bg-brand-blue/10 transition-colors">
+                    <p.icon size={26} className="text-brand-blue" />
+                  </div>
+                  <span className="text-xs font-bold text-brand-navy/30 bg-brand-navy/5 px-2 py-1 rounded-lg">{p.eta}</span>
                 </div>
-                <h3 className="font-display font-bold text-brand-navy text-lg">{p.name}</h3>
-                <p className="mt-2 text-brand-navy/50 text-sm">{p.desc}</p>
-                <span className="mt-4 inline-block px-3 py-1 rounded-full bg-brand-blue/10 text-brand-blue text-xs font-semibold">
-                  Coming Soon
+                <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-brand-blue/10 text-brand-blue">
+                  {p.focus}
                 </span>
+                <h3 className="font-display font-bold text-brand-navy text-lg mt-3">{p.name}</h3>
+                <p className="mt-2 text-brand-navy/50 text-sm leading-relaxed">{p.desc}</p>
+                <ul className="mt-4 space-y-1.5">
+                  {p.features.map((f) => (
+                    <li key={f} className="flex items-center gap-2 text-xs text-brand-navy/50">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-blue/50 shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5">
+                  <Link href="/contact-us" className="text-brand-blue text-sm font-semibold hover:underline">
+                    Daftar notifikasi →
+                  </Link>
+                </div>
               </div>
             ))}
           </div>

@@ -1,20 +1,22 @@
 import Link from "next/link";
 import { ArrowRight, Handshake, Globe, Code, Building } from "lucide-react";
+import type { Metadata } from "next";
+import { getPartners } from "@/lib/partners";
+import type { Partner } from "@/lib/partners";
 
-// Logo placeholder partners – user akan replace dengan logo asli
-const partners = [
-  { name: "Partner A", category: "Teknologi" },
-  { name: "Partner B", category: "Distribusi" },
-  { name: "Partner C", category: "Integrasi" },
-  { name: "Partner D", category: "Teknologi" },
-  { name: "Partner E", category: "Distribusi" },
-  { name: "Partner F", category: "Konsultasi" },
-  { name: "Partner G", category: "Integrasi" },
-  { name: "Partner H", category: "Teknologi" },
-];
+/**
+ * Partners dibaca via lib/partners.ts → package.json > unova.partners
+ * Untuk menambah mitra: edit package.json atau ganti fungsi getPartners()
+ * dengan fetch ke CMS saat siap migrasi.
+ */
+const partners: Partner[] = getPartners();
+const allPartners: Partner[] = [...partners, ...partners];
 
-// Duplicate for infinite scroll
-const allPartners = [...partners, ...partners];
+export const metadata: Metadata = {
+  title: "Kemitraan",
+  description:
+    "Bergabunglah dengan jaringan mitra Unova dan buka peluang bisnis baru di industri IoT yang sedang tumbuh pesat.",
+};
 
 const partnerTypes = [
   {
@@ -46,10 +48,44 @@ const benefits = [
   "Prioritas pembaruan produk",
 ];
 
+function PartnerCard({
+  partner,
+  muted = false,
+}: {
+  partner: Partner;
+  muted?: boolean;
+}) {
+  return (
+    <div
+      className={`flex flex-col items-center justify-center px-8 py-4 rounded-2xl bg-white border min-w-[180px] h-20 transition-all shrink-0 ${
+        muted
+          ? "border-brand-blue/5 opacity-50"
+          : "border-brand-blue/10 hover:border-brand-blue/30 hover:shadow-md"
+      }`}
+    >
+      {partner.logo ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={partner.logo}
+          alt={partner.name}
+          className="h-8 object-contain"
+        />
+      ) : (
+        <>
+          <span className="text-brand-navy/60 font-display font-bold text-sm leading-tight">
+            {partner.name}
+          </span>
+          <span className="text-brand-navy/30 text-xs mt-0.5">{partner.category}</span>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function PartnershipPage() {
   return (
     <>
-      {/* Header */}
+      {/* Hero */}
       <section className="relative pt-40 pb-24 bg-brand-navy overflow-hidden noise">
         <div className="absolute inset-0 grid-bg opacity-30" />
         <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-brand-blue/10 rounded-full blur-3xl" />
@@ -63,8 +99,8 @@ export default function PartnershipPage() {
             <span className="text-gradient-reverse">Ekosistem Unova</span>
           </h1>
           <p className="mt-6 text-white/60 text-xl max-w-2xl mx-auto leading-relaxed">
-            Bergabunglah dengan jaringan mitra Unova dan buka peluang bisnis baru di
-            industri IoT yang sedang tumbuh pesat.
+            Bergabunglah dengan jaringan mitra Unova dan buka peluang bisnis
+            baru di industri home technology yang sedang tumbuh pesat.
           </p>
           <Link
             href="/contact-us"
@@ -82,43 +118,43 @@ export default function PartnershipPage() {
           <p className="text-brand-navy/40 text-sm font-semibold tracking-widest uppercase">
             Mitra yang telah bergabung
           </p>
+          <p className="text-brand-navy/30 text-xs mt-2">
+            Tambah/ubah mitra:{" "}
+            <code className="font-mono bg-brand-blue/10 px-1.5 py-0.5 rounded text-brand-navy/50">
+              unova.partners
+            </code>{" "}
+            di{" "}
+            <code className="font-mono bg-brand-blue/10 px-1.5 py-0.5 rounded text-brand-navy/50">
+              package.json
+            </code>{" "}
+            · Logo: isi field{" "}
+            <code className="font-mono bg-brand-blue/10 px-1.5 py-0.5 rounded text-brand-navy/50">
+              logo
+            </code>{" "}
+            dengan path ke{" "}
+            <code className="font-mono bg-brand-blue/10 px-1.5 py-0.5 rounded text-brand-navy/50">
+              /public/images/partners/
+            </code>
+          </p>
         </div>
 
-        {/* Row 1 - ke kanan */}
+        {/* Row 1 — scroll kanan */}
         <div className="relative flex overflow-hidden mb-4">
-          <div className="flex gap-8 animate-marquee whitespace-nowrap">
+          <div className="flex gap-5 animate-marquee whitespace-nowrap">
             {allPartners.map((p, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-center px-8 py-4 rounded-2xl bg-white border border-brand-blue/10 min-w-[160px] hover:border-brand-blue/30 hover:shadow-md transition-all cursor-default"
-              >
-                <span className="text-brand-navy/50 font-display font-bold text-sm">
-                  {p.name}
-                </span>
-              </div>
+              <PartnerCard key={`r1-${i}`} partner={p} />
             ))}
           </div>
         </div>
 
-        {/* Row 2 - ke kiri (reverse) */}
+        {/* Row 2 — scroll kiri */}
         <div className="relative flex overflow-hidden">
-          <div className="flex gap-8 whitespace-nowrap animate-marquee-reverse">
+          <div className="flex gap-5 whitespace-nowrap animate-marquee-reverse">
             {[...allPartners].reverse().map((p, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-center px-8 py-4 rounded-2xl bg-white border border-brand-blue/10 min-w-[160px] opacity-60"
-              >
-                <span className="text-brand-navy/40 font-display font-bold text-sm">
-                  {p.name}
-                </span>
-              </div>
+              <PartnerCard key={`r2-${i}`} partner={p} muted />
             ))}
           </div>
         </div>
-
-        <p className="text-center text-brand-navy/30 text-xs mt-6">
-          * Logo mitra akan ditampilkan setelah bergabung
-        </p>
       </section>
 
       {/* Partner Types */}
@@ -144,10 +180,15 @@ export default function PartnershipPage() {
                 <h3 className="font-display font-bold text-brand-navy text-xl mb-2">
                   {type.title}
                 </h3>
-                <p className="text-brand-navy/60 text-sm leading-relaxed mb-6">{type.desc}</p>
+                <p className="text-brand-navy/60 text-sm leading-relaxed mb-6">
+                  {type.desc}
+                </p>
                 <ul className="space-y-2">
                   {type.perks.map((perk) => (
-                    <li key={perk} className="flex items-center gap-2 text-sm text-brand-navy/70">
+                    <li
+                      key={perk}
+                      className="flex items-center gap-2 text-sm text-brand-navy/70"
+                    >
                       <span className="w-5 h-5 rounded-full bg-brand-blue/15 flex items-center justify-center shrink-0">
                         <span className="w-2 h-2 rounded-full bg-brand-blue" />
                       </span>
@@ -175,15 +216,19 @@ export default function PartnershipPage() {
                 <span className="text-gradient-reverse">sebagai Mitra Unova</span>
               </h2>
               <p className="mt-5 text-white/60 leading-relaxed">
-                Kami percaya pada kemitraan yang saling menguntungkan dan berkelanjutan.
-                Setiap mitra mendapatkan dukungan penuh untuk sukses.
+                Kami percaya pada kemitraan yang saling menguntungkan dan
+                berkelanjutan. Setiap mitra mendapatkan dukungan penuh untuk
+                sukses bersama.
               </p>
               <Link
                 href="/contact-us"
                 className="group mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-blue text-white font-semibold hover:bg-white hover:text-brand-navy transition-all"
               >
                 Mulai Kemitraan
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-4">

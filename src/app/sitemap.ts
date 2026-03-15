@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/products/smart-sensor-hub`,
+      url: `${baseUrl}/products/gas-leak-prevention`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
@@ -42,6 +42,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/roi-smart-building`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/gas-leak-prevention-rumah`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/kualitas-udara-dalam-ruangan`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,

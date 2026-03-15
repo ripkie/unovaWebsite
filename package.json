@@ -8,6 +8,18 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "unova": {
+    "partners": [
+      { "name": "Telkom Indonesia", "category": "Teknologi", "logo": null },
+      { "name": "PLN", "category": "Energi", "logo": null },
+      { "name": "Pertamina", "category": "Energi", "logo": null },
+      { "name": "BCA", "category": "Finansial", "logo": null },
+      { "name": "Mandiri", "category": "Finansial", "logo": null },
+      { "name": "Tokopedia", "category": "E-Commerce", "logo": null },
+      { "name": "Gojek", "category": "Teknologi", "logo": null },
+      { "name": "Traveloka", "category": "Teknologi", "logo": null }
+    ]
+  },
   "dependencies": {
     "framer-motion": "^12.36.0",
     "lucide-react": "^0.577.0",

@@ -1,65 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CheckCircle2, Package, Wifi, Shield, Zap, Download } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Download, ShieldAlert, Bell, Zap, Wifi, Droplets, Wind } from "lucide-react";
 import { notFound } from "next/navigation";
-
-const products: Record<string, ProductData> = {
-  "smart-sensor-hub": {
-    id: "smart-sensor-hub",
-    name: "Smart Sensor Hub",
-    tagline: "Pusat kendali ekosistem IoT Anda",
-    badge: "Tersedia Sekarang",
-    price: "Rp 2.500.000",
-    image: "/images/product-sensor.png",
-    description: `Smart Sensor Hub adalah perangkat IoT multi-protokol dari Unova yang dirancang untuk menjadi otak dari setiap instalasi smart building. 
-    Dengan kemampuan menghubungkan berbagai protokol industri seperti KNX, MQTT, dan Matter, perangkat ini memudahkan integrator sistem untuk menyatukan berbagai merek dan teknologi dalam satu ekosistem yang harmonis.`,
-    highlights: [
-      "Kompatibel dengan KNX, MQTT, Zigbee, dan Matter",
-      "Jangkauan sinyal RF hingga 100 meter",
-      "Perlindungan IP67 — tahan debu dan air",
-      "Konsumsi daya ultra-rendah < 0.5W standby",
-      "Enkripsi AES-256 untuk komunikasi aman",
-      "OTA update — selalu perbarui firmware tanpa downtime",
-    ],
-    specs: {
-      "Protokol Komunikasi": "KNX, MQTT, Zigbee 3.0, Matter, Wi-Fi 6",
-      "Jangkauan Sinyal": "Hingga 100m (line-of-sight)",
-      "Tegangan Input": "12–30V DC / PoE 802.3af",
-      "Konsumsi Daya": "< 0.5W (standby) / 2W (aktif)",
-      "Perlindungan": "IP67 (tahan debu & air)",
-      "Dimensi": "Ø 85mm × 45mm",
-      "Suhu Operasi": "-20°C hingga +60°C",
-      "Sertifikasi": "CE, FCC, SRRC",
-      "Garansi": "2 tahun",
-    },
-    useCases: [
-      {
-        icon: "🏠",
-        title: "Smart Home Premium",
-        desc: "Integrasikan pencahayaan, tirai, AC, dan keamanan dalam satu antarmuka.",
-      },
-      {
-        icon: "🏢",
-        title: "Bangunan Komersial",
-        desc: "Skalakan ke ratusan titik sensor untuk gedung perkantoran dan hotel.",
-      },
-      {
-        icon: "🏭",
-        title: "Fasilitas Industri",
-        desc: "Monitoring kondisi lingkungan dan otomasi proses untuk efisiensi produksi.",
-      },
-    ],
-    compatibleWith: ["1Home", "KNX", "Loxone", "Home Assistant", "CRESTRON"],
-  },
-};
+import type { Metadata } from "next";
 
 interface ProductData {
   id: string;
   name: string;
   tagline: string;
   badge: string;
+  badgeColor: string;
   price: string;
   image: string;
+  focus: string;
   description: string;
   highlights: string[];
   specs: Record<string, string>;
@@ -67,11 +20,62 @@ interface ProductData {
   compatibleWith: string[];
 }
 
-export default async function ProductDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+const products: Record<string, ProductData> = {
+  "gas-leak-prevention": {
+    id: "gas-leak-prevention",
+    name: "Gas Leak Prevention",
+    tagline: "Proteksi otomatis dari kebocoran gas",
+    badge: "Tersedia Sekarang",
+    badgeColor: "bg-green-500",
+    price: "Rp 1.800.000",
+    image: "/images/product-sensor.png",
+    focus: "🛡️ Keamanan",
+    description:
+      "Gas Leak Prevention adalah solusi keamanan rumah dari Unova yang mendeteksi kebocoran LPG dan gas alam secara real-time. Dilengkapi valve otomatis yang langsung menutup regulator gas saat kebocoran terdeteksi, serta alarm suara keras dan notifikasi ke smartphone — memberikan perlindungan berlapis untuk mencegah risiko kebakaran dan ledakan.",
+    highlights: [
+      "Deteksi kebocoran LPG, gas alam, dan gas beracun (CO)",
+      "Valve elektromagnetik otomatis menutup regulator < 10 detik",
+      "Alarm suara 85dB + notifikasi push ke smartphone",
+      "Koneksi Wi-Fi — pantau status gas dari mana saja",
+      "Sensor dual-element untuk akurasi tinggi, false alarm rendah",
+      "Backup baterai 24 jam saat listrik padam",
+      "Instalasi mudah — plug & play dengan panduan video",
+      "Kompatibel dengan ekosistem Unova dan smart home lain",
+    ],
+    specs: {
+      "Gas yang Dideteksi": "LPG, Gas Alam (Metana), CO",
+      "Sensitivitas": "100–10.000 ppm (adjustable)",
+      "Waktu Respons": "< 10 detik sejak deteksi",
+      "Alarm Suara": "85 dB @ 1 meter",
+      "Konektivitas": "Wi-Fi 2.4GHz (IEEE 802.11 b/g/n)",
+      "Tegangan Input": "220V AC / Backup 3.7V Li-ion",
+      "Backup Baterai": "Hingga 24 jam",
+      "Dimensi Sensor": "Ø 110mm × 38mm",
+      "Dimensi Valve": "1/2 inch BSP, DN15",
+      "Suhu Operasi": "0°C hingga +50°C",
+      "Sertifikasi": "SNI, CE, RoHS",
+      "Garansi": "2 tahun",
+    },
+    useCases: [
+      { icon: "🏠", title: "Dapur Rumah Tangga", desc: "Proteksi kompor gas dari kebocoran regulator, selang, maupun fitting yang longgar." },
+      { icon: "🏢", title: "Restoran & Café", desc: "Keamanan operasional dapur komersial 24/7 dengan monitoring jarak jauh via dashboard." },
+      { icon: "🏨", title: "Hotel & Kost", desc: "Lindungi puluhan unit sekaligus dengan sistem alert terpusat ke manajemen." },
+    ],
+    compatibleWith: ["Unova App", "Google Home", "Amazon Alexa", "Home Assistant", "MQTT"],
+  },
+};
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const product = products[slug];
+  if (!product) return { title: "Produk tidak ditemukan" };
+  return {
+    title: product.name,
+    description: product.description.slice(0, 160),
+  };
+}
+
+export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const product = products[slug];
   if (!product) notFound();
@@ -82,18 +86,15 @@ export default async function ProductDetailPage({
       <section className="relative pt-32 pb-16 bg-brand-navy overflow-hidden noise">
         <div className="absolute inset-0 grid-bg opacity-30" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <Link
-            href="/products"
-            className="inline-flex items-center gap-2 text-white/50 text-sm hover:text-white transition-colors mb-8"
-          >
-            <ArrowLeft size={16} />
-            Kembali ke Produk
+          <Link href="/products" className="inline-flex items-center gap-2 text-white/50 text-sm hover:text-white transition-colors mb-8">
+            <ArrowLeft size={16} />Kembali ke Produk
           </Link>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-block px-3 py-1 rounded-full bg-green-500 text-white text-xs font-bold mb-4">
-                {product.badge}
-              </span>
+              <div className="flex items-center gap-2 mb-4 flex-wrap">
+                <span className={`px-3 py-1 rounded-full text-white text-xs font-bold ${product.badgeColor}`}>{product.badge}</span>
+                <span className="px-3 py-1 rounded-full bg-brand-blue/20 text-brand-blue text-xs font-bold">{product.focus}</span>
+              </div>
               <h1 className="text-5xl font-display font-bold text-white">{product.name}</h1>
               <p className="mt-2 text-brand-blue text-xl font-medium">{product.tagline}</p>
               <p className="mt-6 text-white/60 leading-relaxed text-lg">{product.description}</p>
@@ -104,48 +105,30 @@ export default async function ProductDetailPage({
                 </div>
               </div>
               <div className="mt-8 flex gap-4 flex-wrap">
-                <Link
-                  href="/contact-us"
-                  className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-brand-blue text-white font-semibold hover:bg-white hover:text-brand-navy transition-all"
-                >
-                  Pesan Sekarang
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <Link href="/contact-us" className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-brand-blue text-white font-semibold hover:bg-white hover:text-brand-navy transition-all">
+                  Pesan Sekarang<ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all"
-                >
-                  <Download size={18} />
-                  Unduh Datasheet
+                <a href="#" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all">
+                  <Download size={18} />Unduh Datasheet
                 </a>
               </div>
             </div>
             <div className="flex items-center justify-center">
               <div className="relative p-12 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={400}
-                  height={400}
-                  className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700"
-                />
+                <Image src={product.image} alt={product.name} width={400} height={400} className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Highlights */}
+      {/* Highlights + Specs */}
       <section className="section-padding bg-brand-light">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
-                Fitur Utama
-              </span>
-              <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
-                Dibangun untuk Performa Terbaik
-              </h2>
+              <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Fitur Utama</span>
+              <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Perlindungan Berlapis,<br />Respons Kilat</h2>
               <ul className="mt-8 space-y-4">
                 {product.highlights.map((item) => (
                   <li key={item} className="flex items-start gap-3">
@@ -155,8 +138,6 @@ export default async function ProductDetailPage({
                 ))}
               </ul>
             </div>
-
-            {/* Specs Table */}
             <div className="bg-white rounded-2xl border border-brand-blue/10 overflow-hidden">
               <div className="px-6 py-4 bg-brand-navy">
                 <h3 className="text-white font-display font-semibold">Spesifikasi Teknis</h3>
@@ -174,23 +155,42 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
-      {/* Use Cases */}
+      {/* How it works */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
-              Kasus Penggunaan
-            </span>
-            <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
-              Solusi untuk Setiap Skala
-            </h2>
+            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Cara Kerja</span>
+            <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Proteksi dalam 3 Langkah</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { step: "01", icon: ShieldAlert, title: "Deteksi", desc: "Sensor dual-element mendeteksi konsentrasi gas berbahaya dalam hitungan detik, jauh sebelum tercium bau." },
+              { step: "02", icon: Bell, title: "Alarm & Notifikasi", desc: "Alarm 85dB langsung berbunyi. Notifikasi push dikirim ke smartphone Anda dan keluarga secara bersamaan." },
+              { step: "03", icon: Zap, title: "Valve Otomatis", desc: "Valve elektromagnetik menutup aliran gas secara otomatis. Sumber kebocoran diisolasi sebelum memicu bahaya." },
+            ].map((s) => (
+              <div key={s.step} className="relative p-8 rounded-2xl bg-brand-light border border-brand-blue/10 hover:border-brand-blue/30 hover:shadow-lg transition-all">
+                <div className="text-7xl font-display font-bold text-brand-blue/10 absolute top-4 right-6 select-none">{s.step}</div>
+                <div className="w-12 h-12 rounded-xl bg-brand-navy flex items-center justify-center mb-4">
+                  <s.icon size={22} className="text-white" />
+                </div>
+                <h3 className="font-display font-bold text-brand-navy text-xl mb-2">{s.title}</h3>
+                <p className="text-brand-navy/60 text-sm leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases */}
+      <section className="section-padding bg-brand-light">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Kasus Penggunaan</span>
+            <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Cocok untuk Berbagai Lingkungan</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {product.useCases.map((uc) => (
-              <div
-                key={uc.title}
-                className="p-8 rounded-2xl bg-brand-light border border-brand-blue/10 hover:border-brand-blue/30 hover:shadow-lg transition-all"
-              >
+              <div key={uc.title} className="p-8 rounded-2xl bg-white border border-brand-blue/10 hover:border-brand-blue/30 hover:shadow-lg transition-all">
                 <span className="text-4xl">{uc.icon}</span>
                 <h3 className="mt-4 font-display font-bold text-brand-navy text-xl">{uc.title}</h3>
                 <p className="mt-2 text-brand-navy/60 text-sm leading-relaxed">{uc.desc}</p>
@@ -200,18 +200,13 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
-      {/* Compatible With */}
-      <section className="py-16 bg-brand-light border-t border-brand-blue/10">
+      {/* Compatible */}
+      <section className="py-16 bg-white border-t border-brand-blue/10">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-brand-navy/40 text-sm font-semibold tracking-widest uppercase mb-8">
-            Kompatibel dengan Platform Terkemuka
-          </p>
+          <p className="text-brand-navy/40 text-sm font-semibold tracking-widest uppercase mb-8">Kompatibel dengan</p>
           <div className="flex flex-wrap gap-4 justify-center">
             {product.compatibleWith.map((name) => (
-              <span
-                key={name}
-                className="px-6 py-3 rounded-xl bg-white border border-brand-blue/15 text-brand-navy/60 font-semibold text-sm hover:text-brand-navy transition-colors"
-              >
+              <span key={name} className="px-6 py-3 rounded-xl bg-brand-light border border-brand-blue/15 text-brand-navy/60 font-semibold text-sm hover:text-brand-navy transition-colors">
                 {name}
               </span>
             ))}

@@ -53,12 +53,12 @@ const values = [
 ];
 
 const milestones = [
-  { year: "2022", event: "Unova didirikan di Jakarta dengan tim 5 orang" },
-  { year: "2023", event: "Peluncuran produk pertama — Smart Sensor Hub v1" },
-  { year: "2023", event: "100 instalasi aktif pertama di Jabodetabek" },
-  { year: "2024", event: "Ekspansi ke Surabaya, Bali, dan Medan" },
-  { year: "2024", event: "Raih penghargaan Startup IoT Terbaik Indonesia" },
-  { year: "2025", event: "500+ instalasi aktif, 50+ mitra teknologi" },
+  { date: "Januari 2022", event: "Unova didirikan di Jakarta dengan tim 5 orang" },
+  { date: "Agustus 2023", event: "Peluncuran produk pertama — Smart Sensor Hub v1" },
+  { date: "November 2023", event: "100 instalasi aktif pertama di Jabodetabek" },
+  { date: "Maret 2024", event: "Ekspansi ke Surabaya, Bali, dan Medan" },
+  { date: "September 2024", event: "Raih penghargaan Startup IoT Terbaik Indonesia" },
+  { date: "Januari 2025", event: "500+ instalasi aktif, 50+ mitra teknologi" },
 ];
 
 export default function AboutPage() {
@@ -100,20 +100,24 @@ export default function AboutPage() {
               </h2>
               <div className="mt-6 space-y-4 text-brand-navy/70 leading-relaxed">
                 <p>
-                  Pada 2022, para pendiri Unova bertanya: mengapa teknologi smart home
-                  yang canggih hanya bisa dinikmati oleh segelintir orang dengan budget
-                  besar? Dan mengapa integrasinya harus serumit itu?
+                  Pada 2022, para pendiri Unova bertanya: mengapa insiden kebakaran akibat
+                  kebocoran gas masih terus terjadi di rumah-rumah Indonesia, padahal
+                  teknologi pencegahannya sudah ada? Dan mengapa kualitas udara dalam
+                  ruangan — yang langsung berdampak pada kesehatan keluarga — masih
+                  diabaikan begitu saja?
                 </p>
                 <p>
-                  Dari pertanyaan sederhana itu lahirlah Unova — sebuah misi untuk
-                  mendemokratisasi teknologi IoT di Indonesia. Kami percaya bahwa
-                  kehidupan yang lebih cerdas dan terkoneksi adalah hak setiap orang,
-                  bukan privilege.
+                  Dari pertanyaan itu lahirlah Unova — startup home technology yang fokus
+                  pada dua hal yang paling fundamental: <strong>keamanan</strong> dan
+                  <strong> kesehatan</strong> di lingkungan rumah. Kami percaya bahwa
+                  teknologi cerdas seharusnya bisa diakses semua orang, bukan hanya mereka
+                  yang punya budget premium.
                 </p>
                 <p>
-                  Hari ini, Unova telah melayani ratusan rumah, gedung perkantoran, dan
-                  fasilitas komersial di seluruh Indonesia, dengan tim yang terus tumbuh
-                  dan bersemangat untuk membawa dampak lebih besar.
+                  Hari ini, Unova telah melayani ratusan rumah dan fasilitas komersial
+                  di seluruh Indonesia. Produk kami, mulai dari Gas Leak Prevention hingga
+                  monitor kualitas udara yang akan datang, dirancang untuk memberikan
+                  ketenangan pikiran setiap hari — bahkan saat Anda tidak di rumah.
                 </p>
               </div>
             </div>
@@ -128,8 +132,9 @@ export default function AboutPage() {
                   <h3 className="font-display font-bold text-brand-navy text-lg">Misi</h3>
                 </div>
                 <p className="text-brand-navy/60 leading-relaxed">
-                  Menghadirkan solusi IoT yang accessible, andal, dan berdampak untuk
-                  mempercepat adopsi teknologi cerdas di Indonesia.
+                  Menghadirkan produk home technology yang melindungi keamanan dan
+                  meningkatkan kesehatan keluarga Indonesia — dengan solusi yang
+                  terjangkau, andal, dan mudah digunakan oleh siapa saja.
                 </p>
               </div>
               <div className="p-7 rounded-2xl bg-white border border-brand-blue/10 hover:border-brand-blue/30 hover:shadow-lg transition-all group">
@@ -194,9 +199,11 @@ export default function AboutPage() {
             <div className="space-y-8">
               {milestones.map((m, i) => (
                 <div key={i} className="flex items-start gap-6 pl-16 relative">
-                  <div className="absolute left-4 top-1.5 w-4 h-4 rounded-full border-2 border-brand-blue bg-brand-navy" />
-                  <div className="flex-1">
-                    <span className="text-brand-blue text-sm font-bold">{m.year}</span>
+                  <div className="absolute left-3 top-1 w-5 h-5 rounded-full border-2 border-brand-blue bg-brand-navy flex items-center justify-center">
+                    <span className="w-2 h-2 rounded-full bg-brand-blue" />
+                  </div>
+                  <div className="flex-1 pb-2">
+                    <span className="text-brand-blue text-sm font-bold block">{m.date}</span>
                     <p className="mt-1 text-white/70">{m.event}</p>
                   </div>
                 </div>

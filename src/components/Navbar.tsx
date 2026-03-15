@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -34,20 +33,19 @@ export default function Navbar() {
         <div className="flex items-center justify-between px-5 py-3">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div
-              className={`transition-all duration-500 ${
-                scrolled ? "h-7" : "h-8"
-              }`}
-            >
-              <Image
-                src="/images/logo.png"
+            <div className={`transition-all duration-500 ${scrolled ? "h-8" : "h-9"}`}>
+              {/* logoUnova.svg — warna diatur via CSS currentColor / filter */}
+              <img
+                src="/logoUnova.svg"
                 alt="Unova"
-                width={120}
-                height={32}
-                className={`object-contain transition-all duration-500 ${
-                  scrolled ? "h-7 brightness-0" : "h-8 brightness-0 invert"
-                }`}
-                style={{ width: "auto" }}
+                style={{
+                  height: scrolled ? "32px" : "36px",
+                  width: "auto",
+                  filter: scrolled
+                    ? "invert(10%) sepia(60%) saturate(800%) hue-rotate(205deg) brightness(40%)"
+                    : "invert(1) brightness(2)",
+                  transition: "all 0.4s ease",
+                }}
               />
             </div>
           </Link>
