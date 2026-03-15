@@ -59,7 +59,7 @@
         "department": "C-Level",
         "reportsTo": null,
         "bio": "Visioner di balik Unova dengan fokus pada strategi produk dan pengembangan bisnis home technology di Indonesia.",
-        "photo": null
+        "photo": "/images/anggota/dylan.jpeg"
       },
       {
         "id": "cto",
@@ -113,7 +113,7 @@
         "department": "Engineering",
         "reportsTo": "cto",
         "bio": "Membangun backend, API, dan aplikasi mobile yang menghubungkan perangkat Unova dengan pengguna.",
-        "photo": "/rifki.jpeg"
+        "photo": "/images/anggota/rifki.jpeg"
       },
       {
         "id": "creative-1",
@@ -149,7 +149,7 @@
         "department": "Operations",
         "reportsTo": "coo",
         "bio": "Mengelola hubungan dengan mitra bisnis dan mengembangkan saluran distribusi produk Unova.",
-        "photo": "/wilan.jpeg"
+        "photo": "/images/anggota/wilan.jpeg"
       }
     ]
   },
