@@ -61,14 +61,14 @@ export default function HomePage() {
           style={{ background: "radial-gradient(circle, rgba(111,150,209,0.12) 0%, transparent 70%)" }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center pt-36 pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center pt-24 pb-10">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#6F96D1]/30 text-brand-navy/70 text-sm font-medium mb-8 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             Selamat Datang di Unova
           </div>
 
-          {/* Headline */}
+          {/* Headline — ukuran dari kode asli */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[1.05] tracking-tight text-brand-navy">
             Smarter Ways,
             <br />
@@ -100,102 +100,144 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Dashboard Mockup */}
-          <div className="mt-20 relative max-w-2xl mx-auto">
-            <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#EDF0F5] to-transparent z-10 pointer-events-none" />
-            <div className="rounded-3xl border border-[#6F96D1]/20 shadow-2xl overflow-hidden bg-white"
-              style={{ boxShadow: "0 32px 80px rgba(111,150,209,0.18)" }}
-            >
-              {/* Window chrome */}
-              <div className="flex items-center gap-2 px-5 py-4 border-b border-[#6F96D1]/10 bg-[#EDF0F5]/60">
-                <div className="w-3 h-3 rounded-full bg-red-400/70" />
-                <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
-                <div className="w-3 h-3 rounded-full bg-green-400/70" />
-                <span className="ml-3 text-brand-navy/30 text-xs font-mono">Unova Home — Dashboard</span>
-              </div>
-              {/* Status bar */}
-              <div className="px-5 py-2.5 bg-green-50 border-b border-green-200/60 flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-green-700 text-xs font-semibold">Semua sistem normal · Pantauan aktif</span>
-              </div>
-              {/* Scene selector */}
-              <div className="p-5 grid grid-cols-4 gap-3 bg-[#EDF0F5]/40">
-                {[
-                  { icon: Moon, label: "Malam", active: false },
-                  { icon: Sun, label: "Pagi", active: false },
-                  { icon: UtensilsCrossed, label: "Masak", active: true },
-                  { icon: Users, label: "Keluarga", active: false },
-                ].map((item, i) => (
-                  <div key={i} className="flex flex-col items-center gap-2 p-3 rounded-xl text-xs font-medium transition-all"
-                    style={item.active ? {
-                      background: "linear-gradient(135deg, #6F96D1, #4a7bbf)",
-                      color: "white",
-                      border: "1px solid rgba(111,150,209,0.4)",
-                    } : {
-                      background: "white",
-                      color: "rgba(9,31,88,0.45)",
-                      border: "1px solid rgba(111,150,209,0.15)",
-                    }}
-                  >
-                    <item.icon size={20} />
-                    {item.label}
-                  </div>
-                ))}
-              </div>
-              {/* Safety cards */}
-              <div className="px-5 pb-2 grid grid-cols-2 gap-3">
-                <div className="p-4 rounded-2xl bg-green-50 border border-green-200/60 flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-green-100 flex items-center justify-center shrink-0">
-                    <ShieldAlert size={18} className="text-green-600" />
-                  </div>
-                  <div>
-                    <div className="text-brand-navy text-sm font-bold">Sensor Gas</div>
-                    <div className="text-green-600 text-xs font-semibold">Aman · 0 ppm</div>
-                    <div className="text-brand-navy/35 text-xs mt-0.5">Valve: Terbuka</div>
-                  </div>
-                </div>
-                <div className="p-4 rounded-2xl border flex items-start gap-3"
-                  style={{ background: "rgba(111,150,209,0.06)", borderColor: "rgba(111,150,209,0.2)" }}>
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ background: "rgba(111,150,209,0.15)" }}>
-                    <Wind size={18} style={{ color: "#6F96D1" }} />
-                  </div>
-                  <div>
-                    <div className="text-brand-navy text-sm font-bold">Kualitas Udara</div>
-                    <div className="text-xs font-semibold" style={{ color: "#6F96D1" }}>Baik · AQI 32</div>
-                    <div className="text-brand-navy/35 text-xs mt-0.5">PM2.5: 8 μg/m³</div>
-                  </div>
-                </div>
-                <div className="p-4 rounded-2xl border flex items-start gap-3"
-                  style={{ background: "rgba(111,150,209,0.06)", borderColor: "rgba(111,150,209,0.2)" }}>
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ background: "rgba(111,150,209,0.15)" }}>
-                    <Droplets size={18} style={{ color: "#6F96D1" }} />
-                  </div>
-                  <div>
-                    <div className="text-brand-navy text-sm font-bold">Kelembapan</div>
-                    <div className="text-xs font-semibold" style={{ color: "#6F96D1" }}>Optimal · 58%</div>
-                    <div className="text-brand-navy/35 text-xs mt-0.5">Target: 50–65%</div>
-                  </div>
-                </div>
-                <div className="p-4 rounded-2xl bg-orange-50 border border-orange-200/60 flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-orange-100 flex items-center justify-center shrink-0">
-                    <Thermometer size={18} className="text-orange-500" />
-                  </div>
-                  <div>
-                    <div className="text-brand-navy text-sm font-bold">Suhu Ruang</div>
-                    <div className="text-orange-500 text-xs font-semibold">24°C · Nyaman</div>
-                    <div className="text-brand-navy/35 text-xs mt-0.5">AC: Aktif</div>
+          {/* Dashboard + Produk — layout 1home.io style: produk terpotong di tepi */}
+          <div className="mt-10 relative">
+            {/* Fade bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#EDF0F5] to-transparent z-20 pointer-events-none" />
+            {/* Fade kiri & kanan */}
+            <div className="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-[#EDF0F5] to-transparent z-20 pointer-events-none" />
+            <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-[#EDF0F5] to-transparent z-20 pointer-events-none" />
+
+            <div className="flex items-end justify-center gap-4">
+
+              {/* Produk kiri */}
+              <div className="hidden lg:block shrink-0 -translate-x-4 z-10" style={{ width: 360 }}>
+                <Image
+                  src="/images/fotoProduct/FP-Gas_Leak.png"
+                  alt="Gas Leak Prevention"
+                  width={360}
+                  height={360}
+                  className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                />
+                <div className="text-center mt-3">
+                  <div className="inline-block px-4 py-2 rounded-xl font-extrabold text-base" style={{ color: "#6F96D1" }}>
+                    Gas Leak Prevention
                   </div>
                 </div>
               </div>
-              {/* Bottom bar */}
-              <div className="mx-5 mb-5 mt-3 p-3 rounded-xl border flex items-center gap-3"
-                style={{ background: "rgba(111,150,209,0.05)", borderColor: "rgba(111,150,209,0.15)" }}>
-                <Heart size={16} className="text-pink-400 shrink-0" />
-                <span className="text-brand-navy/45 text-xs">Keluarga Anda terlindungi 24 jam · Terakhir dicek 2 menit lalu</span>
-                <div className="ml-auto w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+
+              {/* Dashboard tengah */}
+              <div className="flex-1 max-w-2xl rounded-3xl border border-[#6F96D1]/20 shadow-2xl overflow-hidden bg-white z-10"
+                style={{ boxShadow: "0 32px 80px rgba(111,150,209,0.18)" }}
+              >
+                {/* Window chrome */}
+                <div className="flex items-center gap-2 px-5 py-4 border-b border-[#6F96D1]/10 bg-[#EDF0F5]/60">
+                  <div className="w-3 h-3 rounded-full bg-red-400/70" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
+                  <div className="w-3 h-3 rounded-full bg-green-400/70" />
+                  <span className="ml-3 text-brand-navy/30 text-xs font-mono">Unova Home — Dashboard</span>
+                </div>
+                {/* Status bar */}
+                <div className="px-5 py-2.5 bg-green-50 border-b border-green-200/60 flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-green-700 text-xs font-semibold">Semua sistem normal · Pantauan aktif</span>
+                </div>
+                {/* Scene selector */}
+                <div className="p-5 grid grid-cols-4 gap-3 bg-[#EDF0F5]/40">
+                  {[
+                    { icon: Moon, label: "Malam", active: false },
+                    { icon: Sun, label: "Pagi", active: false },
+                    { icon: UtensilsCrossed, label: "Masak", active: true },
+                    { icon: Users, label: "Keluarga", active: false },
+                  ].map((item, i) => (
+                    <div key={i} className="flex flex-col items-center gap-2 p-3 rounded-xl text-xs font-medium transition-all"
+                      style={item.active ? {
+                        background: "linear-gradient(135deg, #6F96D1, #4a7bbf)",
+                        color: "white",
+                        border: "1px solid rgba(111,150,209,0.4)",
+                      } : {
+                        background: "white",
+                        color: "rgba(9,31,88,0.45)",
+                        border: "1px solid rgba(111,150,209,0.15)",
+                      }}
+                    >
+                      <item.icon size={20} />
+                      {item.label}
+                    </div>
+                  ))}
+                </div>
+                {/* Safety cards */}
+                <div className="px-5 pb-2 grid grid-cols-2 gap-3">
+                  <div className="p-4 rounded-2xl bg-green-50 border border-green-200/60 flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-green-100 flex items-center justify-center shrink-0">
+                      <ShieldAlert size={18} className="text-green-600" />
+                    </div>
+                    <div>
+                      <div className="text-brand-navy text-sm font-bold">Sensor Gas</div>
+                      <div className="text-green-600 text-xs font-semibold">Aman · 0 ppm</div>
+                      <div className="text-brand-navy/35 text-xs mt-0.5">Valve: Terbuka</div>
+                    </div>
+                  </div>
+                  <div className="p-4 rounded-2xl border flex items-start gap-3"
+                    style={{ background: "rgba(111,150,209,0.06)", borderColor: "rgba(111,150,209,0.2)" }}>
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ background: "rgba(111,150,209,0.15)" }}>
+                      <Wind size={18} style={{ color: "#6F96D1" }} />
+                    </div>
+                    <div>
+                      <div className="text-brand-navy text-sm font-bold">Kualitas Udara</div>
+                      <div className="text-xs font-semibold" style={{ color: "#6F96D1" }}>Baik · AQI 32</div>
+                      <div className="text-brand-navy/35 text-xs mt-0.5">PM2.5: 8 μg/m³</div>
+                    </div>
+                  </div>
+                  <div className="p-4 rounded-2xl border flex items-start gap-3"
+                    style={{ background: "rgba(111,150,209,0.06)", borderColor: "rgba(111,150,209,0.2)" }}>
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ background: "rgba(111,150,209,0.15)" }}>
+                      <Droplets size={18} style={{ color: "#6F96D1" }} />
+                    </div>
+                    <div>
+                      <div className="text-brand-navy text-sm font-bold">Kelembapan</div>
+                      <div className="text-xs font-semibold" style={{ color: "#6F96D1" }}>Optimal · 58%</div>
+                      <div className="text-brand-navy/35 text-xs mt-0.5">Target: 50–65%</div>
+                    </div>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-orange-50 border border-orange-200/60 flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-orange-100 flex items-center justify-center shrink-0">
+                      <Thermometer size={18} className="text-orange-500" />
+                    </div>
+                    <div>
+                      <div className="text-brand-navy text-sm font-bold">Suhu Ruang</div>
+                      <div className="text-orange-500 text-xs font-semibold">24°C · Nyaman</div>
+                      <div className="text-brand-navy/35 text-xs mt-0.5">AC: Aktif</div>
+                    </div>
+                  </div>
+                </div>
+                {/* Bottom bar */}
+                <div className="mx-5 mb-5 mt-3 p-3 rounded-xl border flex items-center gap-3"
+                  style={{ background: "rgba(111,150,209,0.05)", borderColor: "rgba(111,150,209,0.15)" }}>
+                  <Heart size={16} className="text-pink-400 shrink-0" />
+                  <span className="text-brand-navy/45 text-xs">Keluarga Anda terlindungi 24 jam · Terakhir dicek 2 menit lalu</span>
+                  <div className="ml-auto w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                </div>
               </div>
+
+              {/* Produk kanan */}
+              <div className="hidden lg:block shrink-0 translate-x-4 z-10" style={{ width: 360 }}>
+                <Image
+                  src="/images/fotoProduct/FP-Gas_Leak.png"
+                  alt="Valve Regulator"
+                  width={360}
+                  height={360}
+                  className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                />
+                <div className="text-center mt-3">
+                  <div className="inline-block px-4 py-2 rounded-xl font-extrabold text-base" style={{ color: "#6F96D1" }}>
+                    Valve Regulator
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -218,9 +260,9 @@ export default function HomePage() {
       </section>
 
       {/* ─── FITUR ────────────────────────────────────────────────────── */}
-      <section className="py-14 bg-brand-light">
+      <section className="py-10 bg-brand-light">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-10">
+          <div className="text-center mb-8">
             <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Mengapa Unova</span>
             <h2 className="mt-3 text-4xl md:text-5xl font-display font-bold text-brand-navy">
               Rumah yang Aman
@@ -285,7 +327,7 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="relative p-10 rounded-3xl bg-brand-light border border-brand-blue/10 flex items-center justify-center">
-                <Image src="/images/fotoProduct/FP-Gas_Leak.png" alt="Gas Leak Prevention" width={400} height={400} className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+                <Image src="/images/product-sensor.png" alt="Gas Leak Prevention" width={400} height={400} className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="absolute -top-4 -right-4 glass px-4 py-2 rounded-xl shadow-lg border border-green-500/30">
                 <span className="inline-flex items-center gap-1.5 text-green-600 text-sm font-bold">

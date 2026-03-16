@@ -164,7 +164,7 @@ export default function AboutPage() {
               </h2>
               <div className="mt-6 space-y-4 text-brand-navy/65 leading-relaxed">
                 <p>
-                  Pada 2022, para pendiri Unova bertanya: mengapa insiden kebakaran akibat
+                  Pada 2025, para pendiri Unova bertanya: mengapa insiden kebakaran akibat
                   kebocoran gas masih terus terjadi di rumah-rumah Indonesia, padahal
                   teknologi pencegahannya sudah ada?
                 </p>
@@ -188,11 +188,12 @@ export default function AboutPage() {
                   </div>
                   <h3 className="font-display font-bold text-brand-navy text-lg">Misi</h3>
                 </div>
-                <p className="text-brand-navy/60 leading-relaxed">
-                  Menghadirkan produk home technology yang melindungi keamanan dan
-                  meningkatkan kesehatan keluarga Indonesia — terjangkau, andal, dan
-                  mudah digunakan oleh siapa saja.
-                </p>
+                <ul className="list-disc pl-5 space-y-2 text-brand-navy/60 leading-relaxed">
+                  <li>Mengembangkan produk inovatif untuk menyelesaikan masalah masyarakat.</li>
+                  <li>Menghubungkan teknologi dengan kebutuhan pengguna untuk menciptakan solusi berkelanjutan.</li>
+                  <li>Menciptakan solusi terbaik yang memenuhi kebutuhan tanpa mengorbankan kualitas.</li>
+                  <li>Memberikan layanan kepada masyarakat melalui kegiatan berbasis keahlian teknik.</li>
+                </ul>
               </div>
               <div className="p-7 rounded-2xl bg-white border border-[#6F96D1]/15 hover:border-[#6F96D1]/35 hover:shadow-lg transition-all">
                 <div className="flex items-center gap-3 mb-3">
@@ -202,8 +203,7 @@ export default function AboutPage() {
                   <h3 className="font-display font-bold text-brand-navy text-lg">Visi</h3>
                 </div>
                 <p className="text-brand-navy/60 leading-relaxed">
-                  Menjadi merek home technology terpercaya di Asia Tenggara yang dipercaya
-                  jutaan keluarga untuk melindungi rumah mereka setiap hari.
+                  Menjadi perusahaan terdepan dalam solusi teknologi, mulai dari kebutuhan rumah tangga hingga kebutuhan industri. Menciptakan solusi nyata untuk masalah nyata. Disesuaikan secara lokal untuk memenuhi kebutuhan setiap pengguna
                 </p>
               </div>
             </div>
