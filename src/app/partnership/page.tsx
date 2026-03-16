@@ -52,7 +52,7 @@ function PartnerCard({ partner, muted = false }: { partner: Partner; muted?: boo
     >
       {partner.logo ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={partner.logo} alt={partner.name} className="h-18 object-contain" />
+        <img src={partner.logo} alt={partner.name} className="h-10 object-contain" />
       ) : (
         <>
           <span className="text-brand-navy/60 font-display font-bold text-sm leading-tight">
@@ -97,10 +97,20 @@ export default function PartnershipPage() {
       </section>
 
       {/* Partner Logo Slider */}
-      <section className="py-14 overflow-hidden border-b border-[#6F96D1]/15" style={{ background: "#EDF0F5" }}>
+      <section className="py-8 overflow-hidden border-b border-[#6F96D1]/15" style={{ background: "#EDF0F5" }}>
         <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
           <p className="text-brand-navy/40 text-xs font-bold tracking-widest uppercase">
             Mitra yang telah bergabung
+          </p>
+          <p className="text-brand-navy/30 text-xs mt-2">
+            Tambah mitra: edit{" "}
+            <code className="font-mono bg-white px-1.5 py-0.5 rounded text-brand-navy/50">
+              unova.partners
+            </code>{" "}
+            di{" "}
+            <code className="font-mono bg-white px-1.5 py-0.5 rounded text-brand-navy/50">
+              package.json
+            </code>
           </p>
         </div>
         {/* Row 1 — kanan, seamless loop */}
@@ -128,9 +138,9 @@ export default function PartnershipPage() {
       </section>
 
       {/* Partner Types */}
-      <section className="section-padding bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#6F96D1" }}>
               Pilih Jalur Anda
             </span>
@@ -172,7 +182,7 @@ export default function PartnershipPage() {
       </section>
 
       {/* Benefits */}
-      <section className="section-padding" style={{ background: "#EDF0F5" }}>
+      <section className="py-12" style={{ background: "#EDF0F5" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
