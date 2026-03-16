@@ -207,7 +207,7 @@ export default function HomePage() {
 
       {/* ─── STATS ────────────────────────────────────────────────────── */}
       <section className="border-t border-[#6F96D1]/15" style={{ background: "#EDF0F5" }}>
-        <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
               <div className="text-4xl font-display font-bold" style={{ color: "#6F96D1" }}>{s.value}</div>
@@ -218,9 +218,9 @@ export default function HomePage() {
       </section>
 
       {/* ─── FITUR ────────────────────────────────────────────────────── */}
-      <section className="section-padding bg-brand-light">
+      <section className="py-14 bg-brand-light">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Mengapa Unova</span>
             <h2 className="mt-3 text-4xl md:text-5xl font-display font-bold text-brand-navy">
               Rumah yang Aman
@@ -246,7 +246,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── PRODUK HIGHLIGHT ─────────────────────────────────────────── */}
-      <section className="section-padding bg-white">
+      <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -285,7 +285,7 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="relative p-10 rounded-3xl bg-brand-light border border-brand-blue/10 flex items-center justify-center">
-                <Image src="/images/fotoProduct/FP-Gas_Leak.png" alt="Gas Leak Prevention" width={400} height={400} className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+                <Image src="/images/product-sensor.png" alt="Gas Leak Prevention" width={400} height={400} className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="absolute -top-4 -right-4 glass px-4 py-2 rounded-xl shadow-lg border border-green-500/30">
                 <span className="inline-flex items-center gap-1.5 text-green-600 text-sm font-bold">
@@ -301,25 +301,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── PARTNER SLIDER ───*/}
+      {/* ─── PARTNER SLIDER ── infinite loop yang benar ───────────────── */}
       {partners.length > 0 && (
-        <section className="py-14 border-t border-[#6F96D1]/15 overflow-hidden" style={{ background: "#EDF0F5" }}>
+        <section className="py-10 border-t border-[#6F96D1]/15 overflow-hidden" style={{ background: "#EDF0F5" }}>
+          <style>{`
+            @keyframes slider {
+              from { transform: translateX(0); }
+              to   { transform: translateX(-50%); }
+            }
+          `}</style>
           <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
             <span className="text-brand-navy/35 text-xs font-bold tracking-widest uppercase">
               Dipercaya oleh mitra terkemuka
             </span>
           </div>
-          {/* Fade mask kiri & kanan */}
           <div style={{
             maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
             WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
             overflow: "hidden",
           }}>
-            {/*
-              1 track berisi 2 set identik.
-              Animasi geser -50% (= 1 set) → posisi kembali ke awal = seamless.
-              Ubah durasi "12s" untuk atur kecepatan.
-            */}
             <div className="flex w-max" style={{ animation: "slider 12s linear infinite" }}>
               {[...partners, ...partners].map((p, i) => (
                 <span key={i} className="flex items-center gap-10 px-5 shrink-0">

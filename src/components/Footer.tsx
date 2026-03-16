@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-brand-navy text-white">
       {/* CTA Section */}
       <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
               Mari Berkolaborasi
@@ -41,7 +41,7 @@ export default function Footer() {
       </div>
 
       {/* Links */}
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-10">
         <div className="col-span-2 md:col-span-1">
           <Image
             src="/logoUnova.svg"
