@@ -63,7 +63,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-5">
           {/* Email */}
           <a
-            href="mailto:hello@unova.id"
+            href="mailto:unovahometech@gmail.com"
             className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-[#6F96D1]/15 hover:border-[#6F96D1]/35 hover:shadow-md transition-all group"
           >
             <div
@@ -77,7 +77,7 @@ export default function ContactPage() {
                 Email
               </div>
               <div className="font-display font-bold text-brand-navy mt-1 group-hover:text-[#6F96D1] transition-colors">
-                hello@unova.id
+                unovahometech@gmail.com
               </div>
               <div className="flex items-center gap-1 text-brand-navy/40 text-xs mt-1">
                 <Clock size={11} />
@@ -237,7 +237,7 @@ export default function ContactPage() {
                           Email *
                         </label>
                         <input
-                          type="email"
+                          type="unovahometech@gmail.com"
                           required
                           value={form.email}
                           onChange={(e) => setForm({ ...form, email: e.target.value })}
