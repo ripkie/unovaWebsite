@@ -10,9 +10,6 @@ const nextConfig: NextConfig = {
     ],
   },
   // Suppress Node.js 22 experimental localStorage conflicts
-  experimental: {
-    serverComponentsExternalPackages: [],
-  },
 };
 
 export default nextConfig;
