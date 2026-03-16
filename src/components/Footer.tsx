@@ -128,7 +128,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2 text-white/60 text-sm">
               <Mail size={14} className="mt-0.5 shrink-0 text-brand-blue" />
-              hello@unova.id
+              unovahometech@gmail.com
             </li>
             <li className="flex items-start gap-2 text-white/60 text-sm">
               <Phone size={14} className="mt-0.5 shrink-0 text-brand-blue" />
