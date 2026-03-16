@@ -65,7 +65,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-32 pb-12 bg-white border-b border-[#6F96D1]/15">
+      <section className="pt-28 pb-8 bg-white border-b border-[#6F96D1]/15">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <span className="inline-block px-3 py-1 rounded-full bg-[#EDF0F5] text-[#6F96D1] text-xs font-bold tracking-widest uppercase mb-4">
             Produk Kami
@@ -98,7 +98,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Available Products */}
-      <section className="section-padding bg-brand-light">
+      <section className="py-12 bg-brand-light">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-10">
             <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Tersedia Sekarang</span>
@@ -109,25 +109,27 @@ export default function ProductsPage() {
             <div key={product.id} className="bg-white rounded-3xl border border-brand-blue/10 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-brand-blue/10 transition-all duration-500">
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Image */}
-                <div className="relative bg-brand-light flex items-center justify-center p-16 border-r border-brand-blue/10">
+                <div className="relative flex items-center justify-center p-12 border-r border-brand-blue/10" style={{ background: "#EDF0F5" }}>
                   <div className="absolute top-6 left-6 flex gap-2 flex-wrap">
                     <span className={`px-3 py-1 rounded-full text-white text-xs font-bold ${product.badgeColor}`}>{product.badge}</span>
                     <span className={`px-3 py-1 rounded-full text-xs font-bold ${product.focusColor}`}>{product.focus}</span>
                   </div>
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    width={360}
-                    height={360}
-                    className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700"
-                  />
+                  <div className="bg-[#edf0f5c4] rounded-2xl p-8 shadow-md border border-brand-blue/10">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      width={360}
+                      height={360}
+                      className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
                 </div>
 
                 {/* Info */}
                 <div className="p-10 lg:p-14 flex flex-col justify-center">
                   <h2 className="text-3xl font-display font-bold text-brand-navy">{product.name}</h2>
                   <p className="mt-1 text-brand-blue font-medium">{product.tagline}</p>
-                  <p className="mt-4 text-brand-navy/60 leading-relaxed">{product.description}</p>
+                  <p className="mt-4 text-brand-navy/60 leading-relaxed text-justify">{product.description}</p>
 
                   {/* Key highlights */}
                   <div className="mt-6 space-y-2">
