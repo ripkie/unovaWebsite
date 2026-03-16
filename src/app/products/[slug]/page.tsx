@@ -37,15 +37,15 @@ const products: Record<string, ProductData> = {
       "Deteksi kebocoran LPG, gas alam, dan gas beracun (CO)",
       "Valve elektromagnetik otomatis menutup regulator < 10 detik",
       "Alarm suara 85dB + notifikasi push ke smartphone",
-      "Koneksi Wi-Fi - pantau status gas dari mana saja",
+      "Koneksi Wi-Fi — pantau status gas dari mana saja",
       "Sensor dual-element untuk akurasi tinggi, false alarm rendah",
       "Backup baterai 24 jam saat listrik padam",
-      "Instalasi mudah - plug & play dengan panduan video",
+      "Instalasi mudah — plug & play dengan panduan video",
       "Kompatibel dengan ekosistem Unova dan smart home lain",
     ],
     specs: {
       "Gas yang Dideteksi": "LPG, Gas Alam (Metana), CO",
-      "Sensitivitas": "100-10.000 ppm (adjustable)",
+      "Sensitivitas": "100–10.000 ppm (adjustable)",
       "Waktu Respons": "< 10 detik sejak deteksi",
       "Alarm Suara": "85 dB @ 1 meter",
       "Konektivitas": "Wi-Fi 2.4GHz (IEEE 802.11 b/g/n)",
@@ -84,7 +84,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 pb-12 bg-white border-b border-[#6F96D1]/15">
+      <section className="pt-28 pb-8 bg-white border-b border-[#6F96D1]/15">
         <div className="max-w-7xl mx-auto px-6">
           <Link href="/products" className="inline-flex items-center gap-2 text-brand-navy/40 text-sm hover:text-brand-navy transition-colors mb-8">
             <ArrowLeft size={16} />Kembali ke Produk
@@ -129,7 +129,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </section>
 
       {/* Highlights + Specs */}
-      <section className="section-padding bg-brand-light">
+      <section className="py-10 bg-brand-light">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -162,7 +162,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </section>
 
       {/* How it works */}
-      <section className="section-padding bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Cara Kerja</span>
@@ -188,7 +188,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </section>
 
       {/* Use Cases */}
-      <section className="section-padding bg-brand-light">
+      <section className="py-10 bg-brand-light">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Kasus Penggunaan</span>
@@ -210,7 +210,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </section>
 
       {/* Compatible */}
-      <section className="py-16 bg-white border-t border-brand-blue/10">
+      <section className="py-10 bg-white border-t border-brand-blue/10">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-brand-navy/40 text-sm font-semibold tracking-widest uppercase mb-8">Kompatibel dengan</p>
           <div className="flex flex-wrap gap-4 justify-center">
