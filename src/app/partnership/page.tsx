@@ -52,7 +52,7 @@ function PartnerCard({ partner, muted = false }: { partner: Partner; muted?: boo
     >
       {partner.logo ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={partner.logo} alt={partner.name} className="h-10 object-contain" />
+        <img src={partner.logo} alt={partner.name} className="h-18 object-contain" />
       ) : (
         <>
           <span className="text-brand-navy/60 font-display font-bold text-sm leading-tight">
@@ -96,14 +96,14 @@ export default function PartnershipPage() {
         </div>
       </section>
 
-      {/* Partner Logo Slider */}
+      {/* Partner Logo Slider — padding dikurangi */}
       <section className="py-8 overflow-hidden border-b border-[#6F96D1]/15" style={{ background: "#EDF0F5" }}>
-        <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
+        <div className="max-w-7xl mx-auto px-6 mb-5 text-center">
           <p className="text-brand-navy/40 text-xs font-bold tracking-widest uppercase">
             Mitra yang telah bergabung
           </p>
         </div>
-        {/* Row 1 — kanan, seamless loop */}
+        {/* Row 1 */}
         <div className="relative overflow-hidden mb-4" style={{
           maskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
           WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
@@ -116,7 +116,7 @@ export default function PartnershipPage() {
             {[...partners, ...partners].map((p, i) => <PartnerCard key={`r1-${i}`} partner={p} />)}
           </div>
         </div>
-        {/* Row 2 — kiri (reverse), seamless loop */}
+        {/* Row 2 */}
         <div className="relative overflow-hidden" style={{
           maskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
           WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
@@ -127,7 +127,7 @@ export default function PartnershipPage() {
         </div>
       </section>
 
-      {/* Partner Types */}
+      {/* Partner Types — padding dikurangi */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-8">
@@ -171,7 +171,7 @@ export default function PartnershipPage() {
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Benefits — padding dikurangi */}
       <section className="py-12" style={{ background: "#EDF0F5" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
