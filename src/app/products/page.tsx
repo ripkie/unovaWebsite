@@ -16,7 +16,7 @@ const products = [
     tagline: "Proteksi otomatis dari kebocoran gas",
     description:
       "Gas leak detector dengan alarm dan valve otomatis yang menutup regulator saat kebocoran terdeteksi. Memberikan perlindungan cepat untuk mencegah risiko kebakaran dan ledakan pada sistem gas.",
-    image: "/images/product-sensor.png",
+    image: "/images/fotoProduct/FP-Gas_Leak.png",
     badge: "Tersedia",
     badgeColor: "bg-green-500",
     focus: "Keamanan",
@@ -81,8 +81,8 @@ export default function ProductsPage() {
           <div className="mt-6 flex justify-center gap-3 flex-wrap">
             {[
               { icon: ShieldCheck, label: "Keamanan", desc: "Cegah kebakaran & ledakan", color: "#dc2626" },
-              { icon: Leaf,        label: "Kesehatan", desc: "Kualitas udara optimal",   color: "#16a34a" },
-              { icon: Home,        label: "Rumah Pintar", desc: "Terintegrasi & otomatis", color: "#6F96D1" },
+              { icon: Leaf, label: "Kesehatan", desc: "Kualitas udara optimal", color: "#16a34a" },
+              { icon: Home, label: "Rumah Pintar", desc: "Terintegrasi & otomatis", color: "#6F96D1" },
             ].map((tag) => (
               <div
                 key={tag.label}
@@ -115,7 +115,7 @@ export default function ProductsPage() {
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Image */}
                 <div className="relative flex items-center justify-center p-12 border-r border-brand-blue/10" style={{ background: "#EDF0F5" }}>
-                  <div className="bg-white rounded-2xl p-8 shadow-sm border border-brand-blue/10">
+                  <div className="bg-[#edf0f57b] rounded-2xl p-8 shadow-sm border border-brand-blue/10">
                     <Image
                       src={product.image}
                       alt={product.name}
