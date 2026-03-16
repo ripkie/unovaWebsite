@@ -327,7 +327,7 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="relative p-10 rounded-3xl bg-brand-light border border-brand-blue/10 flex items-center justify-center">
-                <Image src="/images/product-sensor.png" alt="Gas Leak Prevention" width={400} height={400} className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+                <Image src="/images/fotoProduct/FP-Gas_Leak.png" alt="Gas Leak Prevention" width={400} height={400} className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="absolute -top-4 -right-4 glass px-4 py-2 rounded-xl shadow-lg border border-green-500/30">
                 <span className="inline-flex items-center gap-1.5 text-green-600 text-sm font-bold">
