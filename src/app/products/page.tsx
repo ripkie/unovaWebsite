@@ -86,13 +86,11 @@ export default function ProductsPage() {
             ].map((tag) => (
               <div
                 key={tag.label}
-                className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-white border border-[#6F96D1]/20 shadow-sm"
+                className="flex flex-col items-center text-center gap-2 px-6 py-4 rounded-xl bg-white border border-[#6F96D1]/20 shadow-sm min-w-[140px]"
               >
-                <tag.icon size={16} style={{ color: tag.color }} />
-                <div>
-                  <div className="text-brand-navy text-sm font-semibold leading-tight">{tag.label}</div>
-                  <div className="text-brand-navy/45 text-xs">{tag.desc}</div>
-                </div>
+                <tag.icon size={22} style={{ color: tag.color }} />
+                <div className="text-brand-navy text-sm font-semibold leading-tight">{tag.label}</div>
+                <div className="text-brand-navy/45 text-xs">{tag.desc}</div>
               </div>
             ))}
           </div>

@@ -59,8 +59,8 @@ const products: Record<string, ProductData> = {
     },
     useCases: [
       { icon: UtensilsCrossed, title: "Dapur Rumah Tangga", desc: "Proteksi kompor gas dari kebocoran regulator, selang, maupun fitting yang longgar." },
-      { icon: Building2,       title: "Restoran & Café",   desc: "Keamanan operasional dapur komersial 24/7 dengan monitoring jarak jauh via dashboard." },
-      { icon: Hotel,           title: "Hotel & Kost",      desc: "Lindungi puluhan unit sekaligus dengan sistem alert terpusat ke manajemen." },
+      { icon: Building2, title: "Restoran & Café", desc: "Keamanan operasional dapur komersial 24/7 dengan monitoring jarak jauh via dashboard." },
+      { icon: Hotel, title: "Hotel & Kost", desc: "Lindungi puluhan unit sekaligus dengan sistem alert terpusat ke manajemen." },
     ],
     compatibleWith: ["Unova App", "Google Home", "Amazon Alexa", "Home Assistant", "MQTT"],
   },
@@ -109,8 +109,13 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 <Link href="/contact-us" className="group inline-flex items-center gap-2 px-7 py-3 rounded-xl text-white font-semibold transition-all" style={{ background: "#6F96D1" }}>
                   Pesan Sekarang<ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="#" className="inline-flex items-center gap-2 px-7 py-3 rounded-xl border border-[#6F96D1]/30 text-brand-navy font-semibold hover:bg-[#EDF0F5] transition-all">
-                  <Download size={17} />Unduh Datasheet
+                <a
+                  href="https://drive.google.com/uc?export=download&id=1FwtHUtZnPT0n3PeSa1gMAaXb0COYY13o"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3 rounded-xl border border-[#6F96D1]/30 text-brand-navy font-semibold hover:bg-[#EDF0F5] transition-all"
+                >
+                  <Download size={17} />Unduh Guidebook
                 </a>
               </div>
             </div>
