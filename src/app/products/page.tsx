@@ -106,15 +106,16 @@ export default function ProductsPage() {
           </div>
 
           {products.map((product) => (
-            <div key={product.id} className="bg-white rounded-3xl border border-brand-blue/10 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-brand-blue/10 transition-all duration-500">
+            <div key={product.id} className="rounded-3xl border border-brand-blue/10 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-brand-blue/10 transition-all duration-500" style={{ background: "#EDF0F5" }}>
+              {/* Badges — kiri atas card */}
+              <div className="flex gap-2 flex-wrap px-6 pt-5">
+                <span className={`px-3 py-1 rounded-full text-white text-xs font-bold ${product.badgeColor}`}>{product.badge}</span>
+                <span className={`px-3 py-1 rounded-full text-xs font-bold ${product.focusColor}`}>{product.focus}</span>
+              </div>
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Image */}
                 <div className="relative flex items-center justify-center p-12 border-r border-brand-blue/10" style={{ background: "#EDF0F5" }}>
-                  <div className="absolute top-6 left-6 flex gap-2 flex-wrap">
-                    <span className={`px-3 py-1 rounded-full text-white text-xs font-bold ${product.badgeColor}`}>{product.badge}</span>
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${product.focusColor}`}>{product.focus}</span>
-                  </div>
-                  <div className="bg-[#edf0f5c4] rounded-2xl p-8 shadow-md border border-brand-blue/10">
+                  <div className="bg-[#edf0f5b1] rounded-2xl p-8 shadow-sm border border-brand-blue/10">
                     <Image
                       src={product.image}
                       alt={product.name}

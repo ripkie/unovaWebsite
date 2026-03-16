@@ -1,10 +1,15 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ExternalLink, Clock, CheckCircle } from "lucide-react";
+import { ArrowRight, ExternalLink, Home, Zap, BarChart3, ShieldAlert, Wind, CheckCircle, type LucideIcon } from "lucide-react";
 
 const categories = ["Semua", "Teknologi", "Panduan", "Bisnis", "Industri"];
 
+const iconMap: Record<string, LucideIcon> = { Home, Zap, BarChart3, ShieldAlert, Wind };
+function PostIcon({ name }: { name: string }) {
+  const Icon = iconMap[name] ?? Home;
+  return <Icon size={40} className="text-white/80" />;
+}
 
 const internalPosts = [
   {
@@ -13,8 +18,9 @@ const internalPosts = [
     excerpt: "Bagaimana ekosistem rumah pintar berkembang melampaui sekadar otomasi menuju sistem yang benar-benar belajar dan beradaptasi.",
     category: "Teknologi",
     date: "10 Maret 2025",
-    readTime: "6 menit",
-    thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    //readTime: "6 menit",
+    iconName: "Home",
+    color: "from-[#6F96D1] to-[#4a7bbf]",
   },
   {
     slug: "knx-vs-matter-protokol",
@@ -22,8 +28,9 @@ const internalPosts = [
     excerpt: "Perbandingan mendalam antara dua standar industri terkemuka dari sisi instalasi, skalabilitas, dan total biaya kepemilikan.",
     category: "Panduan",
     date: "25 Februari 2025",
-    readTime: "9 menit",
-    thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
+    //readTime: "9 menit",
+    iconName: "Zap",
+    color: "from-slate-600 to-slate-800",
   },
   {
     slug: "roi-smart-building",
@@ -31,8 +38,9 @@ const internalPosts = [
     excerpt: "Panduan langkah-demi-langkah untuk mengkuantifikasi penghematan energi dan efisiensi operasional dari instalasi IoT.",
     category: "Bisnis",
     date: "12 Februari 2025",
-    readTime: "7 menit",
-    thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80",
+    //readTime: "7 menit",
+    iconName: "BarChart3",
+    color: "from-emerald-600 to-teal-700",
   },
   {
     slug: "gas-leak-prevention-rumah",
@@ -40,8 +48,9 @@ const internalPosts = [
     excerpt: "Data BNPB menunjukkan kebocoran gas adalah penyebab utama kebakaran rumah tangga. Begini cara mencegahnya dengan teknologi.",
     category: "Teknologi",
     date: "5 Januari 2025",
-    readTime: "5 menit",
-    thumbnail: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80",
+    //readTime: "5 menit",
+    iconName: "ShieldAlert",
+    color: "from-red-600 to-orange-600",
   },
   {
     slug: "kualitas-udara-dalam-ruangan",
@@ -49,8 +58,9 @@ const internalPosts = [
     excerpt: "Studi WHO: udara dalam ruangan bisa 5x lebih tercemar dari luar. Panduan menjaga kualitas udara rumah agar keluarga tetap sehat.",
     category: "Industri",
     date: "20 Desember 2024",
-    readTime: "8 menit",
-    thumbnail: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80",
+    //readTime: "8 menit",
+    iconName: "Wind",
+    color: "from-green-600 to-emerald-700",
   },
 ];
 
@@ -139,9 +149,9 @@ export default function BlogPage() {
                   href={`/blog/${post.slug}`}
                   className="group bg-white rounded-2xl border border-[#6F96D1]/15 overflow-hidden hover:shadow-lg hover:shadow-[#6F96D1]/15 hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="h-36 overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover" />
+                  {/* Thumbnail — emoji diganti PostIcon */}
+                  <div className={`h-36 bg-gradient-to-br ${post.color} flex items-center justify-center`}>
+                    <PostIcon name={post.iconName} />
                   </div>
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-3">
@@ -150,9 +160,6 @@ export default function BlogPage() {
                         style={{ background: "rgba(111,150,209,0.12)", color: "#6F96D1" }}
                       >
                         {post.category}
-                      </span>
-                      <span className="flex items-center gap-1 text-brand-navy/35 text-xs">
-                        <Clock size={11} />{post.readTime}
                       </span>
                     </div>
                     <h3 className="font-display font-bold text-brand-navy text-base leading-snug group-hover:text-[#6F96D1] transition-colors">
