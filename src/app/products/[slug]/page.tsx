@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, CheckCircle2, Download, ShieldAlert, Bell, Zap, Shield, UtensilsCrossed, Building2, Hotel } from "lucide-react";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 interface ProductData {
   id: string;

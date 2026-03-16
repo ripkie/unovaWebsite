@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight, ShieldAlert, Wind, Package, Droplets, Bell, ShieldCheck, Leaf, Home, ChevronLeft, ChevronRight } from "lucide-react";
-import type { Metadata } from "next";
 
 const products = [
   {
