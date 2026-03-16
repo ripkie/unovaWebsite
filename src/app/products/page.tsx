@@ -112,22 +112,36 @@ export default function ProductsPage() {
               <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Tersedia Sekarang</span>
               <h2 className="mt-2 text-3xl font-display font-bold text-brand-navy">Produk Aktif</h2>
             </div>
-            {/* Nav arrows */}
-            <div className="flex items-center gap-3">
-              {products.map((_, i) => (
+            {/* Progress bar + arrows */}
+            <div className="flex items-center gap-4">
+              <div className="flex gap-1.5 items-center" style={{ width: 200 }}>
+                {products.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    className="h-1 rounded-full transition-all duration-300 flex-1"
+                    style={{
+                      background: i === current ? "#091F58" : "rgba(111,150,209,0.25)",
+                      height: i === current ? 3 : 2,
+                    }}
+                  />
+                ))}
+              </div>
+              <div className="flex gap-2">
                 <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  className="w-2.5 h-2.5 rounded-full transition-all"
-                  style={{ background: i === current ? "#6F96D1" : "rgba(111,150,209,0.3)" }}
-                />
-              ))}
-              <button onClick={prev} className="w-9 h-9 rounded-xl border border-[#6F96D1]/25 flex items-center justify-center hover:bg-white transition-colors ml-2">
-                <ChevronLeft size={18} style={{ color: "#6F96D1" }} />
-              </button>
-              <button onClick={next} className="w-9 h-9 rounded-xl border border-[#6F96D1]/25 flex items-center justify-center hover:bg-white transition-colors">
-                <ChevronRight size={18} style={{ color: "#6F96D1" }} />
-              </button>
+                  onClick={prev}
+                  className="w-10 h-10 rounded-full border border-brand-navy/20 flex items-center justify-center hover:border-brand-navy/50 transition-colors"
+                >
+                  <ChevronLeft size={18} style={{ color: "#091F58" }} />
+                </button>
+                <button
+                  onClick={next}
+                  className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+                  style={{ border: "2px dashed rgba(9,31,88,0.25)" }}
+                >
+                  <ChevronRight size={18} style={{ color: "#091F58" }} />
+                </button>
+              </div>
             </div>
           </div>
 
