@@ -46,13 +46,13 @@ const deptConfig: Record<string, { label: string; bg: string; text: string; bord
     border: "rgba(9,31,88,0.12)",
   },
   Engineering: {
-    label: "Technical",
+    label: "Engineering",
     bg: "rgba(111,150,209,0.08)",
     text: "#6F96D1",
     border: "rgba(111,150,209,0.2)",
   },
   Operations: {
-    label: "Official",
+    label: "Operations",
     bg: "rgba(16,185,129,0.06)",
     text: "#059669",
     border: "rgba(16,185,129,0.15)",
@@ -145,14 +145,14 @@ export default function AboutPage() {
           </h1>
           <p className="mt-4 text-brand-navy/55 text-lg leading-relaxed max-w-2xl">
             Unova adalah startup home technology Indonesia yang fokus menghadirkan
-            produk keamanan dan kesehatan rumah - terjangkau, andal, dan berdampak
+            produk keamanan dan kesehatan rumah — terjangkau, andal, dan berdampak
             nyata bagi setiap keluarga.
           </p>
         </div>
       </section>
 
       {/* Story + Mission/Vision */}
-      <section className="section-padding bg-[#EDF0F5]">
+      <section className="py-10 bg-[#EDF0F5]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
@@ -164,12 +164,12 @@ export default function AboutPage() {
               </h2>
               <div className="mt-6 space-y-4 text-brand-navy/65 leading-relaxed">
                 <p>
-                  Pada 2025, para pendiri Unova bertanya: mengapa insiden kebakaran akibat
+                  Pada 2022, para pendiri Unova bertanya: mengapa insiden kebakaran akibat
                   kebocoran gas masih terus terjadi di rumah-rumah Indonesia, padahal
                   teknologi pencegahannya sudah ada?
                 </p>
                 <p>
-                  Dari pertanyaan itu lahirlah Unova - startup home technology yang fokus
+                  Dari pertanyaan itu lahirlah Unova — startup home technology yang fokus
                   pada dua hal yang paling fundamental:{" "}
                   <strong className="text-brand-navy">keamanan</strong> dan{" "}
                   <strong className="text-brand-navy">kesehatan</strong> di lingkungan rumah.
@@ -188,12 +188,11 @@ export default function AboutPage() {
                   </div>
                   <h3 className="font-display font-bold text-brand-navy text-lg">Misi</h3>
                 </div>
-                <ul className="list-disc pl-5 space-y-2 text-brand-navy/60 leading-relaxed">
-                  <li>Mengembangkan produk inovatif untuk menyelesaikan masalah masyarakat.</li>
-                  <li>Menghubungkan teknologi dengan kebutuhan pengguna untuk menciptakan solusi berkelanjutan.</li>
-                  <li>Menciptakan solusi terbaik yang memenuhi kebutuhan tanpa mengorbankan kualitas.</li>
-                  <li>Memberikan layanan kepada masyarakat melalui kegiatan berbasis keahlian teknik.</li>
-                </ul>
+                <p className="text-brand-navy/60 leading-relaxed">
+                  Menghadirkan produk home technology yang melindungi keamanan dan
+                  meningkatkan kesehatan keluarga Indonesia — terjangkau, andal, dan
+                  mudah digunakan oleh siapa saja.
+                </p>
               </div>
               <div className="p-7 rounded-2xl bg-white border border-[#6F96D1]/15 hover:border-[#6F96D1]/35 hover:shadow-lg transition-all">
                 <div className="flex items-center gap-3 mb-3">
@@ -203,7 +202,8 @@ export default function AboutPage() {
                   <h3 className="font-display font-bold text-brand-navy text-lg">Visi</h3>
                 </div>
                 <p className="text-brand-navy/60 leading-relaxed">
-                  Menjadi perusahaan terdepan dalam solusi teknologi, mulai dari kebutuhan rumah tangga hingga kebutuhan industri. Menciptakan solusi nyata untuk masalah nyata. Disesuaikan secara lokal untuk memenuhi kebutuhan setiap pengguna
+                  Menjadi merek home technology terpercaya di Asia Tenggara yang dipercaya
+                  jutaan keluarga untuk melindungi rumah mereka setiap hari.
                 </p>
               </div>
             </div>
@@ -212,9 +212,9 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#6F96D1" }}>
               Nilai-Nilai Kami
             </span>
@@ -237,9 +237,9 @@ export default function AboutPage() {
       </section>
 
       {/* Milestones */}
-      <section className="section-padding" style={{ background: "#EDF0F5" }}>
+      <section className="py-10" style={{ background: "#EDF0F5" }}>
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#6F96D1" }}>
               Perjalanan Kami
             </span>
@@ -267,19 +267,25 @@ export default function AboutPage() {
       </section>
 
       {/* ── TEAM ─────────────────────────────────────────────────────── */}
-      <section className="section-padding bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8">
             <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#6F96D1" }}>
               Tim Kami
             </span>
             <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
               Orang-orang di Balik Unova
             </h2>
+            <p className="mt-3 text-brand-navy/45 text-sm">
+              Data tim dikelola via{" "}
+              <code className="font-mono bg-[#EDF0F5] px-1.5 py-0.5 rounded text-brand-navy/60">
+                package.json → unova.team
+              </code>
+            </p>
           </div>
 
           {/* C-Level — 3 kolom centered */}
-          <div className="mb-12">
+          <div className="mb-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px flex-1" style={{ background: "rgba(9,31,88,0.08)" }} />
               <span className="text-xs font-bold tracking-widest uppercase px-3" style={{ color: "#091F58" }}>
@@ -296,14 +302,14 @@ export default function AboutPage() {
 
           {/* Engineering — under CTO */}
           {engineeringTeam.length > 0 && (
-            <div className="mb-12">
+            <div className="mb-8">
               {/* Connector line from CTO */}
               <div className="flex flex-col items-center mb-6">
                 <div className="w-px h-8" style={{ background: "rgba(111,150,209,0.3)" }} />
                 <div className="flex items-center gap-3 w-full">
                   <div className="h-px flex-1" style={{ background: "rgba(111,150,209,0.2)" }} />
                   <span className="text-xs font-bold tracking-widest uppercase px-3" style={{ color: "#6F96D1" }}>
-                    Technical — under CTO
+                    Engineering — under CTO
                   </span>
                   <div className="h-px flex-1" style={{ background: "rgba(111,150,209,0.2)" }} />
                 </div>
@@ -324,7 +330,7 @@ export default function AboutPage() {
                 <div className="flex items-center gap-3 w-full">
                   <div className="h-px flex-1" style={{ background: "rgba(16,185,129,0.2)" }} />
                   <span className="text-xs font-bold tracking-widest uppercase px-3" style={{ color: "#059669" }}>
-                    Official — under COO
+                    Operations — under COO
                   </span>
                   <div className="h-px flex-1" style={{ background: "rgba(16,185,129,0.2)" }} />
                 </div>
@@ -336,15 +342,21 @@ export default function AboutPage() {
               </div>
             </div>
           )}
+
+          <p className="text-center text-brand-navy/30 text-xs mt-10">
+            * Edit nama, role, bio, dan foto via{" "}
+            <code className="font-mono">package.json → unova.team[].photo</code>{" "}
+            (path ke <code className="font-mono">/public/images/team/nama.jpg</code>)
+          </p>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-white border-t border-[#6F96D1]/15 text-center">
+      <section className="py-12 bg-white border-t border-[#6F96D1]/15 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-display font-bold text-brand-navy">Bergabunglah dalam Misi Kami</h2>
           <p className="mt-4 text-brand-navy/55">
-            Apakah Anda klien, mitra, atau calon anggota tim — kami selalu terbuka untuk percakapan yang bermakna.
+            Apakah Anda klien, mitra, atau calon anggota tim - kami selalu terbuka untuk percakapan yang bermakna.
           </p>
           <div className="mt-8 flex gap-4 justify-center flex-wrap">
             <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-white font-semibold transition-colors" style={{ background: "#091F58" }}>
