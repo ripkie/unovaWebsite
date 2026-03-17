@@ -70,7 +70,7 @@
       {
         "id": "ceo",
         "name": "Arillian Dylan N",
-        "role": "CEO & Co-Founder",
+        "role": "Chief Executive Officer",
         "department": "C-Level",
         "reportsTo": null,
         "bio": "Visioner di balik Unova dengan fokus pada strategi produk dan pengembangan bisnis home technology di Indonesia.",
@@ -79,7 +79,7 @@
       {
         "id": "cto",
         "name": "-1 CTO",
-        "role": "CTO & Co-Founder",
+        "role": "Chief Technical Officer",
         "department": "C-Level",
         "reportsTo": "ceo",
         "bio": "Arsitek teknis yang membangun platform IoT Unova dari nol dengan fokus pada skalabilitas dan keandalan sistem.",
@@ -123,11 +123,11 @@
       },
       {
         "id": "software-engineer",
-        "name": "Muh Rifki Widya R",
+        "name": "M Rifki Widya R",
         "role": "Software Engineer",
         "department": "Engineering",
         "reportsTo": "cto",
-        "bio": "Membangun backend, API, dan aplikasi mobile yang menghubungkan perangkat Unova dengan pengguna.",
+        "bio": "Mengembangkan dan maintenance website serta aplikasi mobile Unova yang terhubung dengan pengguna",
         "photo": "/images/anggota/rifki.jpeg"
       },
       {

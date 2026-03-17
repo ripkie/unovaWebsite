@@ -102,8 +102,8 @@ function MemberCard({ member, size = "md" }: { member: TeamMember; size?: "lg" |
 export default function AboutPage() {
   const allMembers = getTeam();
   const cLevel = allMembers.filter((m) => m.department === "C-Level");
-  const cto = cLevel.find((m) => m.role.includes("CTO"));
-  const coo = cLevel.find((m) => m.role.includes("COO") || m.role.includes("Operation"));
+  const cto = cLevel.find((m) => m.id === "cto");
+  const coo = cLevel.find((m) => m.id === "coo");
   const engineeringTeam = cto ? getReportsTo(cto.id) : [];
   const operationsTeam = coo ? getReportsTo(coo.id) : [];
 
