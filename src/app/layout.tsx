@@ -22,6 +22,10 @@ export const metadata: Metadata = {
     template: "%s | Unova",
   },
 
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
+
   description:
     "Unova menghadirkan solusi IoT dan teknologi cerdas untuk kehidupan yang lebih efisien dan terkoneksi. Smart home, smart building, dan ekosistem IoT untuk Indonesia.",
   keywords: [
