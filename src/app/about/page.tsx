@@ -135,7 +135,7 @@ export default function AboutPage() {
               <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#6F96D1" }}>Kisah Kami</span>
               <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Dimulai dari Satu Pertanyaan</h2>
               <div className="mt-6 space-y-4 text-brand-navy/65 leading-relaxed">
-                <p>Pada 2026, para pendiri Unova bertanya: mengapa insiden kebakaran akibat kebocoran gas masih terus terjadi di rumah-rumah Indonesia, padahal teknologi pencegahannya sudah ada?</p>
+                <p>Pada 2025, para pendiri Unova bertanya: mengapa insiden kebakaran akibat kebocoran gas masih terus terjadi di rumah-rumah Indonesia, padahal teknologi pencegahannya sudah ada?</p>
                 <p>Dari pertanyaan itu lahirlah Unova - startup home technology yang fokus pada dua hal yang paling fundamental:{" "}<strong className="text-brand-navy">keamanan</strong> dan{" "}<strong className="text-brand-navy">kesehatan</strong> di lingkungan rumah.</p>
                 <p>Hari ini, Unova telah melayani ratusan rumah dan fasilitas komersial di seluruh Indonesia.</p>
               </div>
