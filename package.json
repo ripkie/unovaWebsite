@@ -101,7 +101,7 @@
         "department": "Engineering",
         "reportsTo": "cto",
         "bio": "Merancang antarmuka dan pengalaman pengguna produk Unova agar intuitif dan estetis.",
-        "photo": null
+        "photo": "/images/anggota/ibra.jpeg"
       },
       {
         "id": "iot-engineer",
@@ -110,7 +110,7 @@
         "department": "Engineering",
         "reportsTo": "cto",
         "bio": "Mengembangkan firmware dan protokol komunikasi untuk seluruh ekosistem perangkat IoT Unova.",
-        "photo": null
+        "photo": "/images/anggota/insan.jpeg"
       },
       {
         "id": "electrical-engineer",
@@ -146,7 +146,7 @@
         "department": "Operations",
         "reportsTo": "coo",
         "bio": "Mengeksekusi produksi konten digital — foto, video, dan grafis untuk kebutuhan komunikasi Unova.",
-        "photo": null
+        "photo": "/images/anggota/seina.jpeg"
       },
       {
         "id": "marketing-1",
@@ -155,7 +155,7 @@
         "department": "Operations",
         "reportsTo": "coo",
         "bio": "Mengelola kampanye pemasaran digital dan pipeline penjualan produk Unova ke segmen konsumen.",
-        "photo": null
+        "photo": "/images/anggota/faiza.jpeg"
       },
       {
         "id": "marketing-2",
