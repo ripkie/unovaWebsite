@@ -16,7 +16,7 @@ const products = [
     focus: "Keamanan",
     focusColor: "text-red-400 bg-red-500/10",
     specs: ["Deteksi LPG & Gas Alam", "Valve Otomatis", "Alarm 85dB", "Notifikasi App"],
-    price: "Mulai dari Rp 1.800.000",
+    price: "Mulai dari Rp 1xx.xxx",
     highlights: [
       { icon: ShieldAlert, text: "Respon deteksi < 10 detik" },
       { icon: Bell, text: "Alarm suara & push notification" },
@@ -85,7 +85,7 @@ export default function ProductsPage() {
             <span style={{ color: "#6F96D1" }}>di Rumah Anda</span>
           </h1>
           <p className="mt-4 text-brand-navy/55 text-lg max-w-2xl mx-auto leading-relaxed">
-            Unova menghadirkan produk home technology yang berdampak nyata —
+            Unova menghadirkan produk home technology yang berdampak nyata -
             menjaga keamanan dan kesehatan keluarga Anda setiap hari.
           </p>
           <div className="mt-6 flex justify-center gap-3 flex-wrap">
@@ -172,7 +172,7 @@ export default function ProductsPage() {
                           Detail Produk<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                         </Link>
                         <Link href="/contact-us" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-brand-blue/30 text-brand-navy font-semibold hover:bg-brand-light transition-colors">
-                          Minta Demo
+                          Lihat Demo
                         </Link>
                       </>
                     ) : (
