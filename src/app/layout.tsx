@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     default: "Unova – Smarter Ways, Brighter Days",
     template: "%s | Unova",
   },
+
   description:
     "Unova menghadirkan solusi IoT dan teknologi cerdas untuk kehidupan yang lebih efisien dan terkoneksi. Smart home, smart building, dan ekosistem IoT untuk Indonesia.",
   keywords: [
