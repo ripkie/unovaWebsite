@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: "/favicon.svg"
     },
     sitemap: "https://unova.id/sitemap.xml",
   };
