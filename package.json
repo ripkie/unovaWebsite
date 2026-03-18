@@ -41,11 +41,6 @@
         "logo": null
       },
       {
-        "name": "BCA",
-        "category": "Finansial",
-        "logo": null
-      },
-      {
         "name": "Mandiri",
         "category": "Finansial",
         "logo": null
@@ -53,16 +48,6 @@
       {
         "name": "Tokopedia",
         "category": "E-Commerce",
-        "logo": null
-      },
-      {
-        "name": "Gojek",
-        "category": "Teknologi",
-        "logo": null
-      },
-      {
-        "name": "Traveloka",
-        "category": "Teknologi",
         "logo": null
       }
     ],
