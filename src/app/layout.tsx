@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: [{ url: "/logoUnovaKecil.svg", type: "image/svg+xml" }],
+    icon: [{ url: "/logoUnovaTab.svg", type: "image/svg+xml" }],
   },
 
   description:
