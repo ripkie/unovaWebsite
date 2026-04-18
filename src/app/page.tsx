@@ -47,12 +47,6 @@ export default function HomePage() {
         {/* Background */}
         <div className="absolute inset-0 bg-[#EDF0F5]" />
         {/* Grid */}
-        <div className="absolute inset-0"
-          style={{
-            backgroundImage: "linear-gradient(rgba(111,150,209,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(111,150,209,0.08) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
         {/* Orbs */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] rounded-full blur-3xl"
           style={{ background: "radial-gradient(circle, rgba(111,150,209,0.18) 0%, transparent 70%)" }}

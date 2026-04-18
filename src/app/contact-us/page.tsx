@@ -60,11 +60,11 @@ export default function ContactPage() {
 
       {/* Contact Info — 3 cards viewport only, no interaction needed */}
       <section className="py-10 border-b border-[#6F96D1]/15" style={{ background: "#EDF0F5" }}>
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-5">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
           {/* Email */}
           <a
             href="mailto:unovahometech@gmail.com"
-            className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-[#6F96D1]/15 hover:border-[#6F96D1]/35 hover:shadow-md transition-all group"
+            className="flex items-start gap-3 p-4 rounded-2xl bg-white border border-[#6F96D1]/15 hover:border-[#6F96D1]/35 hover:shadow-md transition-all group"
           >
             <div
               className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
@@ -72,11 +72,11 @@ export default function ContactPage() {
             >
               <Mail size={20} style={{ color: "#6F96D1" }} />
             </div>
-            <div>
+            <div className="min-w-0">
               <div className="text-brand-navy/40 text-xs font-semibold uppercase tracking-widest">
                 Email
               </div>
-              <div className="font-display font-bold text-brand-navy mt-1 group-hover:text-[#6F96D1] transition-colors">
+              <div className="font-display font-bold text-brand-navy mt-1 group-hover:text-[#6F96D1] transition-colors break-all text-sm">
                 unovahometech@gmail.com
               </div>
               <div className="flex items-center gap-1 text-brand-navy/40 text-xs mt-1">
@@ -140,7 +140,7 @@ export default function ContactPage() {
       {/* Google Maps + Form — 2 column layout */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid md:grid-cols-2 gap-8 items-start">
 
             {/* Google Maps Embed */}
             <div>
