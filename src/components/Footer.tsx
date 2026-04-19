@@ -15,7 +15,7 @@ export default function Footer() {
             <h2 className="mt-3 text-4xl lg:text-5xl font-display font-bold leading-tight">
               Siap Wujudkan
               <br />
-              <span className="text-gradient-reverse">Ekosistem Cerdas?</span>
+              <span className="text-gradient-white">Ekosistem Cerdas?</span>
             </h2>
             <p className="mt-4 text-white/60 text-lg leading-relaxed max-w-md">
               Dari konsultasi hingga implementasi penuh - tim Unova siap membantu Anda
