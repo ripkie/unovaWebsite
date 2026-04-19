@@ -96,12 +96,7 @@ export default function HomePage() {
 
           {/* Dashboard + Produk — layout 1home.io style: produk terpotong di tepi */}
           <div className="mt-10 relative">
-            {/* Fade bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#EDF0F5] to-transparent z-20 pointer-events-none" />
-            {/* Fade kiri & kanan */}
-            <div className="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-[#EDF0F5] to-transparent z-20 pointer-events-none" />
-            <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-[#EDF0F5] to-transparent z-20 pointer-events-none" />
-
+            
             <div className="flex items-end justify-center gap-4">
 
               {/* Produk kiri */}
