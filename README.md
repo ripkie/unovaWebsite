@@ -1,4 +1,4 @@
-# Unova Web — Company Profile
+# Unova Web - Company Profile
 
 Website company profile Unova dibangun dengan **Next.js 15 App Router**, **Tailwind CSS v4**, dan **TypeScript**.
 
