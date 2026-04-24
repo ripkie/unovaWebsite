@@ -42,19 +42,23 @@ export default function Footer() {
 
       {/* Links */}
       <div className="max-w-7xl mx-auto px-4 py-4 md:px-6 md:py-6 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-5 md:gap-8">
-        {/* Logo + tagline + sosmed — full width on mobile, compact row */}
-        <div className="col-span-2 md:col-span-1 flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-0">
-          <Image
-            src="/logoUnova.svg"
-            alt="Unova"
-            width={90}
-            height={24}
-            style={{ height: "22px", width: "auto", filter: "brightness(0) invert(1)", flexShrink: 0 }}
-          />
-          <p className="text-white/50 text-xs leading-relaxed md:mt-3 md:text-sm">
+        {/* Logo + tagline + sosmed */}
+        <div className="col-span-2 md:col-span-1 flex flex-col md:flex-col">
+          <div className="relative h-8 w-[140px] shrink-0">
+            <Image
+              src="/logoUnova.svg"
+              alt="Unova"
+              fill
+              priority
+              className="object-contain object-left brightness-0 invert"
+              sizes="140px"
+            />
+          </div>
+          <p className="hidden md:block md:mt-3 text-white/50 md:text-sm leading-relaxed">
             Inovasi teknologi untuk kehidupan yang lebih cerdas dan terkoneksi.
           </p>
-          <div className="flex gap-2 md:gap-3 md:mt-4 shrink-0">
+          {/* Sosmed — desktop only di sini */}
+          <div className="hidden md:flex gap-3 mt-4">
             {[
               { icon: Linkedin, href: "#" },
               { icon: Twitter, href: "#" },
@@ -63,7 +67,7 @@ export default function Footer() {
               <a
                 key={i}
                 href={href}
-                className="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-white/10 flex items-center justify-center text-white/60 hover:bg-brand-blue hover:text-white transition-all duration-200"
+                className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white/60 hover:bg-brand-blue hover:text-white transition-all duration-200"
               >
                 <Icon size={13} />
               </a>
@@ -116,6 +120,23 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Sosmed — mobile only, muncul setelah kolom Produk */}
+        <div className="col-span-2 md:hidden flex gap-2">
+          {[
+            { icon: Linkedin, href: "#" },
+            { icon: Twitter, href: "#" },
+            { icon: Instagram, href: "https://www.instagram.com/creativitycorner.cc/?utm_source=ig_web_button_share_sheet" },
+          ].map(({ icon: Icon, href }, i) => (
+            <a
+              key={i}
+              href={href}
+              className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center text-white/60 hover:bg-brand-blue hover:text-white transition-all duration-200"
+            >
+              <Icon size={13} />
+            </a>
+          ))}
         </div>
 
         <div className="col-span-2 md:col-span-1">
