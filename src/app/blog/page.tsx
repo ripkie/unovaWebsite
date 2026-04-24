@@ -1,10 +1,10 @@
 "use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, ExternalLink, CheckCircle } from "lucide-react";
 
 const categories = ["Semua", "Teknologi", "Panduan", "Bisnis", "Industri"];
-
 
 const internalPosts = [
   {
@@ -70,13 +70,15 @@ export default function BlogPage() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
-  const filteredInternal = activeCategory === "Semua"
-    ? internalPosts
-    : internalPosts.filter((p) => p.category === activeCategory);
+  const filteredInternal =
+    activeCategory === "Semua"
+      ? internalPosts
+      : internalPosts.filter((p) => p.category === activeCategory);
 
-  const filteredExternal = activeCategory === "Semua"
-    ? externalArticles
-    : externalArticles.filter((a) => a.category === activeCategory);
+  const filteredExternal =
+    activeCategory === "Semua"
+      ? externalArticles
+      : externalArticles.filter((a) => a.category === activeCategory);
 
   return (
     <>
@@ -118,11 +120,13 @@ export default function BlogPage() {
       </div>
 
       {/* ── Internal Posts ── */}
-      <section className="py-14 bg-[#EDF0F5]">
+      <section className="py-10 bg-[#EDF0F5]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-2xl font-display font-bold text-brand-navy">Artikel dari Unova</h2>
+              <h2 className="text-2xl font-display font-bold text-brand-navy">
+                Artikel dari Unova
+              </h2>
               {activeCategory !== "Semua" && (
                 <p className="text-brand-navy/45 text-sm mt-1">
                   {filteredInternal.length} artikel dalam &ldquo;{activeCategory}&rdquo;
@@ -141,26 +145,41 @@ export default function BlogPage() {
                 >
                   <div className="h-36 overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover" />
+                    <img
+                      src={post.thumbnail}
+                      alt={post.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
+
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-3">
                       <span
                         className="px-2.5 py-0.5 rounded-lg text-xs font-semibold"
-                        style={{ background: "rgba(111,150,209,0.12)", color: "#6F96D1" }}
+                        style={{
+                          background: "rgba(111,150,209,0.12)",
+                          color: "#6F96D1",
+                        }}
                       >
                         {post.category}
                       </span>
                     </div>
+
                     <h3 className="font-display font-bold text-brand-navy text-base leading-snug group-hover:text-[#6F96D1] transition-colors">
                       {post.title}
                     </h3>
+
                     <p className="mt-2 text-brand-navy/55 text-sm leading-relaxed line-clamp-2">
                       {post.excerpt}
                     </p>
+
                     <div className="mt-4 pt-3 border-t border-[#6F96D1]/10 flex items-center justify-between">
-                      <span className="text-brand-navy/35 text-xs">{post.date}</span>
-                      <span className="text-[#6F96D1] text-xs font-semibold group-hover:underline">Baca →</span>
+                      <span className="text-brand-navy/35 text-xs">
+                        {post.date}
+                      </span>
+                      <span className="text-[#6F96D1] text-xs font-semibold group-hover:underline">
+                        Baca →
+                      </span>
                     </div>
                   </div>
                 </Link>
@@ -168,8 +187,13 @@ export default function BlogPage() {
             </div>
           ) : (
             <div className="text-center py-16">
-              <p className="text-brand-navy/40 font-medium">Belum ada artikel di kategori ini</p>
-              <button onClick={() => setActiveCategory("Semua")} className="mt-4 text-[#6F96D1] text-sm font-semibold hover:underline">
+              <p className="text-brand-navy/40 font-medium">
+                Belum ada artikel di kategori ini
+              </p>
+              <button
+                onClick={() => setActiveCategory("Semua")}
+                className="mt-4 text-[#6F96D1] text-sm font-semibold hover:underline"
+              >
                 Lihat semua artikel
               </button>
             </div>
@@ -179,13 +203,18 @@ export default function BlogPage() {
 
       {/* ── External Articles ── */}
       {filteredExternal.length > 0 && (
-        <section className="py-14 bg-white">
+        <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-8">
-              <span className="text-[#6F96D1] text-xs font-bold tracking-widest uppercase">News & Information</span>
-              <h2 className="mt-1 text-2xl font-display font-bold text-brand-navy">Berita & Artikel Eksternal</h2>
+            <div className="mb-6">
+              <span className="text-[#6F96D1] text-xs font-bold tracking-widest uppercase">
+                News & Information
+              </span>
+              <h2 className="mt-1 text-2xl font-display font-bold text-brand-navy">
+                Berita & Artikel Eksternal
+              </h2>
             </div>
-            <div className="space-y-3">
+
+            <div className="space-y-2">
               {filteredExternal.map((article, i) => (
                 <a
                   key={i}
@@ -200,23 +229,39 @@ export default function BlogPage() {
                   >
                     <ExternalLink size={18} style={{ color: "#6F96D1" }} />
                   </div>
+
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <span className="text-[#6F96D1] text-xs font-bold uppercase tracking-wide">{article.source}</span>
+                      <span className="text-[#6F96D1] text-xs font-bold uppercase tracking-wide">
+                        {article.source}
+                      </span>
                       <span
                         className="px-2 py-0.5 rounded-md text-xs font-medium"
-                        style={{ background: "rgba(111,150,209,0.1)", color: "#6F96D1" }}
+                        style={{
+                          background: "rgba(111,150,209,0.1)",
+                          color: "#6F96D1",
+                        }}
                       >
                         {article.category}
                       </span>
-                      <span className="text-brand-navy/30 text-xs">{article.date}</span>
+                      <span className="text-brand-navy/30 text-xs">
+                        {article.date}
+                      </span>
                     </div>
+
                     <h3 className="font-display font-semibold text-brand-navy group-hover:text-[#6F96D1] transition-colors leading-snug">
                       {article.title}
                     </h3>
-                    <p className="mt-1 text-brand-navy/55 text-sm leading-relaxed line-clamp-2">{article.excerpt}</p>
+
+                    <p className="mt-1 text-brand-navy/55 text-sm leading-relaxed line-clamp-2">
+                      {article.excerpt}
+                    </p>
                   </div>
-                  <ArrowRight size={16} className="text-brand-navy/25 group-hover:text-[#6F96D1] group-hover:translate-x-1 transition-all shrink-0 mt-1" />
+
+                  <ArrowRight
+                    size={16}
+                    className="text-brand-navy/25 group-hover:text-[#6F96D1] group-hover:translate-x-1 transition-all shrink-0 mt-1"
+                  />
                 </a>
               ))}
             </div>
@@ -225,13 +270,20 @@ export default function BlogPage() {
       )}
 
       {/* ── Newsletter ── */}
-      <section className="py-16 border-t border-[#6F96D1]/15" style={{ background: "#EDF0F5" }}>
+      <section
+        className="py-8 border-t border-[#6F96D1]/15"
+        style={{ background: "#EDF0F5" }}
+      >
         <div className="max-w-lg mx-auto px-6 text-center">
-          <h2 className="text-2xl font-display font-bold text-brand-navy">Update Terbaru ke Inbox Anda</h2>
-          <p className="mt-2 text-brand-navy/55 text-sm">Tips keamanan rumah, update produk, dan insight industri.</p>
+          <h2 className="text-2xl font-display font-bold text-brand-navy">
+            Update Terbaru ke Inbox Anda
+          </h2>
+          <p className="mt-2 text-brand-navy/55 text-sm">
+            Tips keamanan rumah, update produk, dan insight industri.
+          </p>
+
           {subscribed ? (
             <div className="mt-6 px-6 py-4 rounded-2xl bg-green-50 border border-green-200 text-green-700 font-semibold text-sm flex items-center justify-center gap-2">
-              {/* ✅ diganti CheckCircle icon */}
               <CheckCircle size={16} />
               Terima kasih! Anda akan menerima update terbaru dari Unova.
             </div>
@@ -244,6 +296,7 @@ export default function BlogPage() {
                 placeholder="email@anda.com"
                 className="flex-1 px-4 py-3 rounded-xl border border-[#6F96D1]/25 bg-white text-brand-navy placeholder-brand-navy/30 focus:outline-none focus:border-[#6F96D1] transition-colors text-sm"
               />
+
               <button
                 onClick={() => email && setSubscribed(true)}
                 className="px-6 py-3 rounded-xl text-white text-sm font-semibold transition-colors whitespace-nowrap"
