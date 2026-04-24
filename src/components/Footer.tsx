@@ -41,19 +41,20 @@ export default function Footer() {
       </div> */}
 
       {/* Links */}
-      <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div className="col-span-2 md:col-span-1">
+      <div className="max-w-7xl mx-auto px-4 py-4 md:px-6 md:py-6 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-5 md:gap-8">
+        {/* Logo + tagline + sosmed — full width on mobile, compact row */}
+        <div className="col-span-2 md:col-span-1 flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-0">
           <Image
             src="/logoUnova.svg"
             alt="Unova"
-            width={110}
-            height={28}
-            style={{ height: "28px", width: "auto", filter: "brightness(0) invert(1)" }}
+            width={90}
+            height={24}
+            style={{ height: "22px", width: "auto", filter: "brightness(0) invert(1)", flexShrink: 0 }}
           />
-          <p className="mt-4 text-white/50 text-sm leading-relaxed">
+          <p className="text-white/50 text-xs leading-relaxed md:mt-3 md:text-sm">
             Inovasi teknologi untuk kehidupan yang lebih cerdas dan terkoneksi.
           </p>
-          <div className="flex gap-3 mt-4">
+          <div className="flex gap-2 md:gap-3 md:mt-4 shrink-0">
             {[
               { icon: Linkedin, href: "#" },
               { icon: Twitter, href: "#" },
@@ -62,19 +63,19 @@ export default function Footer() {
               <a
                 key={i}
                 href={href}
-                className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white/60 hover:bg-brand-blue hover:text-white transition-all duration-200"
+                className="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-white/10 flex items-center justify-center text-white/60 hover:bg-brand-blue hover:text-white transition-all duration-200"
               >
-                <Icon size={16} />
+                <Icon size={13} />
               </a>
             ))}
           </div>
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold text-white/40 uppercase tracking-widest mb-4">
+          <h4 className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-2 md:mb-4">
             Navigasi
           </h4>
-          <ul className="space-y-3">
+          <ul className="space-y-1.5 md:space-y-3">
             {[
               { href: "/", label: "Home" },
               { href: "/products", label: "Produk" },
@@ -85,7 +86,7 @@ export default function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-white/60 text-sm hover:text-white transition-colors"
+                  className="text-white/60 text-xs md:text-sm hover:text-white transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -95,10 +96,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold text-white/40 uppercase tracking-widest mb-4">
+          <h4 className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-2 md:mb-4">
             Produk
           </h4>
-          <ul className="space-y-3">
+          <ul className="space-y-1.5 md:space-y-3">
             {[
               "Gas Leak Prevention",
               "Humidifier & Dehumidifier 2in1",
@@ -108,7 +109,7 @@ export default function Footer() {
               <li key={p}>
                 <Link
                   href="/products"
-                  className="text-white/60 text-sm hover:text-white transition-colors"
+                  className="text-white/60 text-xs md:text-sm hover:text-white transition-colors"
                 >
                   {p}
                 </Link>
@@ -117,21 +118,21 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
-          <h4 className="text-sm font-semibold text-white/40 uppercase tracking-widest mb-4">
+        <div className="col-span-2 md:col-span-1">
+          <h4 className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-2 md:mb-4">
             Kontak
           </h4>
-          <ul className="space-y-3">
-            <li className="flex items-start gap-2 text-white/60 text-sm">
-              <MapPin size={14} className="mt-0.5 shrink-0 text-brand-blue" />
+          <ul className="flex flex-row flex-wrap gap-x-4 gap-y-1.5 md:flex-col md:space-y-3">
+            <li className="flex items-center gap-1.5 text-white/60 text-xs md:text-sm">
+              <MapPin size={11} className="shrink-0 text-brand-blue" />
               Bandung, Indonesia
             </li>
-            <li className="flex items-start gap-2 text-white/60 text-sm">
-              <Mail size={14} className="mt-0.5 shrink-0 text-brand-blue" />
+            <li className="flex items-center gap-1.5 text-white/60 text-xs md:text-sm">
+              <Mail size={11} className="shrink-0 text-brand-blue" />
               unovahometech@gmail.com
             </li>
-            <li className="flex items-start gap-2 text-white/60 text-sm">
-              <Phone size={14} className="mt-0.5 shrink-0 text-brand-blue" />
+            <li className="flex items-center gap-1.5 text-white/60 text-xs md:text-sm">
+              <Phone size={11} className="shrink-0 text-brand-blue" />
               +62 xxx-xxxx-xxxx
             </li>
           </ul>
@@ -139,14 +140,14 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-white/30 text-sm">
-          <span>© {new Date().getFullYear()} Unova - All Rights Reserved.</span>
-          <div className="flex gap-6">
+        <div className="max-w-7xl mx-auto px-4 py-3 md:px-6 md:py-4 flex flex-row justify-between items-center gap-2 text-white/30 text-xs md:text-sm">
+          <span>© {new Date().getFullYear()} Unova</span>
+          <div className="flex gap-4">
             <Link href="#" className="hover:text-white/60 transition-colors">
-              Kebijakan Privasi
+              Privasi
             </Link>
             <Link href="#" className="hover:text-white/60 transition-colors">
-              Syarat & Ketentuan
+              S&K
             </Link>
           </div>
         </div>
