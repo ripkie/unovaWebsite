@@ -41,7 +41,7 @@ export default function Footer() {
       </div> */}
 
       {/* Links */}
-      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-8">
         <div className="col-span-2 md:col-span-1">
           <Image
             src="/logoUnova.svg"
@@ -53,7 +53,7 @@ export default function Footer() {
           <p className="mt-4 text-white/50 text-sm leading-relaxed">
             Inovasi teknologi untuk kehidupan yang lebih cerdas dan terkoneksi.
           </p>
-          <div className="flex gap-3 mt-6">
+          <div className="flex gap-3 mt-4">
             {[
               { icon: Linkedin, href: "#" },
               { icon: Twitter, href: "#" },
@@ -139,7 +139,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-white/30 text-sm">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-white/30 text-sm">
           <span>© {new Date().getFullYear()} Unova - All Rights Reserved.</span>
           <div className="flex gap-6">
             <Link href="#" className="hover:text-white/60 transition-colors">

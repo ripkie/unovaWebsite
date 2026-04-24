@@ -96,7 +96,7 @@ export default function HomePage() {
 
           {/* Dashboard + Produk — layout 1home.io style: produk terpotong di tepi */}
           <div className="mt-10 relative">
-            
+
             <div className="flex items-end justify-center gap-4">
 
               {/* Produk kiri */}
@@ -334,14 +334,14 @@ export default function HomePage() {
 
       {/* ─── PARTNER SLIDER ── infinite loop yang benar ───────────────── */}
       {partners.length > 0 && (
-        <section className="py-10 border-t border-[#6F96D1]/15 overflow-hidden" style={{ background: "#EDF0F5" }}>
+        <section className="py-5 border-t border-[#6F96D1]/15 overflow-hidden" style={{ background: "#EDF0F5" }}>
           <style>{`
             @keyframes slider {
               from { transform: translateX(0); }
               to   { transform: translateX(-50%); }
             }
           `}</style>
-          <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
+          <div className="max-w-7xl mx-auto px-6 mb-3 text-center">
             <span className="text-brand-navy/35 text-xs font-bold tracking-widest uppercase">
               Dipercaya oleh mitra terkemuka
             </span>
