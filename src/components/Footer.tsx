@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-brand-navy text-white">
       {/* CTA Section */}
-      <div className="border-b border-white/10">
+      {/* <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">
@@ -38,7 +38,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Links */}
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-10">
