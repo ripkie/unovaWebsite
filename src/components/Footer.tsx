@@ -5,7 +5,7 @@ import { Mail, MapPin, Phone, Linkedin, Twitter, Instagram } from "lucide-react"
 export default function Footer() {
   return (
     <footer className="bg-brand-navy text-white">
-      {/* CTA Section */}
+      {/* CTA Section - Bisa di On/off kan*/}
       {/* <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-12 items-center">
           <div>
