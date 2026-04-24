@@ -74,6 +74,11 @@
   }
 }
 
+:root {
+  --color-brand-blue: #6F96D1;
+  --color-brand-navy: #151F5A;
+}
+
 @layer utilities {
   .text-gradient {
     background: linear-gradient(135deg, var(--color-brand-navy) 0%, var(--color-brand-blue) 100%);

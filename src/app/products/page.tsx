@@ -12,9 +12,9 @@ const products = [
     description: "Gas leak detector dengan alarm dan valve otomatis yang menutup regulator saat kebocoran terdeteksi. Memberikan perlindungan cepat untuk mencegah risiko kebakaran dan ledakan pada sistem gas.",
     image: "/images/fotoProduct/FP-Gas_Leak.png",
     badge: "Tersedia",
-    badgeColor: "bg-green-500",
+    badgeColor: "bg-brand-blue",
     focus: "Keamanan",
-    focusColor: "text-red-400 bg-red-500/10",
+    focusColor: "text-green-400 bg-green-500/10",
     specs: ["Deteksi LPG & Gas Alam", "Valve Otomatis", "Alarm 85dB", "Notifikasi App"],
     price: "Mulai dari Rp 1xx.xxx",
     highlights: [
