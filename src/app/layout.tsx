@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export const metadata: Metadata = {
   creator: "Unova",
   publisher: "Unova",
   metadataBase: new URL("https://unova.id"),
+
   openGraph: {
     type: "website",
     locale: "id_ID",
@@ -52,6 +54,7 @@ export const metadata: Metadata = {
     description:
       "Ekosistem IoT terpercaya untuk smart home dan smart building di Indonesia.",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Unova – Smarter Ways, Brighter Days",
@@ -59,6 +62,7 @@ export const metadata: Metadata = {
       "Ekosistem IoT terpercaya untuk smart home dan smart building di Indonesia.",
     creator: "@unova_id",
   },
+
   robots: {
     index: true,
     follow: true,
@@ -78,11 +82,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className={`${plusJakarta.variable} ${plusJakartaBody.variable}`}>
+    <html
+      lang="id"
+      className={`${plusJakarta.variable} ${plusJakartaBody.variable}`}
+    >
       <body>
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
