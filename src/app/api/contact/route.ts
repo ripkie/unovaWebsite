@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
     // Validasi field wajib
     if (!name || !email || !message) {
       return NextResponse.json(
-        { error: "Field nama, email, dan pesan wajib diisi." },
+        { error: "Name, email, and message are required." },
         { status: 400 }
       );
     }
@@ -18,18 +18,18 @@ export async function POST(req: NextRequest) {
 
     if (!apiKey || !emailTo) {
       return NextResponse.json(
-        { error: "Konfigurasi email belum diatur." },
+        { error: "Email settings have not been configured." },
         { status: 500 }
       );
     }
 
     // Map topik
     const topicMap: Record<string, string> = {
-      produk: "Informasi Produk",
-      demo: "Minta Demo",
-      partnership: "Program Kemitraan",
-      support: "Dukungan Teknis",
-      lainnya: "Lainnya",
+      produk: "Product Information",
+      demo: "Request a Demo",
+      partnership: "Partnership Program",
+      support: "Technical Support",
+      lainnya: "Other",
     };
 
     const topicLabel = topicMap[interest] ?? interest;
@@ -45,16 +45,16 @@ export async function POST(req: NextRequest) {
         from: "Creativity Corner Website <onboarding@resend.dev>",
         to: [emailTo],
         reply_to: email,
-        subject: `[Creativity Corner] Pesan baru dari ${name} — ${topicLabel}`,
+        subject: `[Creativity Corner] New message from ${name} — ${topicLabel}`,
         html: `
           <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; padding: 24px;">
             <div style="background: #352E2B; border-radius: 12px; padding: 20px 24px; margin-bottom: 24px;">
-              <h1 style="color: white; font-size: 20px; margin: 0;">Pesan Baru dari Website Creativity Corner</h1>
+              <h1 style="color: white; font-size: 20px; margin: 0;">New Message from the Creativity Corner Website</h1>
             </div>
 
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase; width: 140px;">Nama</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase; width: 140px;">Name</td>
                 <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #352E2B; font-weight: 600;">${name}</td>
               </tr>
               <tr>
@@ -65,11 +65,11 @@ export async function POST(req: NextRequest) {
               </tr>
               ${company ? `
               <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase;">Perusahaan</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase;">Company</td>
                 <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #352E2B;">${company}</td>
               </tr>` : ""}
               <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase;">Topik</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase;">Subject</td>
                 <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF;">
                   <span style="background: rgba(184, 92, 92,0.15); color: #B85C5C; padding: 2px 10px; border-radius: 20px; font-size: 13px; font-weight: 600;">${topicLabel}</span>
                 </td>
@@ -77,12 +77,12 @@ export async function POST(req: NextRequest) {
             </table>
 
             <div style="margin-top: 20px;">
-              <p style="color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Pesan</p>
+              <p style="color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Message</p>
               <div style="background: #FFFFFF; border-radius: 10px; padding: 16px; color: #352E2B; line-height: 1.6; white-space: pre-wrap;">${message}</div>
             </div>
 
             <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #FFFFFF; font-size: 12px; color: #999;">
-              Dikirim dari creativitycorner.cc · ${new Date().toLocaleString("id-ID", { dateStyle: "full", timeStyle: "short" })}
+              Sent from creativitycorner.cc · ${new Date().toLocaleString("en-US", { dateStyle: "full", timeStyle: "short", timeZone: "Asia/Jakarta" })}
             </div>
           </div>
         `,
@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
       const err = await res.json();
       console.error("Resend error:", err);
       return NextResponse.json(
-        { error: "Gagal mengirim email. Coba lagi nanti." },
+        { error: "Unable to send the email. Please try again later." },
         { status: 500 }
       );
     }
@@ -102,7 +102,7 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error("Contact API error:", err);
     return NextResponse.json(
-      { error: "Terjadi kesalahan server." },
+      { error: "A server error occurred." },
       { status: 500 }
     );
   }

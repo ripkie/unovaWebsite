@@ -8,12 +8,11 @@ export default function HeroSection() {
           Blog & Insights
         </span>
         <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-navy">
-          Wawasan untuk<br />
-          <span style={{ color: "#B85C5C" }}>Rumah yang Lebih Aman</span>
+          Insights for<br />
+          <span style={{ color: "#B85C5C" }}>Safer Homes</span>
         </h1>
         <p className="mt-4 text-brand-navy/55 text-lg max-w-xl mx-auto leading-relaxed">
-          Artikel, panduan, dan berita terkini seputar home technology,
-          keamanan rumah, dan kualitas udara.
+          Articles, guides, and the latest news on home technology, home safety, and air quality.
         </p>
       </div>
     </section>

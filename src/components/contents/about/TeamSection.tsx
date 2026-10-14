@@ -6,8 +6,8 @@ export default function TeamSection({ cLevel, engineeringTeam, operationsTeam }:
     <section className="py-10 bg-brand-light">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-8">
-          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#B85C5C" }}>Tim Kami</span>
-          <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Orang-orang di Balik Creativity Corner</h2>
+          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#B85C5C" }}>Our Team</span>
+          <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">The People Behind Creativity Corner</h2>
         </div>
 
         {/* C-Level */}

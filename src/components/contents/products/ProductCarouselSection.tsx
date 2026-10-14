@@ -11,8 +11,8 @@ export default function ProductCarouselSection({ current, setCurrent, prev, next
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Tersedia Sekarang</span>
-            <h2 className="mt-2 text-3xl font-display font-bold text-brand-navy">Produk Aktif</h2>
+            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Available Now</span>
+            <h2 className="mt-2 text-3xl font-display font-bold text-brand-navy">Current Products</h2>
           </div>
           {/* Nav arrows */}
           <div className="flex items-center gap-3">
@@ -64,22 +64,22 @@ export default function ProductCarouselSection({ current, setCurrent, prev, next
                   ))}
                 </div>
                 <div className="mt-8 pt-6 border-t border-brand-blue/10">
-                  <div className="text-brand-navy/50 text-sm mb-1">Harga</div>
+                  <div className="text-brand-navy/50 text-sm mb-1">Price</div>
                   <div className="text-2xl font-display font-bold text-brand-navy">{product.price}</div>
                 </div>
                 <div className="mt-6 flex gap-3 flex-wrap">
-                  {product.badge === "Tersedia" ? (
+                  {product.badge === "Available" ? (
                     <>
                       <Link href={`/products/${product.id}`} className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-navy text-white font-semibold hover:bg-brand-blue transition-colors">
-                        Detail Produk<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                        Product Details<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                       </Link>
                       <Link href="/contact-us" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-brand-blue/30 text-brand-navy font-semibold hover:bg-brand-light transition-colors">
-                        Lihat Demo
+                        View Demo
                       </Link>
                     </>
                   ) : (
                     <Link href="/contact-us" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-brand-blue/30 text-brand-navy font-semibold hover:bg-brand-light transition-colors">
-                      Daftar Notifikasi
+                      Get Notified
                     </Link>
                   )}
                 </div>
@@ -108,16 +108,16 @@ export default function ProductCarouselSection({ current, setCurrent, prev, next
                   <p className="mt-3 text-brand-navy/60 text-sm leading-relaxed line-clamp-3">{p.description}</p>
                   <div className="mt-4 pt-3 border-t border-brand-blue/10 flex items-center justify-between">
                     <div>
-                      <div className="text-brand-navy/40 text-xs">Harga</div>
+                      <div className="text-brand-navy/40 text-xs">Price</div>
                       <div className="text-brand-navy font-bold text-sm">{p.price}</div>
                     </div>
-                    {p.badge === "Tersedia" ? (
+                    {p.badge === "Available" ? (
                       <Link href={`/products/${p.id}`} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-navy text-white text-sm font-semibold">
                         Detail <ArrowRight size={14} />
                       </Link>
                     ) : (
                       <Link href="/contact-us" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-brand-blue/30 text-brand-navy text-sm font-semibold">
-                        Notifikasi
+                        Get Notified
                       </Link>
                     )}
                   </div>

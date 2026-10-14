@@ -5,8 +5,8 @@ export default function MilestonesSection() {
     <section className="py-10" style={{ background: "#FFF9F5" }}>
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-8">
-          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#B85C5C" }}>Perjalanan Kami</span>
-          <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Milestone Creativity Corner</h2>
+          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#B85C5C" }}>Our Journey</span>
+          <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Creativity Corner Milestones</h2>
         </div>
         <div className="relative">
           <div className="absolute left-[11px] top-2 bottom-2 w-0.5" style={{ background: "rgba(184, 92, 92,0.3)" }} />

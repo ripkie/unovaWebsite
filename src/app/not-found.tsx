@@ -11,10 +11,10 @@ export default function NotFound() {
           404
         </div>
         <h1 className="mt-4 text-4xl font-display font-bold text-white">
-          Halaman Tidak Ditemukan
+          Page Not Found
         </h1>
         <p className="mt-4 text-white/60 text-lg leading-relaxed">
-          Maaf, halaman yang Anda cari tidak ada atau sudah dipindahkan.
+          The page you are looking for does not exist or has moved.
         </p>
         <div className="mt-10 flex gap-4 justify-center">
           <Link
@@ -22,13 +22,13 @@ export default function NotFound() {
             className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-blue text-white font-semibold hover:bg-white hover:text-brand-navy transition-all"
           >
             <Home size={18} />
-            Ke Beranda
+            Back to Home
           </Link>
           <Link
             href="/contact-us"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all"
           >
-            Hubungi Kami
+            Contact Us
           </Link>
         </div>
       </div>

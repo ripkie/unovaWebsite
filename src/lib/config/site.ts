@@ -3,8 +3,8 @@ const origin = new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://creativityco
 export const siteConfig = {
   name: "Creativity Corner",
   url: origin.origin,
-  title: "Creativity Corner — Mainan STEM & Robot Edukasi",
-  description: "Creativity Corner mengembangkan mainan STEM dan robot edukasi Beeboy untuk belajar coding tanpa layar, melalui permainan, cerita, dan board mat di Indonesia.",
+  title: "Creativity Corner — STEM Toys & Educational Robots",
+  description: "Creativity Corner develops STEM toys and Beeboy educational robots for screen-free coding through play, stories, and board mats in Indonesia.",
   tagline: "Born from Korea’s Beeboy, built for Indonesia.",
   instagram: "https://www.instagram.com/creativitycorner.cc/",
   logo: "/cc-logo.png",

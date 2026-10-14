@@ -42,8 +42,8 @@ export default function ArticleContentSection({ post, relatedPosts }: Pick<BlogD
 
             <div className="mt-8 p-6 rounded-2xl bg-brand-light border border-brand-blue/10 flex items-center justify-between flex-wrap gap-4">
               <div>
-                <p className="font-display font-bold text-brand-navy">Artikel ini bermanfaat?</p>
-                <p className="text-brand-navy/50 text-sm">Bagikan ke rekan kerja Anda</p>
+                <p className="font-display font-bold text-brand-navy">Found this article helpful?</p>
+                <p className="text-brand-navy/50 text-sm">Share it with your colleagues</p>
               </div>
               <div className="flex gap-2">
                 {["LinkedIn", "Twitter", "WhatsApp"].map((s) => (
@@ -57,18 +57,18 @@ export default function ArticleContentSection({ post, relatedPosts }: Pick<BlogD
             <div className="p-5 rounded-2xl bg-brand-light border border-brand-blue/10">
               <div className="flex items-center gap-2 mb-3">
                 <BookOpen size={16} className="text-brand-blue" />
-                <span className="text-brand-navy font-semibold text-sm">Artikel ini</span>
+                <span className="text-brand-navy font-semibold text-sm">This article</span>
               </div>
               <div className="flex items-center gap-2 text-brand-navy/50 text-sm">
                 <Clock size={14} />
-                {post.readTime} baca
+                {post.readTime} read
               </div>
-              <div className="mt-3 text-brand-navy/50 text-xs">Ditulis oleh {post.author} · {post.date}</div>
+              <div className="mt-3 text-brand-navy/50 text-xs">Written by {post.author} · {post.date}</div>
             </div>
 
             {relatedPosts.length > 0 && (
               <div className="p-5 rounded-2xl bg-brand-light border border-brand-blue/10">
-                <h3 className="font-display font-bold text-brand-navy mb-4 text-sm uppercase tracking-wide">Artikel Terkait</h3>
+                <h3 className="font-display font-bold text-brand-navy mb-4 text-sm uppercase tracking-wide">Related Articles</h3>
                 <div className="space-y-3">
                   {relatedPosts.map((rel) => (
                     <Link key={rel.slug} href={`/blog/${rel.slug}`} className="group flex items-start gap-3 p-3 rounded-xl hover:bg-white transition-colors">
@@ -87,10 +87,10 @@ export default function ArticleContentSection({ post, relatedPosts }: Pick<BlogD
             )}
 
             <div className="p-5 rounded-2xl text-white" style={{ background: "#352E2B" }}>
-              <p className="font-display font-bold mb-2">Tertarik dengan solusi Creativity Corner?</p>
-              <p className="text-white/60 text-sm mb-4 leading-relaxed">Konsultasi gratis untuk proyek smart building Anda.</p>
+              <p className="font-display font-bold mb-2">Interested in Creativity Corner’s solutions?</p>
+              <p className="text-white/60 text-sm mb-4 leading-relaxed">Get a free consultation for your smart building project.</p>
               <Link href="/contact-us" className="block text-center px-4 py-2.5 rounded-xl text-white text-sm font-semibold transition-colors" style={{ background: "#B85C5C" }}>
-                Hubungi Kami
+                Contact Us
               </Link>
             </div>
           </aside>

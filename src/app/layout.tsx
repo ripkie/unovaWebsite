@@ -15,5 +15,5 @@ export const metadata: Metadata = {
   verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined,
 };
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
-  return <html lang="id" className={font.variable}><body><SiteLayout>{children}</SiteLayout></body></html>;
+  return <html lang="en" className={font.variable}><body><SiteLayout>{children}</SiteLayout></body></html>;
 }

@@ -7,8 +7,8 @@ export default function SpecificationsSection({ product }: Pick<ProductDetailSec
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Fitur Utama</span>
-            <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Perlindungan Berlapis,<br />Respons Kilat</h2>
+            <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Key Features</span>
+            <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Layered Protection,<br />Rapid Response</h2>
             <ul className="mt-8 space-y-4">
               {product.highlights.map((item) => (
                 <li key={item} className="flex items-start gap-3">
@@ -20,7 +20,7 @@ export default function SpecificationsSection({ product }: Pick<ProductDetailSec
           </div>
           <div className="bg-white rounded-2xl border border-brand-blue/10 overflow-hidden">
             <div className="px-6 py-4 bg-brand-navy">
-              <h3 className="text-white font-display font-semibold">Spesifikasi Teknis</h3>
+              <h3 className="text-white font-display font-semibold">Technical Specifications</h3>
             </div>
             <div className="divide-y divide-brand-blue/10">
               {Object.entries(product.specs).map(([key, val]) => (

@@ -6,10 +6,10 @@ export default function PartnerTypesSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-8">
           <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#B85C5C" }}>
-            Pilih Jalur Anda
+            Choose Your Path
           </span>
           <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
-            Tipe Program Kemitraan
+            Partnership Programs
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">

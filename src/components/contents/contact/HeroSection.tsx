@@ -8,14 +8,13 @@ export default function HeroSection() {
           className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4"
           style={{ background: "#FFFFFF", color: "#B85C5C" }}
         >
-          Hubungi Kami
+          Contact Us
         </span>
         <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-navy">
-          Mari Berbicara
+          Let’s Talk
         </h1>
         <p className="mt-4 text-brand-navy/55 text-lg max-w-xl mx-auto leading-relaxed">
-          Ada pertanyaan, ingin demo produk, atau siap mulai proyek?
-          Tim kami siap membantu Anda.
+          Have a question, want a product demo, or ready to start a project? Our team is here to help.
         </p>
       </div>
     </section>

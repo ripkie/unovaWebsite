@@ -3,6 +3,6 @@ import { pageMetadata } from "@/lib/seo/metadata";
 import JsonLd from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
-export const metadata = pageMetadata({ "title": "Tentang Creativity Corner & Beeboy", "description": "Kenali Creativity Corner, startup mainan edukasi STEM yang mengadaptasi Beeboy dari Korea untuk anak, keluarga, dan sekolah di Indonesia.", "path": "/about" });
+export const metadata = pageMetadata({ "title": "About Creativity Corner & Beeboy", "description": "Meet Creativity Corner, a STEM toy startup adapting Korea’s Beeboy for children, families, and schools in Indonesia.", "path": "/about" });
 
-export default function AboutPage() { return <><JsonLd data={breadcrumbSchema([{ "name": "Home", "path": "/" }, { "name": "Tentang Creativity Corner & Beeboy", "path": "/about" }])} /><AboutLayout /></>; }
+export default function AboutPage() { return <><JsonLd data={breadcrumbSchema([{ "name": "Home", "path": "/" }, { "name": "About Creativity Corner & Beeboy", "path": "/about" }])} /><AboutLayout /></>; }

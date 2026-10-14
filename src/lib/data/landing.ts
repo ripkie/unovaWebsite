@@ -1,18 +1,18 @@
 /** Isi landing page. Tambahkan bahan nyata sebelum mengaktifkan section opsional. */
 export const landingContent = {
-  hero: { title: "Main kecil.\nIde besar.", subtitle: "Kenalkan Beeboy, teman bermain untuk menjelajah, mencoba, dan belajar STEM.", image: "/images/beeboy/beeboy-held.png" },
-  robot: { title: "Halo, aku Beeboy!", lead: "Teman kecil untuk rasa ingin tahu yang besar.", description: "Kenalkan anak pada arah dan urutan melalui permainan bersama robot Beeboy. Setiap perjalanan menjadi kesempatan untuk mencoba langkah baru dan menemukan jalan sendiri.", image: "/images/beeboy/beeboy-robot.png" },
-  rfid: { title: "Kartu kecil. Banyak kemungkinan.", lead: "Perintah yang bisa dipegang dan dimainkan.", description: "Kartu RFID menjadi alat bermain untuk memberi perintah kepada Beeboy. Kenali arah, susun langkah, lalu ajak Beeboy menjelajah board mat." },
-  board: { title: "Petualangan dimulai di sini.", lead: "Satu board mat, banyak jalan untuk dijelajahi.", description: "Pohon, bebatuan, dan rintangan menjadi bagian dari perjalanan Beeboy. Ajak anak memilih tujuan, memikirkan jalur, dan mencoba urutan perintah di atas board mat.", image: "/images/beeboy/board-mat.png" },
-  contact: { title: "Mari bermain bersama.", description: "Ingin mengenal Beeboy lebih dekat atau menjajaki kerja sama dengan Creativity Corner? Kami siap mendengar ceritamu." },
+  hero: { title: "Little play.\nBig ideas.", subtitle: "Meet Beeboy, a play companion for exploring, experimenting, and learning STEM.", image: "/images/beeboy/beeboy-held.png" },
+  robot: { title: "Hi, I’m Beeboy!", lead: "A little friend for big curiosity.", description: "Introduce children to directions and sequences through play with Beeboy. Every journey is a chance to try new steps and find their own way.", image: "/images/beeboy/beeboy-robot.png" },
+  rfid: { title: "Little cards. Endless possibilities.", lead: "Commands children can hold and play with.", description: "RFID cards let children give commands to Beeboy. Explore directions, plan the steps, and guide Beeboy around the board mat." },
+  board: { title: "Adventure starts here.", lead: "One board mat. So many paths to explore.", description: "Trees, rocks, and obstacles become part of Beeboy’s journey. Invite children to choose a destination, plan a route, and try command sequences on the board mat.", image: "/images/beeboy/board-mat.png" },
+  contact: { title: "Let’s play together.", description: "Want to get to know Beeboy or explore a partnership with Creativity Corner? We would love to hear from you." },
 };
 // Label dari referensi pengguna. Fungsi 1/3 SCAN tidak diasumsikan.
 export const rfidCards = [
-  { id: "right", label: "RIGHT", caption: "Kanan" },
-  { id: "left", label: "LEFT", caption: "Kiri" },
-  { id: "forward", label: "FORWARD", caption: "Maju" },
-  { id: "delete", label: "DELETE", caption: "Hapus" },
-  { id: "go", label: "GO", caption: "Jalankan" },
+  { id: "right", label: "RIGHT", caption: "Right" },
+  { id: "left", label: "LEFT", caption: "Left" },
+  { id: "forward", label: "FORWARD", caption: "Forward" },
+  { id: "delete", label: "DELETE", caption: "Delete" },
+  { id: "go", label: "GO", caption: "Go" },
   { id: "scan-one", label: "1 SCAN", caption: "1 SCAN" },
   { id: "scan-three", label: "3 SCAN", caption: "3 SCAN" },
 ] as const;

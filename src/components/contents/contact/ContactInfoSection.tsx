@@ -26,7 +26,7 @@ export default function ContactInfoSection() {
             </div>
             <div className="flex items-center gap-1 text-brand-navy/40 text-xs mt-1">
               <Clock size={11} />
-              Respon dalam 24 jam
+              Response within 24 hours
             </div>
           </div>
         </a>
@@ -53,7 +53,7 @@ export default function ContactInfoSection() {
             </div>
             <div className="flex items-center gap-1 text-brand-navy/40 text-xs mt-1">
               <Clock size={11} />
-              Senin–Jumat, 09.00–18.00 WIB
+              Monday–Friday, 9:00 AM–6:00 PM (UTC+7)
             </div>
           </div>
         </a>
@@ -68,14 +68,14 @@ export default function ContactInfoSection() {
           </div>
           <div>
             <div className="text-brand-navy/40 text-xs font-semibold uppercase tracking-widest">
-              Kantor
+              Office
             </div>
             <div className="font-display font-bold text-brand-navy mt-1">
               Bandung, Indonesia
             </div>
             <div className="flex items-center gap-1 text-brand-navy/40 text-xs mt-1">
               <Clock size={11} />
-              Kunjungi dengan perjanjian
+              Visits by appointment
             </div>
           </div>
         </div>

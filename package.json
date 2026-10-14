@@ -12,37 +12,37 @@
     "partners": [
       {
         "name": "Telkom Univerity",
-        "category": "Institusi",
+        "category": "Institutions",
         "logo": "/images/logoPartner/TELU.png"
       },
       {
         "name": "Pusan National University ",
-        "category": "Institusi",
+        "category": "Institutions",
         "logo": "/images/logoPartner/PusanUniv.png"
       },
       {
         "name": "Bandung Techno Park",
-        "category": "Teknologi",
+        "category": "Technology",
         "logo": "/images/logoPartner/BTP.webp"
       },
       {
         "name": "Telkom Indonesia",
-        "category": "Teknologi",
+        "category": "Technology",
         "logo": null
       },
       {
         "name": "PLN",
-        "category": "Energi",
+        "category": "Energy",
         "logo": null
       },
       {
         "name": "Pertamina",
-        "category": "Energi",
+        "category": "Energy",
         "logo": null
       },
       {
         "name": "Mandiri",
-        "category": "Finansial",
+        "category": "Finance",
         "logo": null
       },
       {
@@ -58,7 +58,7 @@
         "role": "Chief Executive Officer",
         "department": "C-Level",
         "reportsTo": null,
-        "bio": "Visioner di balik Unova dengan fokus pada strategi produk dan pengembangan bisnis home technology di Indonesia.",
+        "bio": "The visionary behind Creativity Corner, focused on product strategy and home technology business development in Indonesia.",
         "photo": "/images/anggota/dylan.jpeg"
       },
       {
@@ -67,7 +67,7 @@
         "role": "Chief Technical Officer",
         "department": "C-Level",
         "reportsTo": "ceo",
-        "bio": "Arsitek teknis yang membangun platform IoT Unova dari nol dengan fokus pada skalabilitas dan keandalan sistem.",
+        "bio": "The technical architect building Creativity Corner’s IoT platform from the ground up, with a focus on scalability and reliability.",
         "photo": null
       },
       {
@@ -76,7 +76,7 @@
         "role": "Chief Operation Officer",
         "department": "C-Level",
         "reportsTo": "ceo",
-        "bio": "Memastikan operasional Unova berjalan efisien - dari supply chain produk hingga eksekusi strategi pemasaran.",
+        "bio": "Ensures Creativity Corner’s operations run efficiently, from the product supply chain to marketing execution.",
         "photo": null
       },
       {
@@ -85,7 +85,7 @@
         "role": "Design Engineer",
         "department": "Engineering",
         "reportsTo": "cto",
-        "bio": "Merancang antarmuka dan pengalaman pengguna produk Unova agar intuitif dan estetis.",
+        "bio": "Designs intuitive, attractive interfaces and user experiences for Creativity Corner products.",
         "photo": "/images/anggota/ibra.jpeg"
       },
       {
@@ -94,16 +94,16 @@
         "role": "IoT Engineer",
         "department": "Engineering",
         "reportsTo": "cto",
-        "bio": "Mengembangkan firmware dan protokol komunikasi untuk seluruh ekosistem perangkat IoT Unova.",
+        "bio": "Develops firmware and communication protocols for Creativity Corner’s IoT device ecosystem.",
         "photo": "/images/anggota/insan.jpeg"
       },
       {
         "id": "electrical-engineer",
-        "name": "-1 juga ini",
+        "name": "-1 (unassigned)",
         "role": "Electrical Engineer",
         "department": "Engineering",
         "reportsTo": "cto",
-        "bio": "Merancang skema elektronik dan memastikan keandalan hardware perangkat Unova di lapangan.",
+        "bio": "Designs electronic circuits and ensures the reliability of Creativity Corner hardware in the field.",
         "photo": null
       },
       {
@@ -112,7 +112,7 @@
         "role": "Software Engineer",
         "department": "Engineering",
         "reportsTo": "cto",
-        "bio": "Mengembangkan dan maintenance website serta aplikasi mobile Unova yang terhubung dengan pengguna",
+        "bio": "Develops and maintains Creativity Corner’s website and mobile apps to connect with users.",
         "photo": "/images/anggota/rifki.jpeg"
       },
       {
@@ -121,7 +121,7 @@
         "role": "Creative Specialist",
         "department": "Operations",
         "reportsTo": "coo",
-        "bio": "Menciptakan konten visual dan storytelling brand Unova yang konsisten di semua platform.",
+        "bio": "Creates visual content and consistent brand storytelling for Creativity Corner across platforms.",
         "photo": null
       },
       {
@@ -130,7 +130,7 @@
         "role": "Creative Specialist",
         "department": "Operations",
         "reportsTo": "coo",
-        "bio": "Mengeksekusi produksi konten digital — foto, video, dan grafis untuk kebutuhan komunikasi Unova.",
+        "bio": "Produces digital content, including photos, videos, and graphics, for Creativity Corner’s communications.",
         "photo": "/images/anggota/seina.jpeg"
       },
       {
@@ -139,7 +139,7 @@
         "role": "Marketing & Sales Specialist",
         "department": "Operations",
         "reportsTo": "coo",
-        "bio": "Mengelola kampanye pemasaran digital dan pipeline penjualan produk Unova ke segmen konsumen.",
+        "bio": "Manages digital marketing campaigns and the consumer sales pipeline for Creativity Corner products.",
         "photo": "/images/anggota/faiza.jpeg"
       },
       {
@@ -148,7 +148,7 @@
         "role": "Marketing & Sales Specialist",
         "department": "Operations",
         "reportsTo": "coo",
-        "bio": "Mengelola hubungan dengan mitra bisnis dan mengembangkan saluran distribusi produk Unova.",
+        "bio": "Manages business partner relationships and develops distribution channels for Creativity Corner products.",
         "photo": "/images/anggota/wilan.jpeg"
       }
     ]

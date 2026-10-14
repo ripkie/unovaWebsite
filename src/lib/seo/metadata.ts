@@ -10,7 +10,7 @@ export function pageMetadata({ title, description, path, article = false }: {
     alternates: { canonical: absoluteUrl(path) },
     robots: { index: siteIndexable, follow: true },
     openGraph: {
-      type: article ? "article" : "website", locale: "id_ID", siteName: siteConfig.name,
+      type: article ? "article" : "website", locale: "en_US", siteName: siteConfig.name,
       url: absoluteUrl(path), title: fullTitle, description,
       images: [{ url: absoluteUrl("/opengraph-image"), width: 1200, height: 630, alt: "Creativity Corner — Learning into Play" }],
     },

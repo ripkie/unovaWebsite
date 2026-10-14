@@ -8,10 +8,10 @@ export default function ComingSoonSection() {
     <section className="py-12 bg-brand-light">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-8">
-          <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Segera Hadir</span>
-          <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Roadmap Produk</h2>
+          <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Coming Soon</span>
+          <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Product Roadmap</h2>
           <p className="mt-3 text-brand-navy/50 max-w-xl mx-auto">
-            Kami terus berinovasi. Berikut produk-produk yang sedang dalam pengembangan.
+            We keep innovating. Here are the products currently in development.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
@@ -36,7 +36,7 @@ export default function ComingSoonSection() {
               </ul>
               <div className="mt-5">
                 <Link href="/contact-us" className="text-brand-blue text-sm font-semibold hover:underline">
-                  Daftar notifikasi →
+                  Get notified →
                 </Link>
               </div>
             </div>

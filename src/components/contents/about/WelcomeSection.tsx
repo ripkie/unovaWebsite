@@ -3,10 +3,10 @@ export default function WelcomeSection() {
     <section className="py-10 bg-brand-light">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-8">
-          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#B85C5C" }}>Dukungan Stakeholder</span>
+          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#B85C5C" }}>Stakeholder Support</span>
           <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Welcome Message</h2>
           <p className="mt-3 text-brand-navy/50 max-w-xl mx-auto text-sm leading-relaxed">
-            Pesan dan dukungan dari para komisioner akademik yang mempercayai visi Creativity Corner.
+            Messages of support from academic commissioners who believe in Creativity Corner’s vision.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-6">

@@ -5,14 +5,14 @@ export default function HowItWorksSection() {
     <section className="py-10 bg-brand-light">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Cara Kerja</span>
-          <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Proteksi dalam 3 Langkah</h2>
+          <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">How It Works</span>
+          <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Protection in 3 Steps</h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            { step: "01", icon: ShieldAlert, title: "Deteksi", desc: "Sensor dual-element mendeteksi konsentrasi gas berbahaya dalam hitungan detik, jauh sebelum tercium bau." },
-            { step: "02", icon: Bell, title: "Alarm & Notifikasi", desc: "Alarm 85dB langsung berbunyi. Notifikasi push dikirim ke smartphone Anda dan keluarga secara bersamaan." },
-            { step: "03", icon: Zap, title: "Valve Otomatis", desc: "Valve elektromagnetik menutup aliran gas secara otomatis. Sumber kebocoran diisolasi sebelum memicu bahaya." },
+            { step: "01", icon: ShieldAlert, title: "Detection", desc: "A dual-element sensor detects hazardous gas concentrations within seconds, well before you can smell them." },
+            { step: "02", icon: Bell, title: "Alarm & Notifications", desc: "An 85 dB alarm sounds immediately. Push notifications are sent to your smartphone and your family at the same time." },
+            { step: "03", icon: Zap, title: "Automatic Valve", desc: "An electromagnetic valve automatically shuts off the gas supply. The leak source is isolated before it creates a hazard." },
           ].map((s) => (
             <div key={s.step} className="relative p-8 rounded-2xl bg-brand-light border border-brand-blue/10 hover:border-brand-blue/30 hover:shadow-lg transition-all">
               <div className="text-7xl font-display font-bold text-brand-blue/10 absolute top-4 right-6 select-none">{s.step}</div>

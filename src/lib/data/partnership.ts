@@ -8,30 +8,30 @@ export const partners: Partner[] = getPartners();
 export const partnerTypes = [
   {
     icon: Globe,
-    title: "Mitra Distribusi",
-    desc: "Jangkau pasar lebih luas dengan jaringan distribusi Creativity Corner di seluruh Indonesia.",
-    perks: ["Margin kompetitif", "Training produk", "Marketing support", "Prioritas stok"],
+    title: "Distribution Partners",
+    desc: "Reach a wider market through Creativity Corner’s distribution network across Indonesia.",
+    perks: ["Competitive margins", "Product training", "Marketing support", "Stock priority"],
   },
   {
     icon: Code,
-    title: "Mitra Integrasi",
-    desc: "Integrasikan solusi Creativity Corner ke dalam proyek smart building klien Anda.",
-    perks: ["Akses API penuh", "Technical support 24/7", "Co-marketing", "Demo unit gratis"],
+    title: "Integration Partners",
+    desc: "Integrate Creativity Corner solutions into your clients’ smart building projects.",
+    perks: ["Full API access", "Technical support 24/7", "Co-marketing", "Free demo unit"],
   },
   {
     icon: Building,
-    title: "Mitra Teknologi",
-    desc: "Kembangkan solusi bersama di atas platform IoT Creativity Corner yang terbuka.",
-    perks: ["SDK & dokumentasi", "Joint development", "Revenue sharing", "Co-branding"],
+    title: "Technology Partners",
+    desc: "Develop solutions together on Creativity Corner’s open IoT platform.",
+    perks: ["SDK & documentation", "Joint development", "Revenue sharing", "Co-branding"],
   },
 ];
 
 export const benefits = [
-  "Produk bersertifikat internasional",
-  "Dukungan teknis dedicated",
-  "Training dan sertifikasi",
+  "Internationally certified products",
+  "Dedicated technical support",
+  "Training and certification",
   "Co-marketing & lead sharing",
-  "Portal mitra eksklusif",
-  "Prioritas pembaruan produk",
+  "Exclusive partner portal",
+  "Priority product updates",
 ];
 

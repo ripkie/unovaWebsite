@@ -3,29 +3,29 @@ import { Heart, Users, Lightbulb, Globe } from "lucide-react";
 export const values = [
   {
     icon: Lightbulb,
-    title: "Inovasi Berkelanjutan",
-    desc: "Kami tidak pernah berhenti berinovasi. Setiap produk adalah hasil riset mendalam dan uji lapangan nyata.",
+    title: "Continuous Innovation",
+    desc: "We never stop innovating. Every product is the result of in-depth research and real-world testing.",
   },
   {
     icon: Users,
-    title: "Berpusat pada Pengguna",
-    desc: "Desain yang intuitif bukan kemewahan — ini adalah standar minimum kami untuk setiap solusi.",
+    title: "User-Centered Design",
+    desc: "Intuitive design is not a luxury—it is our minimum standard for every solution.",
   },
   {
     icon: Globe,
-    title: "Berdampak Lokal, Berskala Global",
-    desc: "Mengadaptasi semangat Beeboy dari Korea untuk kebutuhan anak, keluarga, sekolah, dan budaya Indonesia.",
+    title: "Local Impact, Global Reach",
+    desc: "Adapting the spirit of Korea’s Beeboy to the needs of children, families, schools, and Indonesian culture.",
   },
   {
     icon: Heart,
-    title: "Integritas & Kepercayaan",
-    desc: "Setiap janji adalah komitmen. Kami membangun hubungan jangka panjang dengan klien dan mitra.",
+    title: "Integrity & Trust",
+    desc: "Every promise is a commitment. We build lasting relationships with our customers and partners.",
   },
 ];
 
 export const milestones = [
-  { date: "Pengembangan", event: "Adaptasi Beeboy, robot edukasi, board mat, storyline, dan obstacles untuk Indonesia" },
-  { date: "Rencana validasi", event: "Workshop dan demonstrasi produk untuk mendukung pengembangan pengalaman belajar anak" },
+  { date: "Development", event: "Adapting Beeboy, educational robots, board mats, storylines, and obstacles for Indonesia" },
+  { date: "Validation Plans", event: "Workshops and product demonstrations to support the development of children’s learning experiences" },
 ];
 
 export const deptConfig: Record<string, { label: string; bg: string; text: string; border: string; }> = {

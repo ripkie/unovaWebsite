@@ -7,15 +7,15 @@ import { Menu, X, Search } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/products", label: "Produk" },
+  { href: "/products", label: "Products" },
   { href: "/blog", label: "Blog" },
-  { href: "/partnership", label: "Kemitraan" },
-  { href: "/about", label: "Tentang Kami" },
+  { href: "/partnership", label: "Partnerships" },
+  { href: "/about", label: "About Us" },
 ];
 
 const productList = [
-  { id: "gas-leak-prevention", name: "Gas Leak Prevention", desc: "Proteksi otomatis dari kebocoran gas" },
-  { id: "humidifier-dehumidifier-2in1", name: "Humidifier & Dehumidifier 2in1", desc: "Jaga kelembapan udara rumah secara otomatis" },
+  { id: "gas-leak-prevention", name: "Gas Leak Prevention", desc: "Automatic protection against gas leaks" },
+  { id: "humidifier-dehumidifier-2in1", name: "Humidifier & Dehumidifier 2in1", desc: "Automatically maintain your home’s humidity" },
 ];
 
 export default function Navbar() {
@@ -49,14 +49,14 @@ export default function Navbar() {
 
   return (
     <header className="cc-site-header fixed top-0 left-0 right-0 z-50 flex justify-center px-4">
-      <nav className="w-full" style={navStyle} aria-label="Navigasi utama">
+      <nav className="w-full" style={navStyle} aria-label="Main navigation">
         <div className="cc-navbar-inner">
 
           {/* Logo */}
-          <Link href="/" aria-label="Creativity Corner — Beranda" className="flex items-center shrink-0">
+          <Link href="/" aria-label="Creativity Corner — Home" className="flex items-center shrink-0">
             <Image
               src="/cc-logo.png"
-              alt="Logo Creativity Corner"
+              alt="Creativity Corner logo"
               width={1459}
               height={1078}
               priority
@@ -95,12 +95,12 @@ export default function Navbar() {
                   value={search}
                   onChange={(e) => { setSearch(e.target.value); setShowDropdown(true); }}
                   onFocus={() => setShowDropdown(true)}
-                  placeholder="Cari produk..."
-                  aria-label="Cari produk"
+                  placeholder="Search products..."
+                  aria-label="Search products"
                   className="bg-transparent outline-none text-brand-navy placeholder-brand-navy/30 w-full text-sm"
                 />
                 {search && (
-                  <button aria-label="Hapus pencarian" onClick={() => { setSearch(""); setShowDropdown(false); }}>
+                  <button aria-label="Clear search" onClick={() => { setSearch(""); setShowDropdown(false); }}>
                     <X size={13} style={{ color: "#B85C5C" }} />
                   </button>
                 )}
@@ -118,7 +118,7 @@ export default function Navbar() {
                       <div className="text-brand-navy/45 text-xs mt-0.5">{p.desc}</div>
                     </button>
                   )) : (
-                    <div className="px-4 py-3 text-brand-navy/40 text-sm">Produk tidak ditemukan</div>
+                    <div className="px-4 py-3 text-brand-navy/40 text-sm">No products found</div>
                   )}
                 </div>
               )}
@@ -130,12 +130,12 @@ export default function Navbar() {
             href="/contact-us"
             className="cc-navbar-contact hidden lg:inline-flex"
           >
-            Hubungi Kami
+            Contact Us
           </Link>
 
           {/* Mobile toggle */}
           <button
-            aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="cc-mobile-menu"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -164,12 +164,12 @@ export default function Navbar() {
                       value={search}
                       onChange={(e) => { setSearch(e.target.value); setShowDropdown(true); }}
                       onFocus={() => setShowDropdown(true)}
-                      placeholder="Cari produk..."
-                  aria-label="Cari produk"
+                      placeholder="Search products..."
+                  aria-label="Search products"
                       className="bg-transparent outline-none text-brand-navy placeholder-brand-navy/30 w-full text-sm"
                     />
                     {search && (
-                      <button aria-label="Hapus pencarian" onClick={() => { setSearch(""); setShowDropdown(false); }}>
+                      <button aria-label="Clear search" onClick={() => { setSearch(""); setShowDropdown(false); }}>
                         <X size={13} style={{ color: "#B85C5C" }} />
                       </button>
                     )}
@@ -186,7 +186,7 @@ export default function Navbar() {
                           <div className="text-brand-navy/45 text-xs mt-0.5">{p.desc}</div>
                         </button>
                       )) : (
-                        <div className="px-4 py-3 text-brand-navy/40 text-sm">Produk tidak ditemukan</div>
+                        <div className="px-4 py-3 text-brand-navy/40 text-sm">No products found</div>
                       )}
                     </div>
                   )}
@@ -209,7 +209,7 @@ export default function Navbar() {
                 className="mt-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white text-center"
                 style={{ background: "#B85C5C" }}
               >
-                Hubungi Kami
+                Contact Us
               </Link>
             </div>
           </div>

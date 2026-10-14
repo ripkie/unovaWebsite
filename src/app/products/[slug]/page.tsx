@@ -12,5 +12,5 @@ export async function generateMetadata({ params }: Props) {
 }
 export default async function ProductDetailPage(props: Props) {
   const { slug } = await props.params; const product = products[slug]; if (!product) notFound();
-  return <><JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Produk", path: "/products" }, { name: product.name, path: `/products/${slug}` }])} /><ProductDetailLayout {...props} /></>;
+  return <><JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Products", path: "/products" }, { name: product.name, path: `/products/${slug}` }])} /><ProductDetailLayout {...props} /></>;
 }

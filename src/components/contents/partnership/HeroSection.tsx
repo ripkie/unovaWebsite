@@ -9,15 +9,14 @@ export default function HeroSection() {
           className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4"
           style={{ background: "#FFFFFF", color: "#B85C5C" }}
         >
-          Program Kemitraan
+          Partnership Program
         </span>
         <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-navy">
-          Tumbuh Bersama<br />
-          <span style={{ color: "#B85C5C" }}>Ekosistem Creativity Corner</span>
+          Grow with<br />
+          <span style={{ color: "#B85C5C" }}>the Creativity Corner Ecosystem</span>
         </h1>
         <p className="mt-4 text-brand-navy/55 text-lg max-w-2xl mx-auto leading-relaxed">
-          Bangun kolaborasi pendidikan STEM, workshop robot edukasi, dan
-          pengembangan produk bersama Creativity Corner di Indonesia.
+          Collaborate with Creativity Corner in Indonesia on STEM education, educational robot workshops, and product development.
         </p>
         <Link
           href="/contact-us"
@@ -25,7 +24,7 @@ export default function HeroSection() {
           style={{ background: "#B85C5C" }}
         >
           <Handshake size={20} />
-          Daftar sebagai Mitra
+          Become a Partner
         </Link>
       </div>
     </section>

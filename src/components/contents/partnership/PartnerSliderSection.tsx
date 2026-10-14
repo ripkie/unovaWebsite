@@ -6,7 +6,7 @@ export default function PartnerSliderSection() {
     <section className="py-8 overflow-hidden border-b border-[#B85C5C]/15" style={{ background: "#FFF9F5" }}>
       <div className="max-w-7xl mx-auto px-6 mb-5 text-center">
         <p className="text-brand-navy/40 text-xs font-bold tracking-widest uppercase">
-          Mitra yang telah bergabung
+          Our Partners
         </p>
       </div>
       {/* Row 1 */}

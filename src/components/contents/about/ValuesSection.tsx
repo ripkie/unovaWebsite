@@ -5,8 +5,8 @@ export default function ValuesSection() {
     <section className="py-10 bg-brand-light">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-8">
-          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#B85C5C" }}>Nilai-Nilai Kami</span>
-          <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Yang Menggerakkan Kami</h2>
+          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#B85C5C" }}>Our Values</span>
+          <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">What Drives Us</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {values.map((v) => (

@@ -9,10 +9,10 @@ export default function InternalPostsSection({ activeCategory, setActiveCategory
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-2xl font-display font-bold text-brand-navy">Artikel dari Creativity Corner</h2>
-            {activeCategory !== "Semua" && (
+            <h2 className="text-2xl font-display font-bold text-brand-navy">Articles from Creativity Corner</h2>
+            {activeCategory !== "All" && (
               <p className="text-brand-navy/45 text-sm mt-1">
-                {filteredInternal.length} artikel dalam &ldquo;{activeCategory}&rdquo;
+                {filteredInternal.length} articles in &ldquo;{activeCategory}&rdquo;
               </p>
             )}
           </div>
@@ -47,7 +47,7 @@ export default function InternalPostsSection({ activeCategory, setActiveCategory
                   </p>
                   <div className="mt-4 pt-3 border-t border-[#B85C5C]/10 flex items-center justify-between">
                     <span className="text-brand-navy/35 text-xs">{post.date}</span>
-                    <span className="text-[#B85C5C] text-xs font-semibold group-hover:underline">Baca →</span>
+                    <span className="text-[#B85C5C] text-xs font-semibold group-hover:underline">Read →</span>
                   </div>
                 </div>
               </Link>
@@ -55,9 +55,9 @@ export default function InternalPostsSection({ activeCategory, setActiveCategory
           </div>
         ) : (
           <div className="text-center py-16">
-            <p className="text-brand-navy/40 font-medium">Belum ada artikel di kategori ini</p>
-            <button onClick={() => setActiveCategory("Semua")} className="mt-4 text-[#B85C5C] text-sm font-semibold hover:underline">
-              Lihat semua artikel
+            <p className="text-brand-navy/40 font-medium">No articles in this category yet</p>
+            <button onClick={() => setActiveCategory("All")} className="mt-4 text-[#B85C5C] text-sm font-semibold hover:underline">
+              View all articles
             </button>
           </div>
         )}

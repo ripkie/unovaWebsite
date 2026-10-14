@@ -6,7 +6,7 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
     <div className="grid sm:grid-cols-2 gap-4">
       <div>
         <label className="block text-brand-navy/60 text-xs font-semibold uppercase tracking-wide mb-2">
-          Nama Lengkap *
+          Full Name *
         </label>
         <input
           type="text"
@@ -18,7 +18,7 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
             borderColor: "rgba(184, 92, 92,0.25)",
             background: "#FFFFFF",
           }}
-          placeholder="Nama Anda"
+          placeholder="Your name"
         />
       </div>
       <div>
@@ -26,7 +26,7 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
           Email *
         </label>
         <input
-          type="unovahometech@gmail.com"
+          type="email"
           required
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -35,14 +35,14 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
             borderColor: "rgba(184, 92, 92,0.25)",
             background: "#FFFFFF",
           }}
-          placeholder="email@perusahaan.com"
+          placeholder="email@company.com"
         />
       </div>
     </div>
 
     <div>
       <label className="block text-brand-navy/60 text-xs font-semibold uppercase tracking-wide mb-2">
-        Perusahaan / Organisasi
+        Company / Organization
       </label>
       <input
         type="text"
@@ -53,13 +53,13 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
           borderColor: "rgba(184, 92, 92,0.25)",
           background: "#FFFFFF",
         }}
-        placeholder="Nama perusahaan (opsional)"
+        placeholder="Company name (optional)"
       />
     </div>
 
     <div>
       <label className="block text-brand-navy/60 text-xs font-semibold uppercase tracking-wide mb-2">
-        Topik Utama *
+        Subject *
       </label>
       <select
         required
@@ -71,17 +71,17 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
           background: "#FFFFFF",
         }}
       >
-        <option value="produk">Informasi Produk</option>
-        <option value="demo">Minta Demo</option>
-        <option value="partnership">Program Kemitraan</option>
-        <option value="support">Dukungan Teknis</option>
-        <option value="lainnya">Lainnya</option>
+        <option value="produk">Product Information</option>
+        <option value="demo">Request a Demo</option>
+        <option value="partnership">Partnership Program</option>
+        <option value="support">Technical Support</option>
+        <option value="lainnya">Other</option>
       </select>
     </div>
 
     <div>
       <label className="block text-brand-navy/60 text-xs font-semibold uppercase tracking-wide mb-2">
-        Pesan *
+        Message *
       </label>
       <textarea
         required
@@ -93,7 +93,7 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
           borderColor: "rgba(184, 92, 92,0.25)",
           background: "#FFFFFF",
         }}
-        placeholder="Ceritakan kebutuhan atau pertanyaan Anda..."
+        placeholder="Tell us about your needs or questions..."
       />
     </div>
 
@@ -112,11 +112,11 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
       {loading ? (
         <>
           <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-          Mengirim...
+          Sending...
         </>
       ) : (
         <>
-          Kirim Pesan
+          Send Message
           <Send size={18} className="group-hover:translate-x-1 transition-transform" />
         </>
       )}

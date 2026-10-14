@@ -1,6 +1,6 @@
 # Creativity Corner website
 
-Next.js CC dengan landing page baru yang mengikuti komposisi Primo: judul besar di tengah, Beeboy dipegang tangan, lalu pengenalan robot, kartu RFID, board mat, dan kontak. Menu, urutan, dan URL navbar CC tetap. Font Plus Jakarta Sans. Palet soft berlaku di semua halaman; halaman selain Home mempertahankan layout dan konten sebelumnya.
+Next.js CC dengan landing page baru yang mengikuti komposisi Primo: judul besar di tengah, Beeboy dipegang tangan, lalu pengenalan robot, kartu RFID, board mat, dan kontak. Menu, urutan, dan URL navbar CC tetap. Navbar memakai link tebal di sisi kanan tanpa tombol kontak berbentuk pill, sesuai referensi screenshot. Hero memiliki 17 partikel geometris yang mengambang dan berputar (11 pada mobile); animasi nonaktif saat pengguna memilih reduced motion. Font Plus Jakarta Sans. Palet soft berlaku di semua halaman; halaman selain Home mempertahankan layout dan konten sebelumnya.
 
 ## Menjalankan
 
@@ -130,3 +130,25 @@ Form kontak tetap memakai /api/contact; isi RESEND_API_KEY dan EMAIL_TO pada env
 - Pengujian visual browser desktop/mobile belum dijalankan di lingkungan pengerjaan ini. Periksa tampilan di npm run dev sebelum deploy; pengiriman email langsung juga belum diuji.
 
 Pembaruan ini berupa source ZIP dan belum dideploy ke domain produksi.
+
+## Patch animasi dan navbar (setelah versi landing pertama)
+
+Jika versi landing sebelumnya sudah direplace, cukup copy/overwrite:
+
+- src/app/globals.css
+- src/components/layouts/shared/Navbar.tsx
+- src/components/contents/home/HeroSection.tsx
+- src/components/contents/home/HeroParticles.tsx (baru)
+- README.md (panduan)
+
+Tidak ada file lama tambahan yang harus dihapus. Aset gambar, menu/link, palet soft, font, data, konfigurasi section, dan SEO tetap. Bersihkan .next lalu npm run build. Tampilan ini disesuaikan dari screenshot pengguna; pengujian visual browser belum tersedia.
+
+## English website update
+
+All visible website copy is now English: Home, About, Products, product details, Blog, full articles, Partnerships, Contact, navbar/footer, forms, loading/404 states, accessibility labels, team bios and partner categories, email notifications, and SEO metadata. The document language is en, Open Graph locale is en_US, and WebSite schema inLanguage is en. Dates and reading-time labels are localized; IDR remains the currency.
+
+For this update, copy/overwrite src and package.json from the ZIP. package.json contains translated team/partner data only; dependencies are unchanged. Keep .env.local, public assets, package-lock.json, next.config.ts, and existing hosting settings. No files need to be deleted. Clear .next and run npm run build after replacement.
+
+Routes, slugs, form API field names and topic IDs, menu destinations, section visibility, animation, colors, and typography are preserved. Comments and this developer README may still use Indonesian; they are not website copy. User-entered messages and external destination websites keep their own language.
+
+Email error messages and notification templates are English. The email input now uses type=email so native validation recognizes the field correctly. Sending via the real email service was not performed.

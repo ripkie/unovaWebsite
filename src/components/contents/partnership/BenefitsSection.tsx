@@ -10,22 +10,21 @@ export default function BenefitsSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#B85C5C" }}>
-              Keunggulan Kemitraan
+              Partnership Benefits
             </span>
             <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">
-              Yang Anda Dapatkan<br />
-              <span style={{ color: "#B85C5C" }}>sebagai Mitra Creativity Corner</span>
+              What You Get<br />
+              <span style={{ color: "#B85C5C" }}>as a Creativity Corner Partner</span>
             </h2>
             <p className="mt-5 text-brand-navy/55 leading-relaxed">
-              Kami percaya pada kemitraan yang saling menguntungkan dan
-              berkelanjutan. Setiap mitra mendapatkan dukungan penuh untuk sukses bersama.
+              We believe in mutually rewarding, lasting partnerships. Every partner receives the support they need to succeed together.
             </p>
             <Link
               href="/contact-us"
               className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-semibold transition-all"
               style={{ background: "#B85C5C" }}
             >
-              Mulai Kemitraan
+              Start a Partnership
               <ArrowRight size={18} />
             </Link>
           </div>

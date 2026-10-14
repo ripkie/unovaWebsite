@@ -24,12 +24,12 @@ export function useContactState() {
       });
       const data = await res.json();
       if (!res.ok) {
-        setError(data.error ?? "Gagal mengirim pesan. Coba lagi.");
+        setError(data.error ?? "Unable to send your message. Please try again.");
       } else {
         setSent(true);
       }
     } catch {
-      setError("Koneksi gagal. Periksa internet Anda dan coba lagi.");
+      setError("Connection failed. Check your internet connection and try again.");
     } finally {
       setLoading(false);
     }

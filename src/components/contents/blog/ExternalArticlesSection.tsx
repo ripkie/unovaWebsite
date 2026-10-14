@@ -9,7 +9,7 @@ export default function ExternalArticlesSection({ filteredExternal }: Pick<BlogS
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-8">
           <span className="text-[#B85C5C] text-xs font-bold tracking-widest uppercase">News & Information</span>
-          <h2 className="mt-1 text-2xl font-display font-bold text-brand-navy">Berita & Artikel Eksternal</h2>
+          <h2 className="mt-1 text-2xl font-display font-bold text-brand-navy">News & External Articles</h2>
         </div>
         <div className="space-y-3">
           {filteredExternal.map((article, i) => (

@@ -4,8 +4,8 @@ export default function UseCasesSection({ product }: Pick<ProductDetailSectionPr
     <section className="py-10 bg-brand-light">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Kasus Penggunaan</span>
-          <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Cocok untuk Berbagai Lingkungan</h2>
+          <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Use Cases</span>
+          <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Built for Different Environments</h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {product.useCases.map((uc) => (

@@ -6,7 +6,7 @@ export const organizationSchema = {
 };
 export const websiteSchema = {
   "@context": "https://schema.org", "@type": "WebSite", "@id": absoluteUrl("/#website"),
-  name: siteConfig.name, url: absoluteUrl(), inLanguage: "id-ID",
+  name: siteConfig.name, url: absoluteUrl(), inLanguage: "en",
   publisher: { "@id": absoluteUrl("/#organization") },
 };
 export function breadcrumbSchema(items: { name: string; path: string; }[]) {

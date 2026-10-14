@@ -8,7 +8,7 @@ export default function HeroSection({ post }: Pick<BlogDetailSectionProps, "post
       <div className="max-w-4xl mx-auto px-6">
         <Link href="/blog" className="inline-flex items-center gap-2 text-brand-navy/40 text-sm hover:text-brand-navy transition-colors mb-6">
           <ArrowLeft size={15} />
-          Kembali ke Blog
+          Back to Blog
         </Link>
 
         <div className="flex items-center gap-3 mb-4 flex-wrap">
@@ -38,7 +38,7 @@ export default function HeroSection({ post }: Pick<BlogDetailSectionProps, "post
           </div>
           <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FFFFFF] text-brand-navy/60 text-sm hover:bg-[#B85C5C]/10 transition-colors border border-[#B85C5C]/15">
             <Share2 size={13} />
-            Bagikan
+            Share
           </button>
         </div>
       </div>

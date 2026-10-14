@@ -8,7 +8,7 @@ export default function HeroSection({ product }: Pick<ProductDetailSectionProps,
     <section className="pt-28 pb-8 bg-brand-light border-b border-[#B85C5C]/15">
       <div className="max-w-7xl mx-auto px-6">
         <Link href="/products" className="inline-flex items-center gap-2 text-brand-navy/40 text-sm hover:text-brand-navy transition-colors mb-8">
-          <ArrowLeft size={16} />Kembali ke Produk
+          <ArrowLeft size={16} />Back to Products
         </Link>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -23,12 +23,12 @@ export default function HeroSection({ product }: Pick<ProductDetailSectionProps,
             <p className="mt-2 text-lg font-medium" style={{ color: "#B85C5C" }}>{product.tagline}</p>
             <p className="mt-5 text-brand-navy/60 leading-relaxed">{product.description}</p>
             <div className="mt-6 inline-block">
-              <div className="text-brand-navy/40 text-sm">Harga mulai dari</div>
+              <div className="text-brand-navy/40 text-sm">Starting from</div>
               <div className="text-3xl font-display font-bold text-brand-navy">{product.price}</div>
             </div>
             <div className="mt-6 flex gap-3 flex-wrap">
               <Link href="/contact-us" className="group inline-flex items-center gap-2 px-7 py-3 rounded-xl text-white font-semibold transition-all" style={{ background: "#B85C5C" }}>
-                Pesan Sekarang<ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
+                Order Now<ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href="https://drive.google.com/uc?export=download&id=1FwtHUtZnPT0n3PeSa1gMAaXb0COYY13o"
@@ -36,7 +36,7 @@ export default function HeroSection({ product }: Pick<ProductDetailSectionProps,
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3 rounded-xl border border-[#B85C5C]/30 text-brand-navy font-semibold hover:bg-[#FFFFFF] transition-all"
               >
-                <Download size={17} />Unduh Guidebook
+                <Download size={17} />Download Guidebook
               </a>
             </div>
           </div>
