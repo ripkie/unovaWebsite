@@ -166,3 +166,13 @@ npm run build
 ```
 
 The script removes only four retired files listed inside it. It does not delete new catalog components or assets. Product visibility flags now use hero, categories, playsets, adventureMaps, and rfidCards. Detail flags use hero, specifications, howItWorks, and compatibility. Hiding a catalog group also removes its category link. The navbar search uses the new catalog. The two old smart-home product detail URLs permanently redirect to /products. Sitemap now follows the three real detail routes (14 website URLs total).
+
+## Our Team organization chart update
+
+About > Our Team now shows Project Leader Devan Rizki A above Software, Marketing, Mechanical, and Electrical divisions. Names follow the supplied chart. Advisor and stakeholder boxes are omitted from this chart. Edit names and divisions in package.json > unova.team; the legacy C-Level roster and department colors have been replaced. sectionVisibility.about.team still hides the entire section. Other About sections are unchanged.
+
+For this patch, overwrite src/app/globals.css, src/components/contents/about/TeamSection.tsx, src/components/contents/about/MemberCard.tsx, src/lib/team.ts, src/lib/page-state/getAboutState.ts, src/lib/data/about.ts, package.json, and README.md. No file deletion or dependency installation is needed. Keep .env.local and assets. Clear .next and run npm run build. Member cards preserve the existing CC style with portraits. Existing portraits are mapped only to Rifki, Najwamadiha, Ibra, and Insan. The leader and five members without supplied portraits use the existing avatar fallback. Add their photo paths in package.json > unova.team when available. Desktop shows four connected division columns; below 1024px the chart becomes a vertical branch. Browser visual QA was unavailable; check the layout locally before deployment.
+
+## Team member roles
+
+Each member card now displays their role beneath the name: Project Leader, Software Engineer, Marketing Specialist, Mechanical Engineer, or Electrical Engineer. Roles are editable per member in package.json > unova.team. For this small patch overwrite package.json, src/lib/team.ts, src/components/contents/about/MemberCard.tsx, and README.md. No file deletion or dependency changes.

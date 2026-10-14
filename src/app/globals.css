@@ -351,3 +351,29 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--color-primary-d
  .cc-catalog-section { scroll-margin-top:95px; padding:25px 25px 55px; }
  .cc-catalog-detail { padding:110px 25px 35px; } .cc-play-steps { grid-template-columns:1fr; }
 }
+
+/* Responsive Project Leader organization chart. */
+.cc-team-section { padding: 64px 0 80px; background: #FFF9F5; }
+.cc-team-container { max-width: 1280px; padding: 0 24px; margin: 0 auto; }
+.cc-team-chart { margin-top: 48px; }
+.cc-team-leader { width: min(100%, 360px); margin: 0 auto; }
+ .cc-team-division-heading { margin: 0 0 18px; padding: 12px 8px; color: #B85C5C; background: #F5E7E4; border: 1px solid #DAB5AF; border-radius: 12px; text-align: center; font-size: 15px; font-weight: 700; }
+.cc-team-members { display: grid; gap: 16px; }
+.cc-team-member { min-width: 0; }
+.cc-team-member h3, .cc-team-member h4 { overflow-wrap: anywhere; }
+.cc-team-divisions { --team-line: #DAB5AF; position: relative; display: grid; grid-template-columns: repeat(var(--team-columns), minmax(0, 1fr)); list-style: none; padding: 72px 0 0; margin: 0; gap: 24px; }
+.cc-team-divisions::before { content: ''; position: absolute; top: 0; left: 50%; height: 36px; border-left: 2px solid var(--team-line); }
+.cc-team-division { position: relative; }
+.cc-team-division::before { content: ''; position: absolute; top: -36px; left: 50%; height: 36px; border-left: 2px solid var(--team-line); }
+.cc-team-division::after { content: ''; position: absolute; top: -36px; left: -12px; right: -12px; border-top: 2px solid var(--team-line); }
+.cc-team-division:first-child::after { left: 50%; }
+.cc-team-division:last-child::after { right: 50%; }
+@media (max-width: 1023px) {
+  .cc-team-divisions { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; padding: 32px 0 0 22px; gap: 24px; }
+  .cc-team-divisions::before { left: 0; top: 0; bottom: 0; height: auto; }
+  .cc-team-division::before { display: none; }
+  .cc-team-division::after, .cc-team-division:first-child::after, .cc-team-division:last-child::after { left: -22px; right: auto; top: 32px; width: 22px; }
+  .cc-team-leader { width: 100%; max-width: 540px; }
+  .cc-team-section { padding: 48px 0 56px; }
+  .cc-team-chart { margin-top: 32px; }
+}

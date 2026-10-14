@@ -1,42 +1,22 @@
-import { deptConfig } from "@/lib/data/about";
 import type { TeamMember } from "@/lib/team";
-export default function MemberCard({ member, size = "md" }: { member: TeamMember; size?: "lg" | "md" | "sm"; }) {
-  const dept = deptConfig[member.department] ?? deptConfig["C-Level"];
-  const avatarSize = size === "lg" ? "w-20 h-20 text-4xl" : size === "md" ? "w-16 h-16 text-3xl" : "w-12 h-12 text-2xl";
 
+export default function MemberCard({ member, role, leader = false }: { member: TeamMember; role?: string; leader?: boolean }) {
   return (
-    <div
-      className="rounded-2xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-      style={{
-        background: "white",
-        border: `1px solid ${dept.border}`,
-        boxShadow: "0 2px 12px rgba(184, 92, 92,0.07)",
-      }}
-    >
-      <div
-        className={`${avatarSize} rounded-2xl flex items-center justify-center mb-3 shrink-0`}
-        style={{ background: dept.bg }}
-      >
+    <div className="cc-team-member rounded-2xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style={{ background: "white", border: "1px solid rgba(184,92,92,.2)", boxShadow: "0 2px 12px rgba(184,92,92,.07)" }}>
+      <div className={`${leader ? "w-20 h-20" : "w-16 h-16"} rounded-2xl flex items-center justify-center mb-3 shrink-0 overflow-hidden`} style={{ background: "rgba(184,92,92,.08)", color: "#B85C5C" }}>
         {member.photo ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={member.photo} alt={member.name} className="w-full h-full rounded-2xl object-cover" />
+          <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
         ) : (
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-1/2 h-1/2 opacity-40">
-            <circle cx="20" cy="14" r="7" fill="currentColor" style={{ color: dept.text }} />
-            <path d="M6 34c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" style={{ color: dept.text }} />
+          <svg viewBox="0 0 40 40" fill="none" aria-hidden="true" className="w-1/2 h-1/2 opacity-40">
+            <circle cx="20" cy="14" r="7" fill="currentColor" />
+            <path d="M6 34c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
           </svg>
         )}
       </div>
-      <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2" style={{ background: dept.bg, color: dept.text }}>
-        {dept.label}
-      </span>
-      <h3 className={`font-display font-bold text-brand-navy ${size === "lg" ? "text-xl" : "text-base"}`}>
-        {member.name}
-      </h3>
-      <p className="text-xs font-medium mt-0.5" style={{ color: "#B85C5C" }}>{member.role}</p>
-      {size !== "sm" && (
-        <p className="mt-3 text-brand-navy/55 text-xs leading-relaxed">{member.bio}</p>
-      )}
+      {role && !leader && <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2" style={{ background: "rgba(184,92,92,.08)", color: "#B85C5C" }}>{role}</span>}
+      {leader ? <h3 className="font-display font-bold text-brand-navy text-xl">{member.name}</h3> : <h4 className="font-display font-bold text-brand-navy text-base">{member.name}</h4>}
+      <p className="text-xs font-medium mt-1" style={{ color: "#B85C5C" }}>{member.role}</p>
     </div>
   );
 }

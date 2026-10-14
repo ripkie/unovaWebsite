@@ -51,107 +51,84 @@
         "logo": null
       }
     ],
-    "team": [
-      {
-        "id": "ceo",
-        "name": "Arillian Dylan N",
-        "role": "Chief Executive Officer",
-        "department": "C-Level",
-        "reportsTo": null,
-        "bio": "The visionary behind Creativity Corner, focused on product strategy and home technology business development in Indonesia.",
-        "photo": "/images/anggota/dylan.jpeg"
-      },
-      {
-        "id": "cto",
-        "name": "-1 CTO",
-        "role": "Chief Technical Officer",
-        "department": "C-Level",
-        "reportsTo": "ceo",
-        "bio": "The technical architect building Creativity Corner’s IoT platform from the ground up, with a focus on scalability and reliability.",
-        "photo": null
-      },
-      {
-        "id": "coo",
+    "team": {
+      "projectLeader": {
+        "role": "Project Leader",
         "name": "Devan Rizki A",
-        "role": "Chief Operation Officer",
-        "department": "C-Level",
-        "reportsTo": "ceo",
-        "bio": "Ensures Creativity Corner’s operations run efficiently, from the product supply chain to marketing execution.",
         "photo": null
       },
-      {
-        "id": "design-engineer",
-        "name": "Ibra Salman Maulana",
-        "role": "Design Engineer",
-        "department": "Engineering",
-        "reportsTo": "cto",
-        "bio": "Designs intuitive, attractive interfaces and user experiences for Creativity Corner products.",
-        "photo": "/images/anggota/ibra.jpeg"
-      },
-      {
-        "id": "iot-engineer",
-        "name": "Insan Fathul Aziz",
-        "role": "IoT Engineer",
-        "department": "Engineering",
-        "reportsTo": "cto",
-        "bio": "Develops firmware and communication protocols for Creativity Corner’s IoT device ecosystem.",
-        "photo": "/images/anggota/insan.jpeg"
-      },
-      {
-        "id": "electrical-engineer",
-        "name": "-1 (unassigned)",
-        "role": "Electrical Engineer",
-        "department": "Engineering",
-        "reportsTo": "cto",
-        "bio": "Designs electronic circuits and ensures the reliability of Creativity Corner hardware in the field.",
-        "photo": null
-      },
-      {
-        "id": "software-engineer",
-        "name": "M Rifki Widya R",
-        "role": "Software Engineer",
-        "department": "Engineering",
-        "reportsTo": "cto",
-        "bio": "Develops and maintains Creativity Corner’s website and mobile apps to connect with users.",
-        "photo": "/images/anggota/rifki.jpeg"
-      },
-      {
-        "id": "creative-1",
-        "name": "Mutiara A. Z. A. M.",
-        "role": "Creative Specialist",
-        "department": "Operations",
-        "reportsTo": "coo",
-        "bio": "Creates visual content and consistent brand storytelling for Creativity Corner across platforms.",
-        "photo": null
-      },
-      {
-        "id": "creative-2",
-        "name": "Seina Al Qirani",
-        "role": "Creative Specialist",
-        "department": "Operations",
-        "reportsTo": "coo",
-        "bio": "Produces digital content, including photos, videos, and graphics, for Creativity Corner’s communications.",
-        "photo": "/images/anggota/seina.jpeg"
-      },
-      {
-        "id": "marketing-1",
-        "name": "Faiza Restu Aulia",
-        "role": "Marketing & Sales Specialist",
-        "department": "Operations",
-        "reportsTo": "coo",
-        "bio": "Manages digital marketing campaigns and the consumer sales pipeline for Creativity Corner products.",
-        "photo": "/images/anggota/faiza.jpeg"
-      },
-      {
-        "id": "marketing-2",
-        "name": "Najwamadiha Wilandiva R",
-        "role": "Marketing & Sales Specialist",
-        "department": "Operations",
-        "reportsTo": "coo",
-        "bio": "Manages business partner relationships and develops distribution channels for Creativity Corner products.",
-        "photo": "/images/anggota/wilan.jpeg"
-      }
-    ]
+      "divisions": [
+        {
+          "id": "software",
+          "name": "Software Division",
+          "members": [
+            {
+              "name": "M. Rifki Widya R.",
+              "photo": "/images/anggota/rifki.jpeg",
+              "role": "Software Engineer"
+            },
+            {
+              "name": "Siti Alqia T.",
+              "photo": null,
+              "role": "UI/UX Designer"
+            }
+          ]
+        },
+        {
+          "id": "marketing",
+          "name": "Marketing Division",
+          "members": [
+            {
+              "name": "Najwamadiha Wilandiva R.",
+              "photo": "/images/anggota/wilan.jpeg",
+              "role": "Marketing Specialist"
+            },
+            {
+              "name": "Shiva Puti Anjani",
+              "photo": null,
+              "role": "Marketing Specialist"
+            },
+            {
+              "name": "Salwa Zahirah Vanka",
+              "photo": null,
+              "role": "Marketing Specialist"
+            }
+          ]
+        },
+        {
+          "id": "mechanical",
+          "name": "Mechanical Division",
+          "members": [
+            {
+              "name": "Hikhmal M. Haykhal",
+              "photo": null,
+              "role": "Mechanical Engineer"
+            },
+            {
+              "name": "Ibra Salman M.",
+              "photo": "/images/anggota/ibra.jpeg",
+              "role": "Mechanical Engineer"
+            }
+          ]
+        },
+        {
+          "id": "electrical",
+          "name": "Electrical Division",
+          "members": [
+            {
+              "name": "Radya Putra M.",
+              "photo": null,
+              "role": "Electrical Engineer"
+            },
+            {
+              "name": "Insan Fahtul A.",
+              "photo": "/images/anggota/insan.jpeg",
+              "role": "Electrical Engineer"
+            }
+          ]
+        }
+      ]
+    }
   },
   "dependencies": {
     "framer-motion": "^12.36.0",
