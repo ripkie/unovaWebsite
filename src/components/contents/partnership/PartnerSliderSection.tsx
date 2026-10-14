@@ -3,7 +3,7 @@ import PartnerCard from "@/components/contents/partnership/PartnerCard";
 
 export default function PartnerSliderSection() {
   return (
-    <section className="py-8 overflow-hidden border-b border-[#A31C1D]/15" style={{ background: "#FFFFFF" }}>
+    <section className="py-8 overflow-hidden border-b border-[#B85C5C]/15" style={{ background: "#FFF9F5" }}>
       <div className="max-w-7xl mx-auto px-6 mb-5 text-center">
         <p className="text-brand-navy/40 text-xs font-bold tracking-widest uppercase">
           Mitra yang telah bergabung

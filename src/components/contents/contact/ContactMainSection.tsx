@@ -6,7 +6,7 @@ import { MessageCircle, CheckCircle } from "lucide-react";
 import type { ContactSectionProps } from "@/lib/hooks/useContactState";
 export default function ContactMainSection({ form, setForm, sent, setSent, loading, error, handleSubmit }: Pick<ContactSectionProps, "form" | "setForm" | "sent" | "setSent" | "loading" | "error" | "handleSubmit">) {
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-brand-light">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-8 items-start">
 
@@ -18,7 +18,7 @@ export default function ContactMainSection({ form, setForm, sent, setSent, loadi
             <p className="text-brand-navy/50 text-sm mb-5">
               Bandung Techno Park, Bandung, Jawa Barat
             </p>
-            <div className="rounded-2xl overflow-hidden border border-[#A31C1D]/20 shadow-sm" style={{ height: "420px" }}>
+            <div className="rounded-2xl overflow-hidden border border-[#B85C5C]/20 shadow-sm" style={{ height: "420px" }}>
               {/* 
                   CARA GANTI EMBED MAPS:
                   1. Buka Google Maps → cari lokasi kantor
@@ -59,7 +59,7 @@ export default function ContactMainSection({ form, setForm, sent, setSent, loadi
                 <button
                   onClick={() => setSent(false)}
                   className="mt-6 px-6 py-3 rounded-xl text-white font-semibold transition-colors"
-                  style={{ background: "#292929" }}
+                  style={{ background: "#352E2B" }}
                 >
                   Kirim Pesan Lain
                 </button>
@@ -69,9 +69,9 @@ export default function ContactMainSection({ form, setForm, sent, setSent, loadi
                 <div className="mb-8">
                   <div
                     className="w-11 h-11 rounded-2xl flex items-center justify-center mb-4"
-                    style={{ background: "rgba(163,28,29,0.1)" }}
+                    style={{ background: "rgba(184, 92, 92,0.1)" }}
                   >
-                    <MessageCircle size={22} style={{ color: "#A31C1D" }} />
+                    <MessageCircle size={22} style={{ color: "#B85C5C" }} />
                   </div>
                   <h2 className="text-2xl font-display font-bold text-brand-navy">
                     Kirim Pesan

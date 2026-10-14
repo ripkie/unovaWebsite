@@ -10,7 +10,7 @@ export default function MemberCard({ member, size = "md" }: { member: TeamMember
       style={{
         background: "white",
         border: `1px solid ${dept.border}`,
-        boxShadow: "0 2px 12px rgba(163,28,29,0.07)",
+        boxShadow: "0 2px 12px rgba(184, 92, 92,0.07)",
       }}
     >
       <div
@@ -33,7 +33,7 @@ export default function MemberCard({ member, size = "md" }: { member: TeamMember
       <h3 className={`font-display font-bold text-brand-navy ${size === "lg" ? "text-xl" : "text-base"}`}>
         {member.name}
       </h3>
-      <p className="text-xs font-medium mt-0.5" style={{ color: "#A31C1D" }}>{member.role}</p>
+      <p className="text-xs font-medium mt-0.5" style={{ color: "#B85C5C" }}>{member.role}</p>
       {size !== "sm" && (
         <p className="mt-3 text-brand-navy/55 text-xs leading-relaxed">{member.bio}</p>
       )}

@@ -5,7 +5,7 @@ import { comingSoon } from "@/lib/data/products";
 
 export default function ComingSoonSection() {
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-brand-light">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-8">
           <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Segera Hadir</span>

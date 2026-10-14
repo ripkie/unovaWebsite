@@ -2,11 +2,11 @@
 
 export default function HeroSection() {
   return (
-    <section className="pt-32 pb-12 bg-white border-b border-[#A31C1D]/15">
+    <section className="pt-32 pb-12 bg-brand-light border-b border-[#B85C5C]/15">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <span
           className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4"
-          style={{ background: "#FFFFFF", color: "#A31C1D" }}
+          style={{ background: "#FFFFFF", color: "#B85C5C" }}
         >
           Hubungi Kami
         </span>

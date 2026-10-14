@@ -1,6 +1,6 @@
 # Creativity Corner website
 
-Website CC dengan layout, konten, produk, dan interaksi Unova yang telah disetujui. Palet CC, font Plus Jakarta Sans, dan logo CC dipertahankan. Struktur routing, layout, section, data, dan state tetap terpisah. Pembaruan SEO menyesuaikan identitas teks dan pengantar Home/About berdasarkan PDF Beeboy, tanpa mengganti struktur visual atau katalog produk.
+Next.js CC dengan landing page baru yang mengikuti komposisi Primo: judul besar di tengah, Beeboy dipegang tangan, lalu pengenalan robot, kartu RFID, board mat, dan kontak. Menu, urutan, dan URL navbar CC tetap. Font Plus Jakarta Sans. Palet soft berlaku di semua halaman; halaman selain Home mempertahankan layout dan konten sebelumnya.
 
 ## Menjalankan
 
@@ -9,48 +9,75 @@ npm ci
 npm run dev
 ```
 
-Produksi: `npm run build`, kemudian `npm start`.
+Produksi: `npm run build`, lalu `npm start`.
 
-## Struktur
+## Replace ke project yang sudah ada
 
-| Folder | Fungsi |
+1. Backup project atau commit perubahan lokal terlebih dahulu.
+2. Copy/overwrite folder `src` dari ZIP ke project CC.
+3. Copy folder baru `public/images/beeboy` ke lokasi yang sama pada project. Jangan hapus folder public yang lain.
+4. Copy `README.md` dan `cleanup-old-home.ps1` ke root project (folder yang berisi package.json).
+5. Jalankan cleanup untuk lima file Home lama. Script tidak menyentuh file lain.
+6. Hapus cache `.next`, lalu build ulang. Setelah lolos, deploy seperti biasa.
+
+Dependencies, package.json, package-lock.json, dan next.config.ts tidak berubah dalam pembaruan landing ini. Pertahankan `.env.local`, node_modules, semua gambar lama yang masih dipakai halaman lain, dan pengaturan hosting milikmu.
+
+PowerShell dari root project:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\cleanup-old-home.ps1
+if (Test-Path ".next") {
+    Remove-Item ".next" -Recurse -Force
+}
+npm run build
+```
+
+File lama yang dihapus oleh script:
+
+- src/components/contents/home/StatsSection.tsx
+- src/components/contents/home/FeaturesSection.tsx
+- src/components/contents/home/FeaturedProductSection.tsx
+- src/components/contents/home/PartnersSection.tsx
+- src/lib/data/home.ts
+
+HeroSection.tsx dan HomeLayout.tsx direplace, jangan dihapus. Tidak ada perubahan route atau penghapusan produk/artikel lama.
+
+## Struktur file
+
+| Folder/file | Fungsi |
 | --- | --- |
-| `src/app/` | Routing Next.js, metadata, root layout, API kontak, sitemap, dan robots |
-| `src/components/layouts/` | Urutan section untuk setiap halaman |
-| `src/components/layouts/shared/` | Navbar dan Footer |
-| `src/components/contents/` | Komponen section per halaman: home, about, products, partnership, blog, contact, productDetail, blogDetail |
-| `src/components/forms/` | Form kontak |
-| `src/components/ui/` | Komponen kecil bersama, termasuk SectionVisibility |
-| `src/lib/config/sections.ts` | Pengaturan tampil/sembunyi section dan navbar/footer |
-| `src/lib/data/` | Konten dan data per halaman |
-| `src/lib/hooks/` | State carousel produk, filter blog/newsletter, dan form kontak |
-| `src/lib/page-state/` | Persiapan data halaman server serta validasi slug detail |
-| `src/lib/team.ts`, `src/lib/partners.ts` | Pembaca konfigurasi tim/mitra dari package.json |
-| `public/` | Logo CC, foto produk, foto tim, dan aset lainnya |
+| src/app | Routing, metadata, root layout, API kontak, sitemap, robots |
+| src/components/layouts | Urutan section per halaman |
+| src/components/layouts/shared | Navbar dan Footer |
+| src/components/contents/home | Hero, Robot, RFID, Board Mat, Contact dan section opsional |
+| src/components/contents | Section halaman lainnya |
+| src/lib/data/landing.ts | Teks Home, tujuh kartu RFID, data video/cerita/testimoni |
+| src/lib/config/sections.ts | Hide/show semua section, navbar/footer |
+| src/app/globals.css | Palet global dan style landing/navbar/footer |
+| src/lib/hooks, src/lib/page-state | State halaman lain dan validasi slug |
+| public/images/beeboy | Tiga aset Beeboy/board mat dari pengguna |
 
-Route `page.tsx` hanya memanggil layout halaman. Contoh: `src/app/page.tsx` → `HomeLayout.tsx` → `contents/home/*Section.tsx`.
+## Hide/show section
 
-## Tampilkan / sembunyikan section
-
-Edit `src/lib/config/sections.ts`. `true` menampilkan section, `false` menyembunyikannya. Semua flag default `true` agar tampilan sama dengan versi sebelumnya.
-
-Contoh, sembunyikan statistik Home:
+Edit src/lib/config/sections.ts: true = tampil, false = hide. Home memakai:
 
 ```ts
 home: {
   hero: true,
-  stats: false,
-  features: true,
-  featuredProduct: true,
-  partners: true,
+  robot: true,
+  rfid: true,
+  boardMat: true,
+  videos: false,
+  stories: false,
+  testimonials: false,
+  contact: true,
 },
 ```
 
-Konfigurasi yang tersedia:
+Video, cerita, dan testimoni default false karena bahan belum tersedia. Isi array playVideos, storyPreviews, atau testimonials di src/lib/data/landing.ts, lalu aktifkan flag yang sesuai. Data kosong tetap tidak menghasilkan placeholder/ruang kosong, walaupun flag true. Jangan masukkan testimoni atau informasi produk yang belum terkonfirmasi. Label 1 SCAN/3 SCAN ditampilkan sesuai gambar pengguna tanpa mengasumsikan fungsi teknisnya.
 
-| Halaman | Flag section |
+| Halaman lain | Flag |
 | --- | --- |
-| Home | hero, stats, features, featuredProduct, partners |
 | About | hero, story, values, milestones, welcome, team, cta |
 | Products | hero, productCarousel, comingSoon |
 | Partnership | hero, partnerSlider, partnerTypes, benefits |
@@ -59,83 +86,47 @@ Konfigurasi yang tersedia:
 | Product detail | hero, specifications, howItWorks, useCases, compatibility |
 | Blog detail | hero, articleContent |
 
-Navbar/Footer diatur dengan `siteVisibility.navbar` dan `siteVisibility.footer` pada file yang sama.
+siteVisibility.navbar dan siteVisibility.footer mengatur elemen bersama. Urutan diubah melalui layout. Untuk produksi, perubahan config memerlukan build/deploy ulang; bukan CMS/admin.
 
-Layout memakai `SectionVisibility` tanpa elemen pembungkus HTML; section tersembunyi tidak meninggalkan ruang kosong. Urutan section bisa diubah langsung di `src/components/layouts/*Layout.tsx`. Jika ingin override untuk satu layout saja, ubah deklarasi lokalnya:
+## Palet soft dan aset
 
-```ts
-const sections = { ...sectionVisibility.home, stats: false };
-```
+| Fungsi | Hex |
+| --- | --- |
+| Background utama | #FFF9F5 |
+| Background soft | #F5E7E4 |
+| Tombol/aksen | #B85C5C |
+| Hover/aksen gelap | #984747 |
+| Dekorasi | #DAB5AF |
+| Judul | #352E2B |
+| Teks | #625854 |
+| Kartu | #FFFFFF |
 
-Saat development, perubahan config mengikuti hot reload. Untuk produksi, build dan deploy ulang. Pengaturan ini berbasis source code; belum berupa CMS/admin atau preferensi pengguna.
+Token Tailwind berada di globals.css. Warna inline pada halaman lama juga diselaraskan. Logo asli CC dan gambar produk tidak diubah warnanya. Kartu RFID dibuat dengan SVG/icon agar tajam dan memakai biru lembut sesuai referensi alat bermain. Robot dan board memakai berkas pengguna; tidak ada aset Primo yang disalin.
 
-## Mengubah isi
+Foto/render robot dari pengguna tetap dipakai sebagaimana diberikan. Foto samping/belakang, video, cover cerita, usia, harga, sertifikasi, dan testimoni tidak dibuat sebagai fakta produk baru.
 
-Edit section di `components/contents/<halaman>/`, dan data di `lib/data/<halaman>.ts`. State interaktif ada di hooks; section menerima state lewat props dari layout. Form kontak dipisah ke `components/forms/ContactForm.tsx` dan tetap memakai `/api/contact`.
+## SEO dan konfigurasi
 
-Tim/mitra tetap berasal dari `package.json > unova`, sesuai versi yang disetujui. Identitas teks dan metadata sekarang menggunakan Creativity Corner serta domain creativitycorner.cc. Produk dan artikel lama tetap dipertahankan sesuai arahan. Logo yang tampil memakai aset CC asli tanpa filter warna.
+Domain canonical https://creativitycorner.cc. Metadata per halaman, JSON-LD Organization/WebSite/Breadcrumb, gambar sosial, sitemap 12 URL, robots, preview noindex, dan redirect detail Humidifier tetap tersedia. Gambar sosial mengikuti palet soft. Navbar dan footer mengarah ke halaman yang ada.
 
-## Konfigurasi email
+Produk dan artikel smart-home lama tetap ada pada halaman lain sesuai scope pembaruan ini. Data tim/mitra tetap berasal dari package.json > unova. Pembaruan konten halaman lain dilakukan terpisah dari redesign Home.
 
-Salin `.env.example` ke `.env.local` lalu isi `RESEND_API_KEY` dan `EMAIL_TO`. Kredensial unggahan asli tidak disertakan. Pengiriman email langsung tidak diuji pada refactor ini.
-
-## Validasi
-
-Pemeriksaan TypeScript, build produksi, perbandingan hasil render halaman sebelum/sesudah, dan pengujian flag hide/show pada Home, Products, dan About dilakukan saat refactor. Semua flag pada hasil akhir tetap aktif.
-
-
-## SEO — domain produksi
-
-Domain canonical: `https://creativitycorner.cc`. Pengaturan ada di `src/lib/config/site.ts`; helper metadata di `src/lib/seo/metadata.ts` dan schema di `src/lib/seo/structured-data.ts`.
-
-Yang diperbarui:
-
-- Nama brand/domain pada metadata, header konten, dan footer menjadi Creativity Corner.
-- Judul/deskripsi unik dan canonical untuk setiap halaman, termasuk detail produk/artikel.
-- Pengantar Home, About, kisah/visi, dan pengantar kemitraan disesuaikan dengan halaman 3 dan 14 PDF Beeboy yang diberikan. Layout dan flag section tetap sama.
-- Open Graph/Twitter image 1200 × 630 melalui `/opengraph-image`.
-- Organization dan WebSite JSON-LD di Home; breadcrumb schema pada halaman lainnya.
-- Sitemap mengikuti registri halaman detail yang ada. Tidak memakai tanggal lastModified buatan.
-- Detail artikel/produk valid diprerender; slug tidak dikenal tetap 404.
-- Preview Vercel otomatis noindex. Untuk staging di hosting lain, set SITE_INDEXABLE=false.
-- URL detail Humidifier yang sebelumnya 404 diarahkan permanen ke katalog produk. Tidak ada datasheet baru yang dibuat.
-- Aset lama yang tidak dipakai di public dihapus dari archive.
-
-Produk smart-home dan artikel lama tetap ada sesuai arahan. Data tersebut tidak dipresentasikan sebagai spesifikasi Beeboy. Harga target, sertifikasi yang masih direncanakan, angka performa riset, serta pilihan nama/logo dalam PDF tidak dimasukkan ke schema sebagai fakta produk. Tidak ada markup Product/Offer/Review baru dari data harga placeholder. Data tim masih memakai roster sebelumnya; tidak diperbarui dari struktur organisasi PDF dalam pekerjaan SEO ini.
-
-### Cara replace
-
-Copy isi ZIP ke proyek yang sudah memakai struktur terbaru. Sertakan `src`, `next.config.ts`, `package.json`, `README.md`, `.env.example`, serta aset `public` yang dibutuhkan. Dependencies tidak berubah. File package.json hanya memperbarui penyebutan brand pada bio tim; field `unova` tetap dipakai agar pembaca konfigurasi yang ada tidak berubah. Pertahankan `.env.local` dan kredensial milikmu.
-
-Build ulang setelah replace:
-
-```powershell
-if (Test-Path ".next") { Remove-Item ".next" -Recurse -Force }
-npm run build
-```
-
-### Setelah deploy
-
-1. Pastikan domain utama melayani situs melalui HTTPS.
-2. Tambahkan properti domain `creativitycorner.cc` ke Google Search Console dan lakukan verifikasi DNS. Alternatif properti URL-prefix memakai token HTML-meta: set GOOGLE_SITE_VERIFICATION pada environment hosting.
-3. Submit `https://creativitycorner.cc/sitemap.xml` di Search Console.
-4. Gunakan URL Inspection dan Rich Results Test pada domain live.
-5. Jika hosting/domain preview berbeda, pastikan noindex; halaman produksi harus SITE_INDEXABLE=true.
-
-Pengaturan opsional `.env.local` atau hosting:
+Pertahankan konfigurasi pada .env.local/hosting:
 
 ```dotenv
 NEXT_PUBLIC_SITE_URL=https://creativitycorner.cc
-GOOGLE_SITE_VERIFICATION=
 SITE_INDEXABLE=true
+GOOGLE_SITE_VERIFICATION=
 ```
 
-Token verifikasi tidak dibuat oleh aplikasi; gunakan token milik properti Search Console kamu. Perubahan kode belum dideploy dan properti Search Console belum didaftarkan dari sesi ini.
+Form kontak tetap memakai /api/contact; isi RESEND_API_KEY dan EMAIL_TO pada environment sendiri. Tidak ada kredensial yang disertakan dalam ZIP.
 
-Validasi SEO: build produksi lolos; seluruh 12 halaman memiliki canonical yang tepat, judul/deskripsi, satu H1, metadata sosial dan JSON-LD; sitemap sesuai URL halaman yang valid. Preview noindex, escaping JSON-LD, slug metadata invalid/404, serta gambar sosial juga diperiksa. Pengiriman email tidak diuji.
+## Validasi pembaruan
 
-Acuan teknis:
-- https://nextjs.org/docs/15/app/api-reference/functions/generate-metadata
-- https://developers.google.com/search/docs/appearance/title-link
-- https://developers.google.com/search/docs/appearance/structured-data/organization
-- https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+- Build produksi dan pemeriksaan TypeScript lolos.
+- Seluruh 12 halaman memiliki canonical, title, description, satu H1, metadata sosial dan JSON-LD; sitemap sesuai route nyata.
+- Hide/show lima section utama Home, Products, dan About diuji melalui render React. Section opsional kosong tidak menghasilkan markup.
+- Menu desktop/mobile, breakpoint CSS, referensi aset, dan teks halaman lain diperiksa dari source/HTML hasil build.
+- Pengujian visual browser desktop/mobile belum dijalankan di lingkungan pengerjaan ini. Periksa tampilan di npm run dev sebelum deploy; pengiriman email langsung juga belum diuji.
+
+Pembaruan ini berupa source ZIP dan belum dideploy ke domain produksi.

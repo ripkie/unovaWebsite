@@ -21,14 +21,14 @@ export default function ProductCarouselSection({ current, setCurrent, prev, next
                 key={i}
                 onClick={() => setCurrent(i)}
                 className="w-2.5 h-2.5 rounded-full transition-all"
-                style={{ background: i === current ? "#A31C1D" : "rgba(163,28,29,0.3)" }}
+                style={{ background: i === current ? "#B85C5C" : "rgba(184, 92, 92,0.3)" }}
               />
             ))}
-            <button onClick={prev} className="w-9 h-9 rounded-xl border border-[#A31C1D]/25 flex items-center justify-center hover:bg-white transition-colors ml-2">
-              <ChevronLeft size={18} style={{ color: "#A31C1D" }} />
+            <button onClick={prev} className="w-9 h-9 rounded-xl border border-[#B85C5C]/25 flex items-center justify-center hover:bg-white transition-colors ml-2">
+              <ChevronLeft size={18} style={{ color: "#B85C5C" }} />
             </button>
-            <button onClick={next} className="w-9 h-9 rounded-xl border border-[#A31C1D]/25 flex items-center justify-center hover:bg-white transition-colors">
-              <ChevronRight size={18} style={{ color: "#A31C1D" }} />
+            <button onClick={next} className="w-9 h-9 rounded-xl border border-[#B85C5C]/25 flex items-center justify-center hover:bg-white transition-colors">
+              <ChevronRight size={18} style={{ color: "#B85C5C" }} />
             </button>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function ProductCarouselSection({ current, setCurrent, prev, next
           {/* Dot indicators mobile */}
           <div className="flex justify-center gap-2 mt-2">
             {products.map((_, i) => (
-              <div key={i} className="w-2 h-2 rounded-full" style={{ background: "rgba(163,28,29,0.4)" }} />
+              <div key={i} className="w-2 h-2 rounded-full" style={{ background: "rgba(184, 92, 92,0.4)" }} />
             ))}
           </div>
         </div>

@@ -2,7 +2,7 @@ import { ShieldAlert, Bell, Zap } from "lucide-react";
 
 export default function HowItWorksSection() {
   return (
-    <section className="py-10 bg-white">
+    <section className="py-10 bg-brand-light">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <span className="text-brand-blue text-sm font-semibold tracking-widest uppercase">Cara Kerja</span>

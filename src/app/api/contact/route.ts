@@ -48,37 +48,37 @@ export async function POST(req: NextRequest) {
         subject: `[Creativity Corner] Pesan baru dari ${name} — ${topicLabel}`,
         html: `
           <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; padding: 24px;">
-            <div style="background: #292929; border-radius: 12px; padding: 20px 24px; margin-bottom: 24px;">
+            <div style="background: #352E2B; border-radius: 12px; padding: 20px 24px; margin-bottom: 24px;">
               <h1 style="color: white; font-size: 20px; margin: 0;">Pesan Baru dari Website Creativity Corner</h1>
             </div>
 
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #A31C1D; font-size: 12px; font-weight: 600; text-transform: uppercase; width: 140px;">Nama</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #292929; font-weight: 600;">${name}</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase; width: 140px;">Nama</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #352E2B; font-weight: 600;">${name}</td>
               </tr>
               <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #A31C1D; font-size: 12px; font-weight: 600; text-transform: uppercase;">Email</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #292929;">
-                  <a href="mailto:${email}" style="color: #A31C1D;">${email}</a>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase;">Email</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #352E2B;">
+                  <a href="mailto:${email}" style="color: #B85C5C;">${email}</a>
                 </td>
               </tr>
               ${company ? `
               <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #A31C1D; font-size: 12px; font-weight: 600; text-transform: uppercase;">Perusahaan</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #292929;">${company}</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase;">Perusahaan</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #352E2B;">${company}</td>
               </tr>` : ""}
               <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #A31C1D; font-size: 12px; font-weight: 600; text-transform: uppercase;">Topik</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase;">Topik</td>
                 <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF;">
-                  <span style="background: rgba(163,28,29,0.15); color: #A31C1D; padding: 2px 10px; border-radius: 20px; font-size: 13px; font-weight: 600;">${topicLabel}</span>
+                  <span style="background: rgba(184, 92, 92,0.15); color: #B85C5C; padding: 2px 10px; border-radius: 20px; font-size: 13px; font-weight: 600;">${topicLabel}</span>
                 </td>
               </tr>
             </table>
 
             <div style="margin-top: 20px;">
-              <p style="color: #A31C1D; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Pesan</p>
-              <div style="background: #FFFFFF; border-radius: 10px; padding: 16px; color: #292929; line-height: 1.6; white-space: pre-wrap;">${message}</div>
+              <p style="color: #B85C5C; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Pesan</p>
+              <div style="background: #FFFFFF; border-radius: 10px; padding: 16px; color: #352E2B; line-height: 1.6; white-space: pre-wrap;">${message}</div>
             </div>
 
             <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #FFFFFF; font-size: 12px; color: #999;">

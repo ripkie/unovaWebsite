@@ -4,7 +4,7 @@ import { ArrowLeft, Clock, Share2, User } from "lucide-react";
 import type { BlogDetailSectionProps } from "@/lib/page-state/getBlogDetailState";
 export default function HeroSection({ post }: Pick<BlogDetailSectionProps, "post">) {
   return (
-    <section className="pt-28 pb-12 bg-white border-b border-[#A31C1D]/15">
+    <section className="pt-28 pb-12 bg-brand-light border-b border-[#B85C5C]/15">
       <div className="max-w-4xl mx-auto px-6">
         <Link href="/blog" className="inline-flex items-center gap-2 text-brand-navy/40 text-sm hover:text-brand-navy transition-colors mb-6">
           <ArrowLeft size={15} />
@@ -12,7 +12,7 @@ export default function HeroSection({ post }: Pick<BlogDetailSectionProps, "post
         </Link>
 
         <div className="flex items-center gap-3 mb-4 flex-wrap">
-          <span className="px-3 py-1 rounded-lg text-xs font-bold" style={{ background: "rgba(163,28,29,0.12)", color: "#A31C1D" }}>
+          <span className="px-3 py-1 rounded-lg text-xs font-bold" style={{ background: "rgba(184, 92, 92,0.12)", color: "#B85C5C" }}>
             {post.category}
           </span>
           <span className="flex items-center gap-1 text-brand-navy/40 text-sm">
@@ -29,14 +29,14 @@ export default function HeroSection({ post }: Pick<BlogDetailSectionProps, "post
           <div className="flex items-center gap-3">
             {/* 👤 diganti User icon */}
             <div className="w-9 h-9 rounded-xl bg-[#FFFFFF] flex items-center justify-center">
-              <User size={18} style={{ color: "#A31C1D" }} />
+              <User size={18} style={{ color: "#B85C5C" }} />
             </div>
             <div>
               <div className="text-brand-navy font-semibold text-sm">{post.author}</div>
               <div className="text-brand-navy/40 text-xs">{post.authorRole}</div>
             </div>
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FFFFFF] text-brand-navy/60 text-sm hover:bg-[#A31C1D]/10 transition-colors border border-[#A31C1D]/15">
+          <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FFFFFF] text-brand-navy/60 text-sm hover:bg-[#B85C5C]/10 transition-colors border border-[#B85C5C]/15">
             <Share2 size={13} />
             Bagikan
           </button>

@@ -29,7 +29,7 @@ export const posts: Record<string, BlogPost> = {
     author: "Tim Creativity Corner",
     authorRole: "Product & Research",
     iconName: "Home",
-    color: "from-[#A31C1D] to-[#6D0909]",
+    color: "from-[#B85C5C] to-[#984747]",
     tags: ["Smart Home", "AI", "IoT", "Tren 2025"],
     related: ["knx-vs-matter-protokol", "roi-smart-building"],
     content: [

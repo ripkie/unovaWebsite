@@ -15,7 +15,7 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
           onChange={(e) => setForm({ ...form, name: e.target.value })}
           className="w-full px-4 py-3 rounded-xl border text-brand-navy placeholder-brand-navy/30 focus:outline-none transition-colors text-sm"
           style={{
-            borderColor: "rgba(163,28,29,0.25)",
+            borderColor: "rgba(184, 92, 92,0.25)",
             background: "#FFFFFF",
           }}
           placeholder="Nama Anda"
@@ -32,7 +32,7 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
           onChange={(e) => setForm({ ...form, email: e.target.value })}
           className="w-full px-4 py-3 rounded-xl border text-brand-navy placeholder-brand-navy/30 focus:outline-none transition-colors text-sm"
           style={{
-            borderColor: "rgba(163,28,29,0.25)",
+            borderColor: "rgba(184, 92, 92,0.25)",
             background: "#FFFFFF",
           }}
           placeholder="email@perusahaan.com"
@@ -50,7 +50,7 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
         onChange={(e) => setForm({ ...form, company: e.target.value })}
         className="w-full px-4 py-3 rounded-xl border text-brand-navy placeholder-brand-navy/30 focus:outline-none transition-colors text-sm"
         style={{
-          borderColor: "rgba(163,28,29,0.25)",
+          borderColor: "rgba(184, 92, 92,0.25)",
           background: "#FFFFFF",
         }}
         placeholder="Nama perusahaan (opsional)"
@@ -67,7 +67,7 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
         onChange={(e) => setForm({ ...form, interest: e.target.value })}
         className="w-full px-4 py-3 rounded-xl border text-brand-navy focus:outline-none transition-colors text-sm"
         style={{
-          borderColor: "rgba(163,28,29,0.25)",
+          borderColor: "rgba(184, 92, 92,0.25)",
           background: "#FFFFFF",
         }}
       >
@@ -90,7 +90,7 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
         onChange={(e) => setForm({ ...form, message: e.target.value })}
         className="w-full px-4 py-3 rounded-xl border text-brand-navy placeholder-brand-navy/30 focus:outline-none transition-colors resize-none text-sm"
         style={{
-          borderColor: "rgba(163,28,29,0.25)",
+          borderColor: "rgba(184, 92, 92,0.25)",
           background: "#FFFFFF",
         }}
         placeholder="Ceritakan kebutuhan atau pertanyaan Anda..."
@@ -107,7 +107,7 @@ export default function ContactForm({ form, setForm, loading, error, handleSubmi
       type="submit"
       disabled={loading}
       className="group w-full flex items-center justify-center gap-3 px-8 py-3.5 rounded-xl text-white font-semibold transition-all disabled:opacity-60 disabled:cursor-not-allowed"
-      style={{ background: "#292929" }}
+      style={{ background: "#352E2B" }}
     >
       {loading ? (
         <>

@@ -6,7 +6,7 @@ export default function StorySection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
-            <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#A31C1D" }}>Kisah Kami</span>
+            <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#B85C5C" }}>Kisah Kami</span>
             <h2 className="mt-3 text-4xl font-display font-bold text-brand-navy">Dimulai dari Satu Pertanyaan</h2>
             <div className="mt-6 space-y-4 text-brand-navy/65 leading-relaxed">
               <p>Creativity Corner lahir dari inisiatif Beeboy Korea dengan tujuan menghadirkan pembelajaran STEM yang dapat disentuh, dimainkan, dan dieksplorasi anak.</p>
@@ -15,10 +15,10 @@ export default function StorySection() {
             </div>
           </div>
           <div className="space-y-5">
-            <div className="p-7 rounded-2xl bg-white border border-[#A31C1D]/15 hover:border-[#A31C1D]/35 hover:shadow-lg transition-all">
+            <div className="p-7 rounded-2xl bg-white border border-[#B85C5C]/15 hover:border-[#B85C5C]/35 hover:shadow-lg transition-all">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(163,28,29,0.1)" }}>
-                  <Target size={20} style={{ color: "#A31C1D" }} />
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(184, 92, 92,0.1)" }}>
+                  <Target size={20} style={{ color: "#B85C5C" }} />
                 </div>
                 <h3 className="font-display font-bold text-brand-navy text-lg">Misi</h3>
               </div>
@@ -29,10 +29,10 @@ export default function StorySection() {
                 <li>Memberikan layanan kepada masyarakat melalui kegiatan berbasis keahlian teknik.</li>
               </ul>
             </div>
-            <div className="p-7 rounded-2xl bg-white border border-[#A31C1D]/15 hover:border-[#A31C1D]/35 hover:shadow-lg transition-all">
+            <div className="p-7 rounded-2xl bg-white border border-[#B85C5C]/15 hover:border-[#B85C5C]/35 hover:shadow-lg transition-all">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(163,28,29,0.1)" }}>
-                  <Eye size={20} style={{ color: "#A31C1D" }} />
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(184, 92, 92,0.1)" }}>
+                  <Eye size={20} style={{ color: "#B85C5C" }} />
                 </div>
                 <h3 className="font-display font-bold text-brand-navy text-lg">Visi</h3>
               </div>

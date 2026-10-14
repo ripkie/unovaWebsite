@@ -4,24 +4,24 @@ import { Mail, MapPin, Phone, Clock } from "lucide-react";
 
 export default function ContactInfoSection() {
   return (
-    <section className="py-10 border-b border-[#A31C1D]/15" style={{ background: "#FFFFFF" }}>
+    <section className="py-10 border-b border-[#B85C5C]/15" style={{ background: "#FFF9F5" }}>
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
         {/* Email */}
         <a
           href="mailto:unovahometech@gmail.com"
-          className="flex items-start gap-3 p-4 rounded-2xl bg-white border border-[#A31C1D]/15 hover:border-[#A31C1D]/35 hover:shadow-md transition-all group"
+          className="flex items-start gap-3 p-4 rounded-2xl bg-white border border-[#B85C5C]/15 hover:border-[#B85C5C]/35 hover:shadow-md transition-all group"
         >
           <div
             className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-            style={{ background: "rgba(163,28,29,0.1)" }}
+            style={{ background: "rgba(184, 92, 92,0.1)" }}
           >
-            <Mail size={20} style={{ color: "#A31C1D" }} />
+            <Mail size={20} style={{ color: "#B85C5C" }} />
           </div>
           <div className="min-w-0">
             <div className="text-brand-navy/40 text-xs font-semibold uppercase tracking-widest">
               Email
             </div>
-            <div className="font-display font-bold text-brand-navy mt-1 group-hover:text-[#A31C1D] transition-colors break-all text-sm">
+            <div className="font-display font-bold text-brand-navy mt-1 group-hover:text-[#B85C5C] transition-colors break-all text-sm">
               unovahometech@gmail.com
             </div>
             <div className="flex items-center gap-1 text-brand-navy/40 text-xs mt-1">
@@ -36,19 +36,19 @@ export default function ContactInfoSection() {
           href="https://wa.me/62xxxxxxxxxx"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-[#A31C1D]/15 hover:border-[#A31C1D]/35 hover:shadow-md transition-all group"
+          className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-[#B85C5C]/15 hover:border-[#B85C5C]/35 hover:shadow-md transition-all group"
         >
           <div
             className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-            style={{ background: "rgba(163,28,29,0.1)" }}
+            style={{ background: "rgba(184, 92, 92,0.1)" }}
           >
-            <Phone size={20} style={{ color: "#A31C1D" }} />
+            <Phone size={20} style={{ color: "#B85C5C" }} />
           </div>
           <div>
             <div className="text-brand-navy/40 text-xs font-semibold uppercase tracking-widest">
               WhatsApp
             </div>
-            <div className="font-display font-bold text-brand-navy mt-1 group-hover:text-[#A31C1D] transition-colors">
+            <div className="font-display font-bold text-brand-navy mt-1 group-hover:text-[#B85C5C] transition-colors">
               +62 xxx-xxxx-xxxx
             </div>
             <div className="flex items-center gap-1 text-brand-navy/40 text-xs mt-1">
@@ -59,12 +59,12 @@ export default function ContactInfoSection() {
         </a>
 
         {/* Kantor */}
-        <div className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-[#A31C1D]/15">
+        <div className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-[#B85C5C]/15">
           <div
             className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-            style={{ background: "rgba(163,28,29,0.1)" }}
+            style={{ background: "rgba(184, 92, 92,0.1)" }}
           >
-            <MapPin size={20} style={{ color: "#A31C1D" }} />
+            <MapPin size={20} style={{ color: "#B85C5C" }} />
           </div>
           <div>
             <div className="text-brand-navy/40 text-xs font-semibold uppercase tracking-widest">

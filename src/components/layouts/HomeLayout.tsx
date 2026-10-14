@@ -1,44 +1,21 @@
-import { partners } from "@/lib/data/home";
-
 import HeroSection from "@/components/contents/home/HeroSection";
-import StatsSection from "@/components/contents/home/StatsSection";
-import FeaturesSection from "@/components/contents/home/FeaturesSection";
-import FeaturedProductSection from "@/components/contents/home/FeaturedProductSection";
-import PartnersSection from "@/components/contents/home/PartnersSection";
+import RobotSection from "@/components/contents/home/RobotSection";
+import RfidSection from "@/components/contents/home/RfidSection";
+import BoardMatSection from "@/components/contents/home/BoardMatSection";
+import ContactSection from "@/components/contents/home/ContactSection";
+import { VideoSection, StoriesSection, TestimonialsSection } from "@/components/contents/home/SupportingSections";
 import SectionVisibility from "@/components/ui/SectionVisibility";
 import { sectionVisibility } from "@/lib/config/sections";
-
 export default function HomeLayout() {
   const sections = sectionVisibility.home;
-
-  return (
-    <>
-      {/* ─── HERO ─────────────────────────────────────────────────────── */}
-      <SectionVisibility enabled={sections.hero}>
-        <HeroSection />
-      </SectionVisibility>
-
-      {/* ─── STATS ────────────────────────────────────────────────────── */}
-      <SectionVisibility enabled={sections.stats}>
-        <StatsSection />
-      </SectionVisibility>
-
-      {/* ─── FITUR ────────────────────────────────────────────────────── */}
-      <SectionVisibility enabled={sections.features}>
-        <FeaturesSection />
-      </SectionVisibility>
-
-      {/* ─── PRODUK HIGHLIGHT ─────────────────────────────────────────── */}
-      <SectionVisibility enabled={sections.featuredProduct}>
-        <FeaturedProductSection />
-      </SectionVisibility>
-
-      {/* ─── PARTNER SLIDER ── infinite loop yang benar ───────────────── */}
-      {partners.length > 0 && (
-        <SectionVisibility enabled={sections.partners}>
-          <PartnersSection />
-        </SectionVisibility>
-      )}
-    </>
-  );
+  return <div className="cc-landing">
+    <SectionVisibility enabled={sections.hero}><HeroSection /></SectionVisibility>
+    <SectionVisibility enabled={sections.robot}><RobotSection /></SectionVisibility>
+    <SectionVisibility enabled={sections.rfid}><RfidSection /></SectionVisibility>
+    <SectionVisibility enabled={sections.boardMat}><BoardMatSection /></SectionVisibility>
+    <SectionVisibility enabled={sections.videos}><VideoSection /></SectionVisibility>
+    <SectionVisibility enabled={sections.stories}><StoriesSection /></SectionVisibility>
+    <SectionVisibility enabled={sections.testimonials}><TestimonialsSection /></SectionVisibility>
+    <SectionVisibility enabled={sections.contact}><ContactSection /></SectionVisibility>
+  </div>;
 }

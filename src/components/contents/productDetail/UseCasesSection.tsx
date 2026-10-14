@@ -11,8 +11,8 @@ export default function UseCasesSection({ product }: Pick<ProductDetailSectionPr
           {product.useCases.map((uc) => (
             <div key={uc.title} className="p-8 rounded-2xl bg-white border border-brand-blue/10 hover:border-brand-blue/30 hover:shadow-lg transition-all">
               {/* 🏠🏢🏨 diganti icon component */}
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(163,28,29,0.1)" }}>
-                <uc.icon size={24} style={{ color: "#A31C1D" }} />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(184, 92, 92,0.1)" }}>
+                <uc.icon size={24} style={{ color: "#B85C5C" }} />
               </div>
               <h3 className="font-display font-bold text-brand-navy text-xl">{uc.title}</h3>
               <p className="mt-2 text-brand-navy/60 text-sm leading-relaxed">{uc.desc}</p>

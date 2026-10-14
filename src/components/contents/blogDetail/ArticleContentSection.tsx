@@ -5,7 +5,7 @@ import { Clock, Tag, BookOpen } from "lucide-react";
 import type { BlogDetailSectionProps } from "@/lib/page-state/getBlogDetailState";
 export default function ArticleContentSection({ post, relatedPosts }: Pick<BlogDetailSectionProps, "post" | "relatedPosts">) {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-brand-light">
       <div className="max-w-4xl mx-auto px-6">
         <div className="grid lg:grid-cols-[1fr_280px] gap-12 items-start">
           <article className="prose-unova">
@@ -86,10 +86,10 @@ export default function ArticleContentSection({ post, relatedPosts }: Pick<BlogD
               </div>
             )}
 
-            <div className="p-5 rounded-2xl text-white" style={{ background: "#292929" }}>
+            <div className="p-5 rounded-2xl text-white" style={{ background: "#352E2B" }}>
               <p className="font-display font-bold mb-2">Tertarik dengan solusi Creativity Corner?</p>
               <p className="text-white/60 text-sm mb-4 leading-relaxed">Konsultasi gratis untuk proyek smart building Anda.</p>
-              <Link href="/contact-us" className="block text-center px-4 py-2.5 rounded-xl text-white text-sm font-semibold transition-colors" style={{ background: "#A31C1D" }}>
+              <Link href="/contact-us" className="block text-center px-4 py-2.5 rounded-xl text-white text-sm font-semibold transition-colors" style={{ background: "#B85C5C" }}>
                 Hubungi Kami
               </Link>
             </div>

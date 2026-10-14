@@ -1,14 +1,17 @@
 /** Section visibility: true = tampil, false = sembunyikan.
  * Edit this file to control all page layouts. No CMS or client runtime setting.
- * All flags start true to preserve the approved site.
+ * Section opsional Home disembunyikan sampai bahan tersedia.
  */
 export const sectionVisibility = {
   home: {
     hero: true,
-    stats: true,
-    features: true,
-    featuredProduct: true,
-    partners: true
+    robot: true,
+    rfid: true,
+    boardMat: true,
+    videos: false,
+    stories: false,
+    testimonials: false,
+    contact: true
   },
   about: {
     hero: true,

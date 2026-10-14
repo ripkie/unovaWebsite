@@ -31,15 +31,15 @@ export const milestones = [
 export const deptConfig: Record<string, { label: string; bg: string; text: string; border: string; }> = {
   "C-Level": {
     label: "C-Level",
-    bg: "rgba(41,41,41,0.06)",
-    text: "#292929",
-    border: "rgba(41,41,41,0.12)",
+    bg: "rgba(53, 46, 43,0.06)",
+    text: "#352E2B",
+    border: "rgba(53, 46, 43,0.12)",
   },
   Engineering: {
     label: "Technical",
-    bg: "rgba(163,28,29,0.08)",
-    text: "#A31C1D",
-    border: "rgba(163,28,29,0.2)",
+    bg: "rgba(184, 92, 92,0.08)",
+    text: "#B85C5C",
+    border: "rgba(184, 92, 92,0.2)",
   },
   Operations: {
     label: "Official",

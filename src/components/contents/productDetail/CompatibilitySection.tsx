@@ -1,7 +1,7 @@
 import type { ProductDetailSectionProps } from "@/lib/page-state/getProductDetailState";
 export default function CompatibilitySection({ product }: Pick<ProductDetailSectionProps, "product">) {
   return (
-    <section className="py-10 bg-white border-t border-brand-blue/10">
+    <section className="py-10 bg-brand-light border-t border-brand-blue/10">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <p className="text-brand-navy/40 text-sm font-semibold tracking-widest uppercase mb-8">Kompatibel dengan</p>
         <div className="flex flex-wrap gap-4 justify-center">

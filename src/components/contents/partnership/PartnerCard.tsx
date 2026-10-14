@@ -5,7 +5,7 @@ export default function PartnerCard({ partner, muted = false }: { partner: Partn
     <div
       className="flex flex-col items-center justify-center px-8 py-4 rounded-2xl bg-white border min-w-[180px] h-20 transition-all shrink-0"
       style={{
-        borderColor: muted ? "rgba(163,28,29,0.08)" : "rgba(163,28,29,0.2)",
+        borderColor: muted ? "rgba(184, 92, 92,0.08)" : "rgba(184, 92, 92,0.2)",
         opacity: muted ? 0.5 : 1,
       }}
     >
