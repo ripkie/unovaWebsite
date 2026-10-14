@@ -191,14 +191,16 @@
 .cc-navbar-contact:hover { color: var(--color-primary-dark); }
 .cc-navbar-toggle { margin-left: auto; }
 .cc-nav-link:hover { color: var(--color-primary) !important; }
+.cc-nav-link[aria-current="page"],
+.cc-navbar-contact[aria-current="page"] { color: var(--color-primary) !important; }
 .cc-nav-link:hover,
 .cc-nav-link:focus-visible,
+.cc-nav-link[aria-current="page"],
 .cc-navbar-contact:hover,
-.cc-navbar-contact:focus-visible {
-  text-decoration-line: underline;
-  text-decoration-color: var(--color-primary);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 8px;
+.cc-navbar-contact:focus-visible,
+.cc-navbar-contact[aria-current="page"] {
+  border-bottom-color: var(--color-primary) !important;
+  text-decoration: none;
 }
 .cc-landing { padding-top: 116px; background: var(--color-brand-light); }
 .cc-hero { position: relative; isolation: isolate; text-align: center; overflow: hidden; padding: 18px 24px 64px; }

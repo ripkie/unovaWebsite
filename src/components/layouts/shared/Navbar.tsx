@@ -25,6 +25,8 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const isProducts = pathname === "/products";
+  const isActiveLink = (href: string) => pathname === href ||
+    (href !== "/" && pathname.startsWith(`${href}/`));
   const searchRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -67,7 +69,7 @@ export default function Navbar() {
           {/* Desktop Links */}
           <div className="cc-navbar-links hidden lg:flex items-center">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = isActiveLink(link.href);
               return (
                 <Link
                   key={link.href}
@@ -75,7 +77,8 @@ export default function Navbar() {
                   aria-current={isActive ? "page" : undefined}
                   className="cc-nav-link px-1 py-2 text-sm transition-all duration-200"
                   style={{
-                    color: isActive ? textActive : textColor,
+                    color: isActive ? "#B85C5C" : textColor,
+                    borderBottom: isActive ? "1px solid #B85C5C" : "1px solid transparent",
                     fontWeight: 700,
                   }}
                 >
@@ -128,7 +131,9 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             href="/contact-us"
+            aria-current={isActiveLink("/contact-us") ? "page" : undefined}
             className="cc-navbar-contact hidden lg:inline-flex"
+            style={{ color: isActiveLink("/contact-us") ? "#B85C5C" : textActive, borderBottom: isActiveLink("/contact-us") ? "1px solid #B85C5C" : "1px solid transparent" }}
           >
             Contact Us
           </Link>
@@ -196,15 +201,17 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  aria-current={isActiveLink(link.href) ? "page" : undefined}
                   onClick={() => setMenuOpen(false)}
-                  className="px-4 py-2.5 rounded-xl text-sm font-medium"
-                  style={{ color: textColor }}
+                  className="cc-nav-link px-4 py-2.5 rounded-xl text-sm font-medium"
+                  style={{ color: isActiveLink(link.href) ? "#B85C5C" : textColor, borderBottom: isActiveLink(link.href) ? "1px solid #B85C5C" : "1px solid transparent" }}
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
                 href="/contact-us"
+                aria-current={isActiveLink("/contact-us") ? "page" : undefined}
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white text-center"
                 style={{ background: "#B85C5C" }}
