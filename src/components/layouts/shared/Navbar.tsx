@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, Search } from "lucide-react";
+import { products } from "@/lib/data/products";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -13,10 +14,7 @@ const navLinks = [
   { href: "/about", label: "About Us" },
 ];
 
-const productList = [
-  { id: "gas-leak-prevention", name: "Gas Leak Prevention", desc: "Automatic protection against gas leaks" },
-  { id: "humidifier-dehumidifier-2in1", name: "Humidifier & Dehumidifier 2in1", desc: "Automatically maintain your home’s humidity" },
-];
+const productList = products.map(p => ({ id: p.id, name: p.name, desc: p.description }));
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

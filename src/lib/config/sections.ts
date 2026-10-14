@@ -24,8 +24,10 @@ export const sectionVisibility = {
   },
   products: {
     hero: true,
-    productCarousel: true,
-    comingSoon: true
+    categories: true,
+    playsets: true,
+    adventureMaps: true,
+    rfidCards: true
   },
   partnership: {
     hero: true,
@@ -49,7 +51,6 @@ export const sectionVisibility = {
     hero: true,
     specifications: true,
     howItWorks: true,
-    useCases: true,
     compatibility: true
   },
   blogDetail: {

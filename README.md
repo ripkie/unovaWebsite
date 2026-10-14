@@ -152,3 +152,17 @@ For this update, copy/overwrite src and package.json from the ZIP. package.json 
 Routes, slugs, form API field names and topic IDs, menu destinations, section visibility, animation, colors, and typography are preserved. Comments and this developer README may still use Indonesian; they are not website copy. User-entered messages and external destination websites keep their own language.
 
 Email error messages and notification templates are English. The email input now uses type=email so native validation recognizes the field correctly. Sending via the real email service was not performed.
+
+## CC Products catalog update
+
+Products now follows the Primo shop structure with category links and product rows: Beeboy, Adventure Maps, and RFID Cards. Three detail routes are available: /products/beeboy, /products/forest-board-mat, and /products/rfid-command-cards. Prices, sales status, kit quantities, age ratings, warranty, and certifications are omitted until confirmed. Contact Us replaces checkout; Learn More opens the product detail page. Story names and further adventure maps can be added to src/lib/data/products.ts when provided. Existing smart-home blog articles remain separate from this catalog update.
+
+Copy/overwrite src, next.config.ts, README.md, and cleanup-old-products.ps1 from this ZIP. No dependency changes or new image files. Keep package.json and .env.local from your current English website. Run the cleanup script from the project root after replacement:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\cleanup-old-products.ps1
+if (Test-Path ".next") { Remove-Item ".next" -Recurse -Force }
+npm run build
+```
+
+The script removes only four retired files listed inside it. It does not delete new catalog components or assets. Product visibility flags now use hero, categories, playsets, adventureMaps, and rfidCards. Detail flags use hero, specifications, howItWorks, and compatibility. Hiding a catalog group also removes its category link. The navbar search uses the new catalog. The two old smart-home product detail URLs permanently redirect to /products. Sitemap now follows the three real detail routes (14 website URLs total).
