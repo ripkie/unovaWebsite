@@ -1,12 +1,7 @@
-import { MetadataRoute } from "next";
-
+import type { MetadataRoute } from "next";
+import { absoluteUrl, siteIndexable } from "@/lib/config/site";
 export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: "/favicon.svg"
-    },
-    sitemap: "https://unova.id/sitemap.xml",
-  };
+  return siteIndexable
+    ? { rules: { userAgent: "*", allow: "/", disallow: "/api/" }, sitemap: absoluteUrl("/sitemap.xml") }
+    : { rules: { userAgent: "*", disallow: "/" } };
 }

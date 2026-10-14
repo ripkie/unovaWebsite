@@ -1,7 +1,7 @@
 /**
  * lib/team.ts
  *
- * Single source of truth untuk data tim Unova.
+ * Single source of truth untuk data tim Creativity Corner.
  * Data dibaca dari `package.json > unova.team`
  *
  * Cara edit tim:
@@ -35,7 +35,7 @@ export interface TeamMember {
 }
 
 export function getTeam(): TeamMember[] {
-  const pkg = pkgJson as { unova?: { team?: TeamMember[] } };
+  const pkg = pkgJson as { unova?: { team?: TeamMember[]; }; };
   return pkg.unova?.team ?? [];
 }
 

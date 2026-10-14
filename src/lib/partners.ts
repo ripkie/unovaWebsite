@@ -1,7 +1,7 @@
 /**
  * lib/partners.ts
  *
- * Single source of truth untuk data mitra Unova.
+ * Single source of truth untuk data mitra Creativity Corner.
  *
  * Cara kerja saat ini:
  *   - Data dibaca dari `package.json > unova.partners`
@@ -35,6 +35,6 @@ export interface Partner {
  * Ganti dengan async fetch saat migrasi ke CMS.
  */
 export function getPartners(): Partner[] {
-  const pkg = pkgJson as { unova?: { partners?: Partner[] } };
+  const pkg = pkgJson as { unova?: { partners?: Partner[]; }; };
   return pkg.unova?.partners ?? [];
 }

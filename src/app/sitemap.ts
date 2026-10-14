@@ -1,80 +1,10 @@
-import { MetadataRoute } from "next";
-
+import type { MetadataRoute } from "next";
+import { absoluteUrl, siteIndexable } from "@/lib/config/site";
+import { products } from "@/lib/data/productDetail";
+import { posts } from "@/lib/data/blogDetail";
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://unova.id";
-
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/products`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/products/gas-leak-prevention`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/smart-home-2025-trend`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/knx-vs-matter-protokol`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/roi-smart-building`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/gas-leak-prevention-rumah`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/kualitas-udara-dalam-ruangan`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/partnership`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/contact-us`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.6,
-    },
-  ];
+  if (!siteIndexable) return [];
+  const paths = ["/", "/about", "/products", "/blog", "/partnership", "/contact-us", ...Object.keys(products).map(slug => `/products/${slug}`), ...Object.keys(posts).map(slug => `/blog/${slug}`)];
+  // lastModified is omitted until real per-page content timestamps are available.
+  return paths.map(path => ({ url: absoluteUrl(path) }));
 }

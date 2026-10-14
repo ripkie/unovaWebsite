@@ -42,47 +42,47 @@ export async function POST(req: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Unova Website <onboarding@resend.dev>",
+        from: "Creativity Corner Website <onboarding@resend.dev>",
         to: [emailTo],
         reply_to: email,
-        subject: `[Unova] Pesan baru dari ${name} — ${topicLabel}`,
+        subject: `[Creativity Corner] Pesan baru dari ${name} — ${topicLabel}`,
         html: `
           <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; padding: 24px;">
-            <div style="background: #091F58; border-radius: 12px; padding: 20px 24px; margin-bottom: 24px;">
-              <h1 style="color: white; font-size: 20px; margin: 0;">Pesan Baru dari Website Unova</h1>
+            <div style="background: #292929; border-radius: 12px; padding: 20px 24px; margin-bottom: 24px;">
+              <h1 style="color: white; font-size: 20px; margin: 0;">Pesan Baru dari Website Creativity Corner</h1>
             </div>
 
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #EDF0F5; color: #6F96D1; font-size: 12px; font-weight: 600; text-transform: uppercase; width: 140px;">Nama</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #EDF0F5; color: #091F58; font-weight: 600;">${name}</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #A31C1D; font-size: 12px; font-weight: 600; text-transform: uppercase; width: 140px;">Nama</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #292929; font-weight: 600;">${name}</td>
               </tr>
               <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #EDF0F5; color: #6F96D1; font-size: 12px; font-weight: 600; text-transform: uppercase;">Email</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #EDF0F5; color: #091F58;">
-                  <a href="mailto:${email}" style="color: #6F96D1;">${email}</a>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #A31C1D; font-size: 12px; font-weight: 600; text-transform: uppercase;">Email</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #292929;">
+                  <a href="mailto:${email}" style="color: #A31C1D;">${email}</a>
                 </td>
               </tr>
               ${company ? `
               <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #EDF0F5; color: #6F96D1; font-size: 12px; font-weight: 600; text-transform: uppercase;">Perusahaan</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #EDF0F5; color: #091F58;">${company}</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #A31C1D; font-size: 12px; font-weight: 600; text-transform: uppercase;">Perusahaan</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #292929;">${company}</td>
               </tr>` : ""}
               <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #EDF0F5; color: #6F96D1; font-size: 12px; font-weight: 600; text-transform: uppercase;">Topik</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #EDF0F5;">
-                  <span style="background: rgba(111,150,209,0.15); color: #6F96D1; padding: 2px 10px; border-radius: 20px; font-size: 13px; font-weight: 600;">${topicLabel}</span>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF; color: #A31C1D; font-size: 12px; font-weight: 600; text-transform: uppercase;">Topik</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #FFFFFF;">
+                  <span style="background: rgba(163,28,29,0.15); color: #A31C1D; padding: 2px 10px; border-radius: 20px; font-size: 13px; font-weight: 600;">${topicLabel}</span>
                 </td>
               </tr>
             </table>
 
             <div style="margin-top: 20px;">
-              <p style="color: #6F96D1; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Pesan</p>
-              <div style="background: #EDF0F5; border-radius: 10px; padding: 16px; color: #091F58; line-height: 1.6; white-space: pre-wrap;">${message}</div>
+              <p style="color: #A31C1D; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Pesan</p>
+              <div style="background: #FFFFFF; border-radius: 10px; padding: 16px; color: #292929; line-height: 1.6; white-space: pre-wrap;">${message}</div>
             </div>
 
-            <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #EDF0F5; font-size: 12px; color: #999;">
-              Dikirim dari unova-website.vercel.app · ${new Date().toLocaleString("id-ID", { dateStyle: "full", timeStyle: "short" })}
+            <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #FFFFFF; font-size: 12px; color: #999;">
+              Dikirim dari creativitycorner.cc · ${new Date().toLocaleString("id-ID", { dateStyle: "full", timeStyle: "short" })}
             </div>
           </div>
         `,
